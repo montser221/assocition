@@ -94,7 +94,7 @@
                           left: 42%;
                           width: 110px;
                           text-align:center;
-                          background: #2fa89c;
+                          background: #BAA342;
                           color: FFF;
                           border-radius: 20px;
                          }

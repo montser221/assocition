@@ -623,7 +623,7 @@
              ?>
               <div class="item-1 col-md-6 col-sm-12">
                 <a href="{{route('courseDetail',$course->courseId)}}">
-                  <img style=" height: 126px;   max-height: 175px;"  src="{{ url("uploads/courses/".$course->courseImage) }}" class="" alt=" " />
+                  <img style=" height: 126px;   max-height: 175px;"  src="{{ url("storage/".$course->courseImage) }}" class="" alt=" " />
                   <span class="d-block text-center  main-color">{{$course->courseName ?? ''}}</span>
                 </a>
                 <p style="font-size:15px;min-height:70px; max-height: 70px;   overflow: auto;">
@@ -635,7 +635,7 @@
                   <small style="margin-left: 5px"> خانة</small>
                 </div>
                 <div class="links">
-                  <a class="btn btn-success" href="{{route('cart')}}">إشترك الآن</a> 
+                  <a class="btn btn-success" href="{{route('subscribenow')}}">إشترك الآن</a> 
                   <a class="btn btn-primary" href="{{route('courseDetail',$course->courseId)}}">  قراءة المزيد</a> 
                 </div>
               </div>  

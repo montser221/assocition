@@ -90,10 +90,11 @@
           <a class="list-group-item" href="{{route('money.index')}}"><i class="fa fa-dollar fa-fw" aria-hidden="true"></i>&nbsp;  التقارير المالية  </a>
           <a class="list-group-item" href="{{route('denoate.index')}}"><i class="fa fa-dollar fa-fw" aria-hidden="true"></i>&nbsp; تفاصيل الدفع  الفواتير</a>
 
+          <a class="list-group-item" href="{{route('courses.index')}}"><i class="fa fa-desktop" aria-hidden="true"></i>&nbsp;إدارة الدورات التدريبية</a>
           <a class="list-group-item" href="{{route('projects.index')}}"><i class="fa fa-desktop" aria-hidden="true"></i>&nbsp;إدارة المشاريع</a>
           <a class="list-group-item" href="{{route('arrows.index')}}"><i class="fa fa-arrows" aria-hidden="true"></i>&nbsp;إدارة الأسهم</a>
 
-          <a class="list-group-item" href="{{route('projectcategories.index')}}"> <i class="fa fa-desktop" aria-hidden="true"></i>&nbsp; إدارة فئات المشاريع  </a>
+          {{-- <a class="list-group-item" href="{{route('projectcategories.index')}}"> <i class="fa fa-desktop" aria-hidden="true"></i>&nbsp; إدارة فئات المشاريع  </a> --}}
 
           <a class="list-group-item" href="{{route('paymentmethod.index')}}"><i class="fa fa-credit-card" aria-hidden="true"></i>&nbsp;إدارة طرق الدفع</a>
 

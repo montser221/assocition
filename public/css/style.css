@@ -2763,7 +2763,7 @@ border:0px solid ;
 	left: 52%;
 	width: 50px !important;
 	height: 50px !important;
-	background: #786E42 !important;
+	background: #BAA342 !important;
 	color: #fff !important;
 }
 
@@ -2782,7 +2782,7 @@ border:0px solid ;
 	bottom: -18px;
 	left: 35%;
 	width: 110px;
-	background: #786E42;
+	background: #BAA342;
 	color: FFF;
 	border-radius: 20px;
 }
@@ -2814,7 +2814,7 @@ border:0px solid ;
 		/* box-shadow: #C6C6C6 0px 0px 10px -2px; */
 	}
 	.project-detail .p-detail .p-down .p-buttons input {
-		color:#786E42;
+		color:#BAA342;
 		border: 1px solid;
 	}
 	.project-detail .p-detail .p-down .p-buttons button
@@ -2822,7 +2822,7 @@ border:0px solid ;
 			margin-left: 10px !important;
 			width: 65px;
 			border-radius: 30px !important;
-			color:#786E42;
+			color:#BAA342;
 			background-color: #E6E6E6;
 			margin-bottom: 10px;
 	}

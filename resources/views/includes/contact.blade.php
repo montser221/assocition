@@ -10,7 +10,7 @@
         <div class="text-center mt-1 mb-4 line-design-right"></div>
         </div>
         <div class="short-text text-gray mb-3">
-          تواصل معنا لأي استفسار على الخدمات التكافلية الخيرية التي
+          تواصل معنا لأي استفسار على الخدمات التكافلية الخيرية  
 
         </div>
       </div>
@@ -20,7 +20,7 @@
           @method('POST')
           {{-- <input type="hidden" name="contact_home"> --}}
             <div class="form-group">
-              <Select name="msgType" class="form-control p-0" autoFocus  >
+              <Select name="msgType" class="form-control p-0"   >
                 <option disabled selected >نوع الرسالة</option>
                 <option @if (old('msgType') =="complaint") selected @endif  value="complaint"> شكوى</option>
                 <option @if (old('msgType') == "suggist") selected @endif value="suggist">إقتراح</option>

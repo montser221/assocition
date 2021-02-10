@@ -16,6 +16,7 @@ Route::get('test',function(){
     
 
 })->name('test');
+Route::get('/subscribenow', [App\Http\Controllers\TrainningSubscriberController::class,'index'])->name('subscribenow');
 Route::get('/exportAllDenoate', [App\Http\Controllers\DenoateController::class,'exportAllDenoate'])->name('exportAllDenoate')->middleware('auth');
 Route::get('/exportToExcel/{id}', [App\Http\Controllers\MoneyReportController::class,'exportToExcel'])->name('exportToExcel')->middleware('auth');
 Route::get('money', [App\Http\Controllers\MoneyReportController::class,'index'])->name('money.index')->middleware('auth');
@@ -34,10 +35,8 @@ Route::get('ourproject',[App\Http\Controllers\MainController::class,'ourproject'
 Route::get('paymethod',[App\Http\Controllers\paymethodController::class,'paymethod'])->name('paymethod');
 Route::get('zakat',[App\Http\Controllers\MainController::class,'zakat'])->name('zakat');
 Route::get('aboutus',[App\Http\Controllers\aboutController::class,'aboutus'])->name('aboutus');
-
 Route::get('volnt',[App\Http\Controllers\VolntController::class,'volnt'])->name('volnt')->middleware('auth');
 Route::delete('volnt/{id}',[App\Http\Controllers\VolntController::class,'destroy'])->name('volnt.destroy')->middleware('auth');
-
 Route::get('applicable',[App\Http\Controllers\ApplicableController::class,'applicable'])->name('applicable')->middleware('auth');
 Route::delete('destroy/{id}',[App\Http\Controllers\ApplicableController::class,'destroy'])->name('destroy')->middleware('auth');
 
@@ -71,8 +70,8 @@ Route::get('allReportFiles',[App\Http\Controllers\ManageMoneyReportController::c
 Route::get('stat',[App\Http\Controllers\StatisticsController::class,'statistics'])->name('stat')->middleware('auth');
 //arrow route
 Route::resource('arrows',App\Http\Controllers\ArrowsController::class)->middleware('auth');
-Route::resource('courses',App\Http\Controllers\TrainningCoursesController::class);
-// Route::resource('courses',App\Http\Controllers\TrainningCoursesController::class)->middleware('auth');
+// Route::resource('courses',App\Http\Controllers\TrainningCoursesController::class);
+Route::resource('courses',App\Http\Controllers\TrainningCoursesController::class)->middleware('auth');
 
 Route::resource('statistics',App\Http\Controllers\StatisticsController::class)->middleware('auth');
 Route::resource('denoate',App\Http\Controllers\DenoateController::class);
