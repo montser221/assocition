@@ -4,6 +4,8 @@ npm-debug.log
 yarn-error.log
 public/storage
 public/uploads
+storage/
+public/
 storage/*.key
 .env
 Homestead.yaml
