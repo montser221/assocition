@@ -19,7 +19,7 @@ $otherFiles = \App\Models\OtherMember::all();
 </svg>
                حساب الزكاة</a>
             </li>
-             <li>
+             {{-- <li>
                 <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAZ__vK183RUOFFDVzYxRlc0UEJRTDlNWTVTRDQzUDE2WC4u">
                      <i class="fa fa-basket ml-1" aria-hidden="true"></i>
                      طلب عضو منتسب </a>
@@ -28,7 +28,7 @@ $otherFiles = \App\Models\OtherMember::all();
                 <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAZ__vK183RURjJWR1k1TUNKVVo4SFMzRlFOWVBaNjJZSC4u">
                      <i class="fa fa-basket ml-1" aria-hidden="true"></i>
                        طلب عضو عامل   </a>
-            </li>
+            </li> --}}
              <li>
                 <i class="fa fa-user" aria-hidden="true"></i>
                 <a href="{{route("voluntary.index")}}"> بوابة المتطوعين</a>
