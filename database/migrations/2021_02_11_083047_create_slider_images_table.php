@@ -17,7 +17,7 @@ class CreateSliderImagesTable extends Migration
             $table->id('sliderId');
             $table->string('sliderTitle');
             $table->string('sliderImage')->nullable();
-            $table->string('sliderText',255);
+            $table->text('sliderText');
             $table->string('sliderLink');
             $table->string('sliderStatus')->default(0);
             $table->timestamps();

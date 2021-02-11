@@ -23,7 +23,7 @@
         <div class="carousel-item {{ $loop->first ? 'active' : '' }} ">
         @foreach ($imageCollection as $slider)
        <img style="margin-bottom: 160px !important;  max-height: 100%;" src="{{ url($slider->sliderImage)}}" class="d-block w-100" alt="...">
-       <div class="container text-center" style="position: absolute;top: 40%;">
+       <div class="container text-center" style="position: absolute;top: 40%;  left: 6%;">
          <div class="text-center mb-3"  style="color:#fff;font-size:30px">{{ $slider->sliderTitle }} </div>
          <div class="text-center   mb-5" style="color:#fff;font-size:20px;  width: 80%; margin: 0 auto;">{{ $slider->sliderText }}</div>
          <a href="{{ $slider->sliderLink }}" 
