@@ -5,15 +5,8 @@ use Illuminate\Support\Facades\Storage;
 Route::get('viewFile',[App\Http\Controllers\ViewFileController::class,'viewFile'])->name('viewFile');
 Route::get('/',[App\Http\Controllers\MainController::class,'index'])->name('/');
 Route::get('test',function(){
-    $pageId = 1;
-    \DB::table('pages')
-    ->insert([
-      'pageId' => $pageId,
-      'pageName' => 'الرئيسية',
-      'totalViews'=> 0,
-      'updated_at'=>now(),
-    ]);
-    
+  $allimgefiles  = DB::table('projects')->select('*')->get();
+    return view('pages.testslider',compact('allimgefiles'));
 
 })->name('test');
 Route::get('/subscribenow', [App\Http\Controllers\TrainningSubscriberController::class,'index'])->name('subscribenow');
@@ -80,6 +73,7 @@ Route::get('payments',[App\Http\Controllers\DenoateController::class,'payments']
 
 
 Route::resource('dashboard',App\Http\Controllers\Dashboard\DashboardController::class)->middleware('auth');
+Route::resource('sliderimages',App\Http\Controllers\SliderImageController::class)->middleware('auth');
 Route::resource('userscategories',App\Http\Controllers\UsersCategoriesController::class)->middleware('auth');
 Route::resource('users',App\Http\Controllers\UsersController::class)->middleware('auth');
 Route::resource('paymentmethod',App\Http\Controllers\PaymentMethodController::class)->middleware('auth');

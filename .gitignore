@@ -6,6 +6,7 @@ public/storage
 public/uploads
 storage/*.key
 .env
+resources/views/pages/testslider.blade.php
 Homestead.yaml
 Homestead.json
 /.vagrant

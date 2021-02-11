@@ -85,23 +85,12 @@
             </div>
           </div>
         </div>
-
         <div class="form-row">
            <input class="btn btn-secondary ml-2" type="reset" name="" value="تفريغ">
            <button type="submit" class="btn text-orange text-white "> حفظ التعديلات <i class="fa fa-save"></i></button>
         </div>
-
-        
-
-
     </form>
-
     </div>
-
     {{-- Start Modal Edit --}}
-
-
-
-
     {{-- End Modal Edit --}}
 @endsection
