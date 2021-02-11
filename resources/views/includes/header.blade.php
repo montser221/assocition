@@ -20,13 +20,11 @@ $otherFiles = \App\Models\OtherMember::all();
                حساب الزكاة</a>
             </li>
              <li>
-
                 <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAZ__vK183RUOFFDVzYxRlc0UEJRTDlNWTVTRDQzUDE2WC4u">
                      <i class="fa fa-basket ml-1" aria-hidden="true"></i>
                      طلب عضو منتسب </a>
             </li>
             <li>
-
                 <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAZ__vK183RURjJWR1k1TUNKVVo4SFMzRlFOWVBaNjJZSC4u">
                      <i class="fa fa-basket ml-1" aria-hidden="true"></i>
                        طلب عضو عامل   </a>
@@ -86,14 +84,11 @@ $otherFiles = \App\Models\OtherMember::all();
   <div class="row">
     <div class="col-lg-10">
       <nav class="navbar navbar-expand-lg navbar-light">
-
         <a class="navbar-brand" href="{{route("home")}}" {{$data->foundationName  ?? ' '}} >
           <img class="brand-img"  src="@if( isset($data->foundationLogo) ) {{url( "uploads/settings/". $data->foundationLogo )}}
           @else alt=""
           @endif " class="dashboard-logo"  >
-
          </a>
-
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -151,7 +146,7 @@ $otherFiles = \App\Models\OtherMember::all();
            </li>
             <li class="nav-item">
               <a href="{{route('contact.index')}}" class="nav-link"> 
-                 الاتصال بالجمعية'
+                 الاتصال بالجمعية
               </a>
             </li>
         </div>

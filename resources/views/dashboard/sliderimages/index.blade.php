@@ -34,12 +34,7 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body">
-                        {{-- sliderTitle
-sliderImage
-sliderText
-sliderLink
-sliderStatus --}}
+                    <div class="modal-body">   
                         <form id="create-form" enctype="multipart/form-data" method="post"
                             action="{{ route('sliderimages.store') }}">
                             @csrf
@@ -47,21 +42,37 @@ sliderStatus --}}
                             <div class="form-row">
                                 <div class="col">
                                     <label class="label-control" for="sliderTitle"> العنوان </label>
-                                    <input id="inputProjectName" type="text" name="sliderTitle" شعautofocus
-                                        class="form-control" placeholder="أكتب    عنوان الملف">
+                                    <input id="inputProjectName" 
+                                    type="text"
+                                    name="sliderTitle" 
+                                    autofocus
+                                    class="form-control" 
+                                    placeholder="أكتب العنوان "
+                                    value="{{ old("sliderTitle") }}"
+                                    >
                                 </div>
                             </div>
 
                             <div class="form-row">
                                 <div class="col">
                                     <label class="label-control" for="sliderLink"> الرابط </label>
-                                    <input type="text" class="form-control" name="sliderLink" placeholder="نص مختصر">
+                                    <input 
+                                        type="text" 
+                                        class="form-control" 
+                                        name="sliderLink" 
+                                        placeholder="https://www.example.com"
+                                        value="{{ old("sliderLink") }}"
+                                        >
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="col">
                                     <label class="label-control" for="sliderImage">صورة مميزة</label>
-                                    <input type="file" name="sliderImage" class="form-control">
+                                    <input 
+                                        type="file" 
+                                        name="sliderImage" 
+                                        class="form-control"
+                                        >
                                 </div>
                             </div>
 
@@ -69,21 +80,24 @@ sliderStatus --}}
                                 <div class="col">
                                     <label class="label-control" for="sliderText">نص مختصر</label>
                                     <textarea name="sliderText" class="form-control" rows="6"
-                                        placeholder="أكتب المحتوى هنا"></textarea>
+                                        placeholder="أكتب المحتوى هنا">{{ old("sliderText") }}</textarea>
                                 </div>
                             </div>
 
                             <div class="form-row mt-3">
                                 <div class="col">
                                     <div class="form-group form-check">
-                                        <input class="form-check-input" type="checkbox" id="sliderStatus"
-                                            name="sliderStatus">
+                                        <input 
+                                            class="form-check-input" 
+                                            type="checkbox" 
+                                            id="sliderStatus"
+                                            name="sliderStatus"
+                                            @if(old('sliderStatus') == 1) checked="checked"  @else  @endif
+                                            >
                                         <label class="form-check-label" for="sliderStatus"> تفعيل الملف</label>
                                     </div>
                                 </div>
-
                             </div>
-
                     </div>
                     <div class="modal-footer d-block">
                         <button type="button" class="btn text-warning btn-main" data-dismiss="modal">الغاء</button>
@@ -115,11 +129,10 @@ sliderStatus --}}
                     <tr>
                         <td> {{ $ids }} </td>
                         <td>{{ $slider->sliderTitle }}</td>
-                        <td>{{ $slider->sliderText }}</td>
-                        <td>{{ $slider->sliderLink }}</td>
-                        <td> <img style="max-width:40px;max-height:40px" src="{{ url('storage/' . $slider->sliderIcon) }}"
+                        <td style="  max-width: 300px;">{{ $slider->sliderText }}</td>
+                        <td> <a target="_balnk" style="color:#BAA342 !important" href="{{ $slider->sliderLink }}"> فتح الرابط </a> </td>
+                        <td> <img style="max-width:100px;max-height:100px" src="{{ url($slider->sliderImage) }}"
                                 class="icon" alt="" /></i> </td>
-                        <td>نعم</td>
                     <td class="@if ($slider->sliderStatus == 1) text-success @else
                             text-danger @endif">
                             @if ($slider->sliderStatus == 1)

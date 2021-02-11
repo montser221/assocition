@@ -2,6 +2,8 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\SliderImage;
+use Storage;
+use Image;
 class SliderImageController extends Controller
 {
     /**
@@ -11,7 +13,7 @@ class SliderImageController extends Controller
      */
     public function index()
     {
-        $allsliderimages =  SliderImage::latest()->paginate(10);
+       $allsliderimages =  SliderImage::latest()->paginate(10);
        return view('dashboard.sliderimages.index',compact('allsliderimages'));
     }
     public function store(Request $request)
@@ -20,7 +22,7 @@ class SliderImageController extends Controller
           'sliderTitle'        => 'required|unique:slider_images|max:255',
           'sliderText'         => 'required',
           'sliderImage'       => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:14096',
-          'sliderLink'        => 'required|link',
+          'sliderLink'        => 'required|url',
       ]);
       // create slider instance
       $slider = new SliderImage;
@@ -32,7 +34,7 @@ class SliderImageController extends Controller
       // upload   image and store it in database
       if($request->file('sliderImage')){
           $path = Storage::disk('public_path')->putFile('uploads/sliders', $request->file('sliderImage'));
-          $slider->sliderImage='sliders/'.$path;
+          $slider->sliderImage='storage/'.$path;
           $image = Image::make(Storage::path($path))->fit(1200,700);
           $image->save();
       }
@@ -67,7 +69,7 @@ class SliderImageController extends Controller
       // check if slider status checked or not
       if($request->has('sliderStatus') )
       {
-        \DB::table('sliders')
+        \DB::table('slider_images')
         ->where('sliderId',$id)
         ->update([
           'sliderStatus'=>1,
@@ -75,7 +77,7 @@ class SliderImageController extends Controller
       }
       else
       {
-        \DB::table('sliders')
+        \DB::table('slider_images')
         ->where('sliderId',$id)
         ->update([
           'sliderStatus'=>0,
@@ -85,10 +87,10 @@ class SliderImageController extends Controller
       if($request->file('sliderImage')){
         Storage::delete(SliderImage::find($id)->sliderImage);
         $path = Storage::disk('public_path')->putFile('uploads/sliders', $request->file('sliderImage'));
-        \DB::table('sliders')
+        \DB::table('slider_images')
         ->where('sliderId',$id)
         ->update([
-          'sliderImage'=> 'sliders/'.$path,
+          'sliderImage'=> 'storage/'.$path,
         ]);
         $image = Image::make(Storage::path($path))->fit(1200,700);
         $image->save();
@@ -96,7 +98,7 @@ class SliderImageController extends Controller
 
     if($request->has('sliderTitle'))
     {
-      \DB::table('sliders')
+      \DB::table('slider_images')
       ->where('sliderId',$id)
       ->update([
         'sliderTitle'=>$request->input('sliderTitle'),
@@ -105,7 +107,7 @@ class SliderImageController extends Controller
 
     if($request->has('sliderText'))
     {
-      \DB::table('sliders')
+      \DB::table('slider_images')
       ->where('sliderId',$id)
       ->update([
         'sliderText'=>$request->input('sliderText'),
@@ -114,7 +116,7 @@ class SliderImageController extends Controller
 
     if($request->has('sliderLink'))
     {
-      \DB::table('sliders')
+      \DB::table('slider_images')
       ->where('sliderId',$id)
       ->update([
         'sliderLink'=>$request->input('sliderLink'),
@@ -135,7 +137,7 @@ class SliderImageController extends Controller
       // delete slider by id
       if(intval($id)){
         Storage::delete(SliderImage::find($id)->sliderImage);
-        \DB::table('sliders')
+        \DB::table('slider_images')
         ->where('sliderId',$id)
         ->delete();
       }

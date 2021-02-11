@@ -14,7 +14,6 @@
         @include('includes.errors')
         @include('includes.success')
         <h5>   تعديل ملف الاسلايدر  </h5>
-
         <form id="edit-form" enctype="multipart/form-data" method="post"
             action="{{ route('sliderimages.update', $data->sliderId) }}">
             @csrf
@@ -31,7 +30,6 @@
                       >
                 </div>
             </div>
-
             <div class="form-row">
                 <div class="col">
                     <label class="label-control" for="sliderLink"> الرابط </label>
@@ -53,7 +51,6 @@
                         >
                 </div>
             </div>
-
             <div class="form-row">
                 <div class="col">
                     <label class="label-control" for="sliderText">نص مختصر</label>
@@ -64,7 +61,6 @@
                           >{{ $data->sliderText }}</textarea>
                 </div>
             </div>
-
             <div class="form-row mt-3">
                 <div class="col">
                     <div class="form-group form-check">
@@ -78,25 +74,12 @@
                         <label class="form-check-label" for="sliderStatus"> تفعيل الملف</label>
                     </div>
                 </div>
-
             </div>
-
             <div class="form-row">
-                <input class="btn btn-secondary ml-2" type="reset" name="" value="تفريغ">
                 <button type="submit" class="btn text-orange text-white "> حفظ التعديلات <i class="fa fa-save"></i></button>
             </div>
-
-
-
-
         </form>
-
     </div>
-
     {{-- Start Modal Edit --}}
-
-
-
-
     {{-- End Modal Edit --}}
 @endsection

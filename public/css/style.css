@@ -184,7 +184,7 @@ color: #FFF;
 
 	position: absolute;
 
-	top: 76px;
+	top: 88px;
 	left: 230px;
 
 }
@@ -249,14 +249,9 @@ color: #FFF;
 }
 
 #donate-now {
-
-		margin-top: 35px;
-
-		margin-top: 35px;
-
-		position: absolute;
-
-		left:35px;
+	margin-top: 40px;
+	position: absolute;
+	left:35px;
 
 }
 
@@ -266,7 +261,7 @@ color: #FFF;
 
   width: 90px;
 
-  height: 30px;
+  height: 40px;
 
   border-radius: 4px;
 
@@ -294,8 +289,8 @@ color: #FFF;
 {
     width:12%;
 }
-.slider .carousel-item.active {margin-bottom:60px;}
-.brand-img {max-width:68px;}
+.slider .carousel-item.active { height: 500px; margin-bottom:60px;}
+.brand-img {max-width:105px;}
 ._panel {
 
     position: absolute;
@@ -969,7 +964,7 @@ input[type=number] {direction: rtl;}
 /* Start Our Services */
 
 .our-services {
-    padding-top:50px;
+    /* padding-top:50px; */
     padding-bottom:40px;
     background:#f9f9f9;
 	margin-top: 100px;
@@ -1632,16 +1627,10 @@ color: #20c997}
 
 }
 
-.dashboard .dashboard-top .dashboard-logo {
-
-	/*width:40px;*/
-
-	height:40px;
-
-	/*font-size:15px;*/
-
-	/*margin-right: 15px;*/
-
+.dashboard .dashboard-top .dashboard-logo 
+{
+	width: 184px;
+	height: 97px;
 }
 
 .dashboard .modal-footer{display: block !important;}
@@ -1724,7 +1713,7 @@ color: #20c997}
 
 .dashboard .list-group-item.active {
 
-    color: #786E42;
+    color: #BAA342;
 
     background-color: #fff;
 

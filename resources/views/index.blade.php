@@ -11,7 +11,6 @@
 @endif
 
 @section('content')
-<!-- Start Slider -->
 {{-- Start Slider --}}
 <div class="slider">
  @error('dnow')
@@ -19,158 +18,34 @@
   {{ $message }}
   </div>
   @enderror
-	<div id="carouselExampleControls" class="carousel slide" data-ride="carousel"  data-interval="false">
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel"  data-interval="false">
       <div class="carousel-inner">
-        @foreach ($allprojects->chunk(1) as $projectCollection)
-        <div class="carousel-item {{ $loop->first ? 'active' :'' }} ">
-      @foreach ($projectCollection as $project)
-
-      {{-- @if ($project->projectStatus==1) --}}
-
-       <img style="margin-bottom: 170px !important;" src="{{ url("storage/".$project->projectImage)}}" class="d-block w-100" alt="...">
-
-       <div class="container">
-
-         <div class="panel _panel col-sm-hidden">
-
-           <div class="row" style="max-height:160px">
-
-             <div class="col-md-4" style="display: flex;">
-              <a href="{{route('projectDetail',$project->projectId)}}">
-                <img class="p-image"   src="{{url("storage/".$project->projectIcon)}}">
-              </a>
-
-               <div class="project-name">
-
-                 <span>
-
-                 {{$project->projectDesc}}
-
-                 </span>
-                  <a class="main-color" href="{{route('projectDetail',$project->projectId)}}">
-               {{$project->projectName}}
-             </a>
-               </div>
-             </div>
-             <div  class="col-md-4 p-about" >
-               {{$project->projectText}}
-             </div>
-             <div class="col-md-4">
-               <?php
-               $getAllDenoate = \DB::table('denoate_pay_details')
-                                   ->where('projectTable',$project->projectId)
-                                   ->sum('moneyValue');
-                                   // ->get();
-
-               ?>
-               <div class="denoate">
-
-                 <span>إجمالي التبرعات</span>
-
-                 <div class="denoate-total">
-                   <?php    echo( number_format($getAllDenoate,0)); ?>
-
-                  SAR
-
-                 </div>
-
-                 <div class="progress" data-toggle="tooltip"  offset="2" data-placement="top" title=" {{number_format($getAllDenoate,0) }} SAR " >
-
-                   <div class="progress-bar" role="progressbar"
-
-                        style="width:  {{round($getAllDenoate / $project->projectCost * 100) }}%;" aria-valuenow="25"
-
-                        aria-valuemin="0" aria-valuemax="100"
-
-                        >
-
-                      {{round($getAllDenoate / $project->projectCost * 100) }}%</div>
-
-                 </div>
-
-               </div>
-
-             </div>
-
-             <!-- start widget -->
-
-             <section class="widget">
-
-               <div class="container">
-
-                 <div class="row">
-
-
-                   <div class="dn-fix">
-
-                     <form class="d-inline-flex original-form" action="{{route('addToCart',$project->projectId)}}" method="post">
-
-                       @csrf
-
-                       @method('post')
-
-                     <input type="number" name="denoate" required   class="input-denoate slider-denoate" placeholder="ضع قيمة التبرع هنا">
-
-                     <button class="btn-basket" data-toggle="tooltip"  data-placement="bottom" title="إضافة الى السلة">  <i class="fa fa-shopping-basket"></i> </button>
-
-                   </form>
-                    <form class="d-inline-flex dnow-form" action="{{route('addToCartNow',$project->projectId)}}" method="post">
-                      @csrf
-                      @method('post')
-                      <input type="hidden"  name="dnow"  class="dnow" value="">
-
-                     <button  style="padding:8px" class="btn-denoate sliderdnow" 
-                     type="submit">تبرع الآن </button>
-                    </form>
- 
-                   </div>
-
-                 </div>
-
-               </div>
-
-             </section>
-
-             <!-- end widget -->
-
-           </div>
-
-         </div>
-
+        @foreach ($allsliderimages->chunk(1) as $imageCollection)
+        <div class="carousel-item {{ $loop->first ? 'active' : '' }} ">
+        @foreach ($imageCollection as $slider)
+       <img style="margin-bottom: 160px !important;  max-height: 100%;" src="{{ url($slider->sliderImage)}}" class="d-block w-100" alt="...">
+       <div class="container text-center" style="position: absolute;top: 40%;">
+         <div class="text-center mb-3"  style="color:#fff;font-size:30px">{{ $slider->sliderTitle }} </div>
+         <div class="text-center   mb-5" style="color:#fff;font-size:20px;  width: 80%; margin: 0 auto;">{{ $slider->sliderText }}</div>
+         <a href="{{ $slider->sliderLink }}" 
+            class="btn btn-success  text-center " 
+            style="width:250px">سجل الان</a>
        </div>
-		 {{-- @endif --}}
-
-	 @endforeach
+     {{-- @endif --}}
+   @endforeach
     </div>
-
-
-
-
 @endforeach
-
-
   </div>
-
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-
     <span class="sr-only">Previous</span>
-
   </a>
-
   <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-
     <span class="sr-only">Next</span>
-
   </a>
-
 </div> {{-- End Carousel--}}
-
 </div>
-
 <!-- End Slider -->
 
 <section class="about-association">
@@ -475,123 +350,64 @@
         <path fill-rule="evenodd" d="M5.795 12.456A.5.5 0 0 1 5.5 12V4a.5.5 0 0 1 .832-.374l4.5 4a.5.5 0 0 1 0 .748l-4.5 4a.5.5 0 0 1-.537.082z"/>
 
       </svg>
-
       <span class="sr-only">Previous</span>
-
     </a>
-
     <a class="carousel-control-next" href="#carouselProjectsIndicators" role="button" data-slide="next">
-
       <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-left-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-
     <path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
-
     <path fill-rule="evenodd" d="M10.205 12.456A.5.5 0 0 0 10.5 12V4a.5.5 0 0 0-.832-.374l-4.5 4a.5.5 0 0 0 0 .748l4.5 4a.5.5 0 0 0 .537.082z"/>
-
     </svg>      <span class="sr-only">Next</span>
-
     </a>
 @endif
   </div> <!-- end Carousel -->
 @if ($show)
 <div class="text-center mt-5 ">
-
   <a href="{{route('ourproject')}}"><button class="btn btn-more">عرض المزيد </button></a>
 </div>
 @endif
   </div> <!--End container -->
-
 </div>
-
 <br>
-
-
 {{-- End Our Projects --}}
-
-
-
 <!-- Start Our Services -->
-
 <?php
-
   $show=0;
-
  ?>
-
   @foreach ($services as $service)
-
     @if($service->serviceStatus==1)
-
       <?php
-
       $show=1;
-
        ?>
-
     @endif
-
   @endforeach
-
   @if( $show==1)
-
 <div class="our-services">
-
   <div class="container">
-
     <div class="h2 text-center">
-
       خدماتنـــــــا
-
     </div>
  <div class="text-center mt-1 mb-4 line-design"></div>
     <div class="service-fix text-center">
-
       مجموعة الخدمات التطوعية التي تقوم بها المؤسسة
-
     </div>
-
     <div class="row">
-
       @foreach ($services as $service)
-
       <div class="col-sm-12 col-md-6 col-lg-3 mb-5">
-
         <div class="service">
-
           <img class="rounded-circle" src="{{url("uploads/services/".$service->serviceImage)}}" alt="">
-
           <div class="s-title">
-
               {{$service->serviceTitle}}
-
           </div>
-
           <p class="s-text">
-
             {{$service->serviceText}}
-
           </p>
-
         </div>
-
       </div>
-
     @endforeach
-
-
-
     </div>
-
   </div>
-
-
-
 </div>
-
 @endif
-
-
-
 <!-- End Our Services -->
 {{-- Start Our Courses --}}
 <div class="our-projects">
@@ -624,9 +440,9 @@
               <div class="item-1 col-md-6 col-sm-12">
                 <a href="{{route('courseDetail',$course->courseId)}}">
                   <img style=" height: 126px;   max-height: 175px;"  src="{{ url("storage/".$course->courseImage) }}" class="" alt=" " />
-                  <span class="d-block text-center  main-color">{{$course->courseName ?? ''}}</span>
+                  <span class="d-block text-center  main-color ">{{$course->courseName ?? ''}}</span>
                 </a>
-                <p style="font-size:15px;min-height:70px; max-height: 70px;   overflow: auto;">
+                <p style="font-size:15px;min-height:70px; max-height: 70px;   overflow: auto;margin-top:2rem">
                   {{$course->courseDescription ?? ''}}
                 </p>
                 <div class="remain mb-4" style="justify-content: start" >
@@ -634,9 +450,9 @@
                   <small style="margin-left: 5px">{{ $course->seatCount - $getallSubscriber }} </small>
                   <small style="margin-left: 5px"> خانة</small>
                 </div>
-                <div class="links">
-                  <a class="btn btn-success" href="{{route('subscribenow')}}">إشترك الآن</a> 
-                  <a class="btn btn-primary" href="{{route('courseDetail',$course->courseId)}}">  قراءة المزيد</a> 
+                <div class="links" style="  display: flex;justify-content: space-around;">
+                  <a class="btn  " style="background: #BAA342; color: #fff;" href="{{route('subscribenow')}}">إشترك الآن</a> 
+                  <a class="btn  " style="background: #BAA342; color: #fff;" href="{{route('courseDetail',$course->courseId)}}">  قراءة المزيد</a> 
                 </div>
               </div>  
             @endforeach

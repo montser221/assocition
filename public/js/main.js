@@ -338,6 +338,14 @@ btnDelete.on('click',function() {
       return  false;
   });
 
+  $('.btn-slider').on('click',function(e) {
+    var _confirm = confirm('هل تريد حذف العنصر');
+    if(_confirm)
+      return true;
+    else
+      return  false;
+  });
+
   //=========================================================
   //grab input value our project
   let _input_denoate = $('.c_c'),
@@ -353,56 +361,6 @@ btnDelete.on('click',function() {
      console.log( $(this).parent().siblings('form-m-p').find('.c_c'))
     $(this).parent().siblings('form').find('.c_c').val($(this).children('.arrVal').val())
    });
-
-  //=========================================================
-  // Add project Detail To Basket
-//   let p_addToBasket = $('#add-to-basket-detail'),
-//       inputdenoate  =  $('#c_denoate');
-
-//   p_addToBasket.on('click',function(e){
-//     e.preventDefault();
-//     console.log("run add to basket")
-//     console.log(typeof inputdenoate.val() )
-//     console.log(  inputdenoate.val()  === "" )
-//     if(parseInt(inputdenoate.val())  === '')
-//     {
-//       console.error('input can\'t be empty');
-//       e.preventDefault();
-//     }   
-    
-//     else if(parseInt(inputdenoate.val()) < 100)
-//     {
-//       console.error('input must be grater than or equal to 100');
-//       e.preventDefault();
-//     }   
-   
-//  });
-
-
-  //=========================================================
-//validation before add items to basket slider button
-// let _add_to_basket = $('.btn-basket'),
-//     denoate = parseInt($('.slider-denoate').val());
-// _add_to_basket.on('click',function(e){
-  
-//   if(denoate ==='')
-//    {
-//     console.error('input can\'t be empty');
-//     // denoate.addClass('alert alert-danger');
-//      e.preventDefault();
-//    }
-//    else if(denoate  < 100)
-//     {
-//       console.error('input must be grater than or equal to 100');
-//       e.preventDefault();
-//     }  
-//      else if(isNaN(denoate ))
-//     {
-//       console.error('input must be valid number');     
-//       e.preventDefault();
-//     }  
-  
-// });
 
 //validation before add items to basket slider button
 let _add_ = $('._add_');

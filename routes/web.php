@@ -2,11 +2,12 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Storage;
+use App\Models\SliderImage;
 Route::get('viewFile',[App\Http\Controllers\ViewFileController::class,'viewFile'])->name('viewFile');
 Route::get('/',[App\Http\Controllers\MainController::class,'index'])->name('/');
 Route::get('test',function(){
-  $allimgefiles  = DB::table('projects')->select('*')->get();
-    return view('pages.testslider',compact('allimgefiles'));
+  $allsliderimages =  SliderImage::latest()->take(1)->get();
+    return view('pages.testslider',compact('allsliderimages'));
 
 })->name('test');
 Route::get('/subscribenow', [App\Http\Controllers\TrainningSubscriberController::class,'index'])->name('subscribenow');
@@ -70,8 +71,6 @@ Route::resource('statistics',App\Http\Controllers\StatisticsController::class)->
 Route::resource('denoate',App\Http\Controllers\DenoateController::class);
 
 Route::get('payments',[App\Http\Controllers\DenoateController::class,'payments'])->name('payments');
-
-
 Route::resource('dashboard',App\Http\Controllers\Dashboard\DashboardController::class)->middleware('auth');
 Route::resource('sliderimages',App\Http\Controllers\SliderImageController::class)->middleware('auth');
 Route::resource('userscategories',App\Http\Controllers\UsersCategoriesController::class)->middleware('auth');

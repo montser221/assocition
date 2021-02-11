@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Models\Projects;
 use App\Models\AboutAssociation;
@@ -17,6 +15,7 @@ use App\Models\PagesViews;
 use Session;
 use App\Models\TrainningCourses;
 use App\Models\Money;
+use App\Models\SliderImage;
 class MainController extends Controller
 {
   public function index()
@@ -46,6 +45,7 @@ class MainController extends Controller
     $aboutassociation = AboutAssociation::find(1);
     $allprojects = Projects::with('arrow','denoate')->latest()->take(5)->get()->where('projectStatus',1);;
     $services = Services::all();
+    $allsliderimages =  SliderImage::latest()->take(1)->get();
     $agents = Agent::all()->where('agentStatus',1);
     $files = pdfFile::all()->where('fileStatus',1);
     $imagesAlbum = ImageManagement::all()->where('imageStatus',1);
@@ -56,20 +56,19 @@ class MainController extends Controller
     return view('index')->with([
       'allprojects'=>$allprojects,
       'aboutassociation'=>$aboutassociation,
-      'files'=>$files,
-      'reportFiles'=>$reportFiles,
-      'services'       =>$services,
-      'agents'       =>$agents,
-      'images'       =>$imagesAlbum,
-      'videos'       =>$videos,
+      'files'         =>$files,
+      'reportFiles'   =>$reportFiles,
+      'services'      =>$services,
+      'agents'        =>$agents,
+      'images'        =>$imagesAlbum,
+      'videos'        =>$videos,
       'statistics'    =>$statistics,
       'courses'       =>$courses,
+      'allsliderimages' => $allsliderimages ,
 
     ]);
   }
-
   // Add To cart function
-
   public function addToCart(Request $request , $id)
   {
     $project = Projects::find($id);

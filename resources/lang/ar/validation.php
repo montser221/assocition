@@ -149,7 +149,7 @@ return [
     'attributes' => [
    
         'msgType '              => '     نوع الرسالة  ',
-        'dnow '              => '  قيمة التبرع  ',
+        'dnow '               => '  قيمة التبرع  ',
         'denoate '              => '  قيمة التبرع  ',
         'startDate'              => ' بداية الفترة',
         'endDate'              => ' نهاية الفترة',
@@ -250,6 +250,9 @@ return [
         'courseLocation' => 'مكان الدورة التدريبية',
         'courseContent' => 'محتوى الدورة التدريبية',
         'seatCount' => ' عدد مقاعد الدورة التدريبية',
-
+        'sliderTitle' => ' العنوان',
+        'sliderImage' => 'الصورة',
+        'sliderText'  => 'النص المختصر',
+        'sliderLink'  => 'رابط الملف',
     ],
 ];
