@@ -80,6 +80,25 @@
           type="hidden" 
           name="trainningCourseId"
           value="{{ request()->query('cid') }}" />
+          
+          <input 
+          type="hidden" 
+          name="cprice"
+          value="{{ request()->query('p') }}" />
+          @if(request()->query('p')=="paid") 
+            {{-- <label class="label-control text-right"> test</label>
+            <input 
+            type="text" 
+            class="form-control mb-3"  
+            name="subscriberPhone" 
+            value="{{old('subscriberPhone')}}"    
+            placeholder="رقم الهاتف">
+            @error('subscriberPhone')
+              <div class="alert alert-danger w-100">
+                {{$message}}
+              </div>
+            @enderror --}}
+          @endif
           <button 
             class="btn btn-job  btn-lg  mb-5   mx-auto" 
             type="submit"

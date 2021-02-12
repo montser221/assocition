@@ -350,7 +350,7 @@
                   <small style="margin-left: 5px"> خانة</small>
                 </div>
                 <div class="links" style="  display: flex;justify-content: space-around;">
-                  <a class="btn  " style="background: #BAA342; color: #fff;" href="{{url('subscribenow?cid='.$course->courseId )}}">إشترك الآن</a> 
+                  <a class="btn  " style="background: #BAA342; color: #fff;" href="{{url('subscribenow?cid='.$course->courseId."&p=".$course->coursePrice )}}">إشترك الآن</a> 
                   <a class="btn  " style="background: #BAA342; color: #fff;" href="{{route('courseDetail',$course->courseId)}}">  قراءة المزيد</a> 
                 </div>
               </div>  
