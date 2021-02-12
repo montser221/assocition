@@ -4,10 +4,8 @@
 {{-- include header --}}
 @include('includes.header')
 {{-- include contact page --}}
-
 <!-- Start Contact Us -->
 <div class=" project-detail">
-
     <div class="content mt-2">
       <div class="container zakat-fix">
       <div class="row">
@@ -32,8 +30,7 @@
                </div>
                <div class="p-name ">
                <span class="text-gray">   المكان :  {{$courseData->courseLocation}} </span>
-               </div>
-              
+               </div>  
                <p style="padding:15px;font-size:1.2rem">
                    <span class="text-gray">   وصف قصير  :    {{$courseData->courseDescription}}  </span> 
                 </p>
@@ -59,13 +56,6 @@
                   <div class="p-total mb-5">
                     <strong  class="text-gray" style="margin-left:2rem"  class="d-inline-block">  باقي للاشتراك  </strong>
                     <span class="main-color" style="font-weight:bold;"> {{ $courseData->seatCount - $getallSubscriber ?? ''}} خانة </span>
-                  </div>
-                   <div class="progress mb-5" data-toggle="tooltip"  offset="2" data-placement="bottom" title="{{ $getallSubscriber }} ">
-                    <div class="progress-bar" role="progressbar"
-                         style="width: {{ $getallSubscriber / $courseData->seatCount * 100}} %;    background-color: #89c64f; " aria-valuenow="25"
-                         aria-valuemin="0" aria-valuemax="100"
-                          >
-                        {{ round($getallSubscriber / $courseData->seatCount * 100)}}%</div>
                   </div>
                   <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ar_AR/sdk.js#xfbml=1&version=v9.0" nonce="rcB6zvfw"></script>
@@ -124,16 +114,11 @@
                         <img style="width: 38px;" src="{{url('design/icons/whatsapp.png')}}" />
                     </a>
                   </div>
-                 
-                  
-                  
-
-                 <a   class="suscribe-now" href="#">أشترك الآن </a>
+                 <a   class="suscribe-now" href="{{url('subscribenow?cid='.$courseData->courseId )}}">أشترك الآن </a>
                 
                 <!--<div class="basket">-->
                 <!--    <a id="btn-basket" class="btn back-main " href="{{route('cart')}}">تبرع الآن</a>-->
                 <!--</div>-->
-
             </div>
             {{-- @include('includes.errors') --}}
           </div>

@@ -10,7 +10,8 @@ Route::get('test',function(){
     return view('pages.testslider',compact('allsliderimages'));
 
 })->name('test');
-Route::get('/subscribenow', [App\Http\Controllers\TrainningSubscriberController::class,'index'])->name('subscribenow');
+Route::get('/subscribenow/{cid?}', [App\Http\Controllers\TrainningSubscriberController::class,'index'])->name('subscribenow');
+Route::post('/subscribe', [App\Http\Controllers\TrainningSubscriberController::class,'store'])->name('subscribe');
 Route::get('/exportAllDenoate', [App\Http\Controllers\DenoateController::class,'exportAllDenoate'])->name('exportAllDenoate')->middleware('auth');
 Route::get('/exportToExcel/{id}', [App\Http\Controllers\MoneyReportController::class,'exportToExcel'])->name('exportToExcel')->middleware('auth');
 Route::get('money', [App\Http\Controllers\MoneyReportController::class,'index'])->name('money.index')->middleware('auth');

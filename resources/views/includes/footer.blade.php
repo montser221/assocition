@@ -78,9 +78,8 @@ $data = \App\Models\Settings::find(1);
     <hr style="border-bottom:2px solid #DDD"/>
     <div class="copyright">
       <div class="footer-left">
-          جميع الحقوق محفوظة لدى جمعية البر الخيرية بمحافظة الموية  تصميم نوافذ الابداع
+          جميع الحقوق محفوظة لدى جمعية {{ $data->foundationName ?? ' ' }}             
        </div>
-
       <div class="footer-right">
         {{date('Y')}}
       </div>

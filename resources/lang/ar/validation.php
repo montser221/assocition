@@ -254,5 +254,11 @@ return [
         'sliderImage' => 'الصورة',
         'sliderText'  => 'النص المختصر',
         'sliderLink'  => 'رابط الملف',
+        'subscriberName'   => 'إسم المشترك',
+        'subscriberEmail' => 'الايمل',
+        'subscriberPhone'  => 'رقم الهاتف',
+        'subscriberBirthOfDate' => 'تاريخ الميلاد',
+        'subscriberFamilyCard' => 'كرت العائلة',
+        'trainningCourseId' => 'معرف الدورة التدريبية',
     ],
 ];

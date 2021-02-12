@@ -49,7 +49,7 @@
 <section class="about-association">
   <div class="container">
     <hr>
-      <p style="padding-bottom: 32px;">مرحبا بك في جمعية البر الخيرية بمحافظة المويه! <span > <a class="main-color" href="{{route('ourproject')}}">تصفح المشاريع</a> الخيرية للقيام بالتبرع  </span></p>
+      <p style="padding-bottom: 32px;">مرحبا بك في جمعية عاصم الخيرية    ! <span > <a class="main-color" href="{{route('ourproject')}}">تصفح المشاريع</a> الخيرية للقيام بالتبرع  </span></p>
     <hr>
 </div>
 </section>
@@ -350,7 +350,7 @@
                   <small style="margin-left: 5px"> خانة</small>
                 </div>
                 <div class="links" style="  display: flex;justify-content: space-around;">
-                  <a class="btn  " style="background: #BAA342; color: #fff;" href="{{route('subscribenow')}}">إشترك الآن</a> 
+                  <a class="btn  " style="background: #BAA342; color: #fff;" href="{{url('subscribenow?cid='.$course->courseId )}}">إشترك الآن</a> 
                   <a class="btn  " style="background: #BAA342; color: #fff;" href="{{route('courseDetail',$course->courseId)}}">  قراءة المزيد</a> 
                 </div>
               </div>  
