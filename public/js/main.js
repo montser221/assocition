@@ -272,28 +272,23 @@ _add_to.on('click',function(e){
     {
       console.log('cant be less than 100')
     }
-
   });
-
-
 
   let link = $('#link').attr('href'),
     _input = document.createElement("textarea"),
     myText = document.createTextNode('');
-
   $('._copy').on('click',function(){
       _input.value = "hi"
     console.log(_input.val());
-    
     // document.getElementById('stext').select()
   // $('stext').select();
     // text.select();
-
     // document.execCommand("copy");
   });
   //remove success message
-  $('.success').fadeOut(1000).removeClass('success');
-  $('.error').fadeOut(1000).removeClass('error');
+  $('.success').fadeOut(15000).removeClass('success');
+  $('.error').fadeOut(15000).removeClass('error');
+  $('#hide-error').fadeOut(15000).removeClass('error');
   // $('.class="rm-after-delete"').fadeOut(6000);
   $('#delete').on('click',function(){
     let _confirm = confirm('لا تجعل الشيطان يمنعك  من التبرع');
@@ -322,12 +317,10 @@ _add_to.on('click',function(e){
   }
 btnDelete.on('click',function() {
   let _confirm = confirm('لا تجعل الشيطان يمنعك  من التبرع');
-
     if(_confirm)
       return true;
     else
       return  false;
-
 });
 
   $('.btn-project').on('click',function(e) {

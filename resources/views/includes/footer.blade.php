@@ -78,7 +78,7 @@ $data = \App\Models\Settings::find(1);
     <hr style="border-bottom:2px solid #DDD"/>
     <div class="copyright">
       <div class="footer-left">
-          جميع الحقوق محفوظة لدى جمعية {{ $data->foundationName ?? ' ' }}             
+          جميع الحقوق محفوظة لدى  {{ $data->foundationName ?? ' ' }}             
        </div>
       <div class="footer-right">
         {{date('Y')}}

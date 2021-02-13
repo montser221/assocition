@@ -45,7 +45,7 @@ class MainController extends Controller
     $aboutassociation = AboutAssociation::find(1);
     $allprojects = Projects::with('arrow','denoate')->latest()->take(5)->get()->where('projectStatus',1);;
     $services = Services::all();
-    $allsliderimages =  SliderImage::latest()->take(1)->get();
+    $allsliderimages =  SliderImage::latest()->get();
     $agents = Agent::all()->where('agentStatus',1);
     $files = pdfFile::all()->where('fileStatus',1);
     $imagesAlbum = ImageManagement::all()->where('imageStatus',1);

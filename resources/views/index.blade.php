@@ -22,13 +22,13 @@
         @foreach ($allsliderimages->chunk(1) as $imageCollection)
         <div class="carousel-item {{ $loop->first ? 'active' : '' }} ">
         @foreach ($imageCollection as $slider)
-       <img style="margin-bottom: 160px !important;  max-height: 100%;" src="{{ url($slider->sliderImage)}}" class="d-block w-100" alt="...">
-       <div class="container text-center" style="position: absolute;top: 40%;  left: 6%;">
-         <div class="text-center mb-3"  style="color:#fff;font-size:30px">{{ $slider->sliderTitle }} </div>
-         <div class="text-center   mb-5" style="color:#fff;font-size:20px;  width: 80%; margin: 0 auto;">{{ $slider->sliderText }}</div>
+       <img style="max-height: 100%;" src="{{ url($slider->sliderImage)}}" class="d-block w-100 slider-image" alt="...">
+       <div class="container text-center slider-small" style="position: absolute;top: 40%;  left: 6%;">
+         <div class="text-center mb-3 slider-title"  style="color:#fff;font-size:30px">{{ $slider->sliderTitle }} </div>
+         <div class="text-center   mb-5 slider-text" style="color:#fff;font-size:20px;  width: 80%; margin: 0 auto;">{{ $slider->sliderText }}</div>
          <a href="{{ $slider->sliderLink }}" 
-            class="btn btn-success  text-center " 
-            style="width:250px">سجل الان</a>
+            class="btn btn-success  text-center slider-btn " 
+             >سجل الان</a>
        </div>
      {{-- @endif --}}
    @endforeach
@@ -345,12 +345,22 @@
                   {{$course->courseDescription ?? ''}}
                 </p>
                 <div class="remain mb-4" style="justify-content: start" >
+                 @if ($course->seatCount - $getallSubscriber == 0)
+                      <span style="font-size: 18px; margin-right: 10px; color: #0abd6b;"> أكتمل العدد <i class="fa fa-check fa-2x ml-4 mr-2"></i></span>
+                  {{-- <small style="margin-left: 5px">{{ $course->seatCount - $getallSubscriber }} </small> --}}
+                  {{-- <small style="margin-left: 5px"> خانة</small> --}}
+                  @else
                   <span style="font-size: 12px; margin-left: 10px;">باقي للاشتراك:</span>
                   <small style="margin-left: 5px">{{ $course->seatCount - $getallSubscriber }} </small>
                   <small style="margin-left: 5px"> خانة</small>
+                  @endif
                 </div>
                 <div class="links" style="  display: flex;justify-content: space-around;">
+                 @if ($course->seatCount - $getallSubscriber == 0)
+                  <a class="btn  " style="background: #0abd6b; color: #fff;"  >  أكتمل العدد</a> 
+                  @else
                   <a class="btn  " style="background: #BAA342; color: #fff;" href="{{url('subscribenow?cid='.$course->courseId."&p=".$course->coursePrice )}}">إشترك الآن</a> 
+                   @endif
                   <a class="btn  " style="background: #BAA342; color: #fff;" href="{{route('courseDetail',$course->courseId)}}">  قراءة المزيد</a> 
                 </div>
               </div>  

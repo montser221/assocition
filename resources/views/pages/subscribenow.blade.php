@@ -5,12 +5,32 @@
 @stop
 @section('content')
   <div class="container  ">
+  @if (Session::get('success') )
+<div id="hide-success mt-5" >
+    <ul class="list-unstyled form-group">
+        {{-- <button type="button" class="close" data-dismiss="alert">×</button> --}}
+        <li class="alert alert-success success">{{ Session::get('success') }}</li>
+    </ul>
+    {{-- <a class="btn btn-main" href="{{ route('/') }}">عودة الى الصفحة الرئيسية</a> --}}
+</div>
+@endif
+  @if (Session::get('error') )
+<div id="hide-error mt-5" >
+    <ul class="list-unstyled form-group">
+        {{-- <button type="button" class="close" data-dismiss="alert">×</button> --}}
+        <li class="alert alert-danger error">{{ Session::get('error') }}</li>
+    </ul>
+    {{-- <a class="btn btn-main" href="{{ route('/') }}">عودة الى الصفحة الرئيسية</a> --}}
+</div>
+@endif
+
   <h3  class="text-center mb-3">الاشتراك في الدورة   </h3>
   <div class="text-center mt-1 mb-4 line-design mb-5"></div>
  <form 
+      class="form-subscriber"
       style="  width: 35%;margin: auto;"
-      method="post" 
-      action="{{route('subscribe')}}"  
+      method="POST" 
+      action="{{route('subscribenow.store')}}"  
       enctype="multipart/form-data" 
       id="subrcribe-form">
       @csrf
@@ -62,7 +82,7 @@
         {{$message}}
       </div>
     @enderror
-          <label class="label-control text-right">       كرت العائلة</label>
+          <label class="label-control text-right"> كرت العائلة</label>
           <div class="file-fix ">
             <i class="fa fa-upload"></i>  <span class="" style=" font-size:15px !important; top: 3px;right: 16px;">ارفق كرت العائلة</span>
             <input 
@@ -86,18 +106,21 @@
           name="cprice"
           value="{{ request()->query('p') }}" />
           @if(request()->query('p')=="paid") 
-            {{-- <label class="label-control text-right"> test</label>
+            <label for="subscriberMoneyStatement" class="label-control text-right mt-2">إيصال الدفع</label>
+           <div class="file-fix ">
+            <i class="fa fa-upload"></i>  <span class="" style=" font-size:15px !important; top: 3px;right: 16px;">  إيصال الدفع </span>
             <input 
-            type="text" 
-            class="form-control mb-3"  
-            name="subscriberPhone" 
-            value="{{old('subscriberPhone')}}"    
-            placeholder="رقم الهاتف">
-            @error('subscriberPhone')
+              type="file" 
+              class="form-control mb-3"  
+              name="subscriberMoneyStatement" 
+              value="{{old('subscriberMoneyStatement')}}"    
+              >
+            @error('subscriberMoneyStatement')
               <div class="alert alert-danger w-100">
                 {{$message}}
               </div>
-            @enderror --}}
+            @enderror
+            </div>
           @endif
           <button 
             class="btn btn-job  btn-lg  mb-5   mx-auto" 

@@ -8,13 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class TrainningSubscriber extends Model
 {
     use HasFactory;
-    protected $primaryKey ='trainningCourseId';
+    protected $primaryKey ='subscriberId';
     protected $fillable = [
         'subscriberName',
         'subscriberEmail',
         'subscriberPhone',
         'subscriberBirthOfDate',
         'subscriberFamilyCard',
-
+        'trainningCourseId'
     ];
 }

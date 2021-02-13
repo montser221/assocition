@@ -5,13 +5,13 @@ use Illuminate\Support\Facades\Storage;
 use App\Models\SliderImage;
 Route::get('viewFile',[App\Http\Controllers\ViewFileController::class,'viewFile'])->name('viewFile');
 Route::get('/',[App\Http\Controllers\MainController::class,'index'])->name('/');
-Route::get('test',function(){
-  $allsliderimages =  SliderImage::latest()->take(1)->get();
-    return view('pages.testslider',compact('allsliderimages'));
+// Route::get('test',function(){
+//   $allsliderimages =  SliderImage::latest()->take(1)->get();
+//     return view('pages.testslider',compact('allsliderimages'));
 
-})->name('test');
-Route::get('/subscribenow/{cid?}', [App\Http\Controllers\TrainningSubscriberController::class,'index'])->name('subscribenow');
-Route::post('/subscribe', [App\Http\Controllers\TrainningSubscriberController::class,'store'])->name('subscribe');
+// })->name('test');
+Route::resource('subscribenow',App\Http\Controllers\TrainningSubscriberController::class);
+Route::get('/subscriber', [App\Http\Controllers\TrainningSubscriberController::class,'subscriber'])->name('subscriber');
 Route::get('/exportAllDenoate', [App\Http\Controllers\DenoateController::class,'exportAllDenoate'])->name('exportAllDenoate')->middleware('auth');
 Route::get('/exportToExcel/{id}', [App\Http\Controllers\MoneyReportController::class,'exportToExcel'])->name('exportToExcel')->middleware('auth');
 Route::get('money', [App\Http\Controllers\MoneyReportController::class,'index'])->name('money.index')->middleware('auth');

@@ -15,7 +15,7 @@
         </div>
         <div class="col-sm-12 mt-5">
           <div class="row">
-            <div class="col-md-8 offset-md-2 p-detail">
+            <div class="col-md-8 offset-md-2 p-detail" style="  width: 92% ;left: -16px;">
             @if ($courseData) 
               <img  style="min-width:350px;max-height:400px;border-radius:5px"
                src="{{ url('storage/'.$courseData->courseImage)}}" class="d-block w-100   fix-ph" alt="">
@@ -54,8 +54,12 @@
                     <span class="main-color" style="font-weight:bold;"> {{ $getallSubscriber }} </span>
                   </div>
                   <div class="p-total mb-5">
-                    <strong  class="text-gray" style="margin-left:2rem"  class="d-inline-block">  باقي للاشتراك  </strong>
+                  @if ($courseData->seatCount - $getallSubscriber == 0)
+                      <span style="font-size: 18px; margin-right: 10px; color: #0abd6b;"> أكتمل العدد <i class="fa fa-check fa-2x ml-4 mr-2"></i></span>
+                  @else
+                    <strong  class="text-gray" style=""  class="d-inline-block">  باقي للاشتراك  </strong>
                     <span class="main-color" style="font-weight:bold;"> {{ $courseData->seatCount - $getallSubscriber ?? ''}} خانة </span>
+                  @endif
                   </div>
                   <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ar_AR/sdk.js#xfbml=1&version=v9.0" nonce="rcB6zvfw"></script>
@@ -92,7 +96,7 @@
                          .btn-price {width:100px}
                          }
                   </style>
-                  <div class="buttons-share mb-5 d-flext">
+                  <div class="buttons-share mb-5 d-flext" style="  width: 106%;">
                     {{-- <a href="#">
                       <i class="fa fa-facebook fa-3x"></i>
                     </a>        --}}
@@ -114,8 +118,11 @@
                         <img style="width: 38px;" src="{{url('design/icons/whatsapp.png')}}" />
                     </a>
                   </div>
-                 <a   class="suscribe-now" href="{{url('subscribenow?cid='.$courseData->courseId )}}">أشترك الآن </a>
-                
+                  @if ($courseData->seatCount - $getallSubscriber == 0)
+                 <a class="btn suscribe-now " style="background: #0abd6b; color: #fff;"  >  أكتمل العدد</a> 
+                  @else
+                  <a   class="suscribe-now" href="{{url('subscribenow?cid='.$courseData->courseId ."&p=" .$courseData->coursePrice )}}">أشترك الآن </a>
+                  @endif
                 <!--<div class="basket">-->
                 <!--    <a id="btn-basket" class="btn back-main " href="{{route('cart')}}">تبرع الآن</a>-->
                 <!--</div>-->

@@ -289,7 +289,14 @@ color: #FFF;
 {
     width:12%;
 }
+.slider img  {   margin-bottom: 160px;}
+.slider .slider-btn {width: 250px;}
 .slider .carousel-item.active { height: 500px; margin-bottom:60px;}
+.slider .carousel .slider-smal {
+	position: absolute;
+	top: 40%;
+	left: 6%;
+}
 .brand-img {max-width:105px;}
 ._panel {
 
@@ -2865,7 +2872,7 @@ border:0px solid ;
 	font-size: 10px;
 }
 .project-detail .p-detail #btn-basket{ left: 25% !important; }
-.slider .carousel-item.active {margin-bottom: 84px !important;}
+/* .slider .carousel-item.active {margin-bottom: 84px !important;} */
 	.our-achieving .item-1{
 		width: 60px !important;
 		height: 60px !important;
@@ -2932,6 +2939,36 @@ border:0px solid ;
 		{left:60% !important}
 }
 @media (max-width:576px) {
+	.form-subscriber {
+		width: 70%  !important;
+	}
+	.slider .carousel-item.active {
+		margin-bottom: 0 !important;
+		width: 100%  !important;
+		height: 100%  !important;
+	}
+	.slider img {
+		margin-bottom: 0 !important;
+	}
+	.slider .slider-btn {
+	  	position: absolute;
+		left: 33% !important;
+		top: 86px !important;
+  		width: 100px;
+	}
+	.slider .slider-title {
+		font-size: 15px !important;
+	}
+	.slider .carousel .slider-small {
+		top:30%  !important;
+	}
+	.slider .slider-text {
+		font-size: 14px !important;
+		width: 77% !important;
+		max-height: 45px;
+		margin: 0 auto;
+		overflow: hidden;
+	}
 	.fix-width-phone {max-width:215% !important; margin-top: 20px; margin-bottom: 20px;}
     .our-projects .carousel .carousel-inner .item-1 .project-buttons 
     {
@@ -3960,17 +3997,21 @@ font-size: .8rem !important;
 /*Small Screen*/
 
 @media(min-width: 768px) and (max-width: 991px)
-
 {
+	.fix-width {
+
+		max-width: 141%;
+	}
 	.navbar-light .navbar-toggler {z-index: 1}
 	.contactus .email {
     	width: 100% !important;
 	}
 	.navbar-fix .main-cart {
-		left: 272px;
+		left: 140px;
+		top: 97px;
 	}
 	#donate-now {
-		left: -541px;
+		display: none !important;
 	}
 	.footer .social {
     	margin-bottom: 0;
