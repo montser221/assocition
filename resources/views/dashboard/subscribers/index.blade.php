@@ -30,6 +30,7 @@
           <th>   الهاتف</th>
           <th>   الدورة </th>
            <th>  كرت العائلة</th>
+           <th>     الايصال</th>
            <th>تاريخ التقديم</th>
           <th> أحداث  </th>
         </thead>
@@ -45,6 +46,9 @@
               <td>{{$trainner->subscriberPhone}}</td>
               <td>{{ \App\Models\TrainningCourses::find($trainner->trainningCourseId )->courseName}}</td>
               <td data-toggle="tooltip"  offset="2" data-placement="top" title="أضغط لعرض الصورة"> <a target="_blank"   href="{{url("storage/".$trainner->subscriberFamilyCard)}}" > <img style="max-width:40px;max-height:40px" src="{{url("storage/".$trainner->subscriberFamilyCard)}}" class="viewImage" alt="" /></i> </a></td>
+              {{-- @if() --}}
+              <td data-toggle="tooltip"  offset="2" data-placement="top" title="أضغط لعرض الصورة"> <a target="_blank"   href="{{url("storage/".$trainner->subscriberMoneyStatement ?? '')}}" > <img style="max-width:40px;max-height:40px" src="{{url("storage/".$trainner->subscriberMoneyStatement ?? '')}}" class="viewImage" alt="" /></i> </a></td>
+              {{-- @endif --}}
               <td>{{ $trainner->subscriberBirthOfDate }}</td>
               <td>
                 <form class="form-inline" action="{{route('subscribenow.destroy',$trainner->subscriberId ) }}" method="post">

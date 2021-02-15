@@ -290,12 +290,29 @@ color: #FFF;
     width:12%;
 }
 .slider img  {   margin-bottom: 160px;}
-.slider .slider-btn {width: 250px;}
+.slider .slider-btn {
+	width: 250px !important;
+	position: absolute;
+	top: 69%;
+	left: 34%;
+	background: #786e42;
+	color: #FFF;
+	border-color: #786e42 !important;
+}
 .slider .carousel-item.active { height: 500px; margin-bottom:60px;}
-.slider .carousel .slider-smal {
+.slider .carousel .slider-small {
 	position: absolute;
 	top: 40%;
 	left: 6%;
+}
+.slider .slider-text {
+	font-size: 14px !important;
+	width: 77% !important;
+	max-height: 45px;
+	margin: 0 auto;
+	padding-bottom: 50px;
+	max-height: 63px;
+	overflow: hidden;
 }
 .brand-img {max-width:105px;}
 ._panel {
@@ -659,21 +676,12 @@ background-position: center;
 }
 
 .msg-vison .vison {
-
-
 	padding: 51px;
-
 	margin-left: 7.5px;
-
 	border-radius: 5px;
-
 	max-width: 100%;
-
 	min-height: 100%;
-
 }
-
-
 
 .msg-vison .message {
 	margin-right: 7.5px;
@@ -681,27 +689,17 @@ background-position: center;
 	border-radius: 5px;
 	max-width: 100%;
 	min-height: 100%;
-
 }
 
-
-
-
-
 .msg-vison .vison .vison-title  {
-
 	font-size: 18px;
 	font-weight: bold;
     color:#161616;
 	text-align: center;
 	margin-top: 15px;
-
 }
 
-
-
 .msg-vison .message .msg-title  {
-
 	font-size: 18px;
       color:#161616;
 	font-weight: bold;
@@ -1781,7 +1779,11 @@ color: #20c997}
 /* Start users */
 
 .dashboard .dropdown-menu > a:hover {color: #6e6e6e}
-
+.nav-link:focus, .nav-link:hover {cursor: pointer; background-color: transparent;}
+.dropdown-item:focus, .dropdown-item:hover{
+	background-color: #786e42;
+	color: #fff;
+}
 .dashboard .dropdown-menu > a:active {color: #6e6e6e}
 
 .dashboard .dropdown-item {margin-bottom: 5px;}
@@ -2940,7 +2942,7 @@ border:0px solid ;
 }
 @media (max-width:576px) {
 	.form-subscriber {
-		width: 70%  !important;
+		width: 90%  !important;
 	}
 	.slider .carousel-item.active {
 		margin-bottom: 0 !important;
@@ -2951,20 +2953,23 @@ border:0px solid ;
 		margin-bottom: 0 !important;
 	}
 	.slider .slider-btn {
-	  	position: absolute;
-		left: 33% !important;
-		top: 86px !important;
-  		width: 100px;
+	    position: absolute;
+		left: 36% !important;
+		top: 102px !important;
+		max-width: 100px;
 	}
 	.slider .slider-title {
 		font-size: 15px !important;
 	}
 	.slider .carousel .slider-small {
-		top:30%  !important;
+		top: 25% !important;
+		width: 75% !important;
+		right: 12%;
+		max-height: 150px;
 	}
 	.slider .slider-text {
 		font-size: 14px !important;
-		width: 77% !important;
+		width: 86% !important;
 		max-height: 45px;
 		margin: 0 auto;
 		overflow: hidden;
@@ -3709,58 +3714,16 @@ font-size: .8rem !important;
 
 }
 
-/* @media (max-width:620px) {
-
-	._panel {
-
-    position: absolute;
-
-    margin-right: -20px;
-
-    width: 84%;
-
-    background: #fff;
-
-    padding: 15px;
-
-    border: 1px solid #000;
-
-    border-radius: 5px;
-
-    top: 186px;
-
-    min-height: 100px;
-
-    box-shadow: 0px 0px 16px 0px;
-
-}
-
-._panel .project-name {
-
-    font-size: 14px;
-
-    color: #786E42;
-
-    font-weight: bold;
-
-    margin-right: 38px;
-
-    position: absolute;
-
-    top: 0;
-
-    left: 413px;
-
-}
-
-} */
-
-
-
 @media(max-width: 767px)
 
 {
-
+	
+	/* .our-projects .carousel .carousel-control-next{
+		right: 910px !important;
+	}
+	.our-projects .carousel .carousel-control-prev{
+		right: 864px !important;
+	} */
 	.project .p-detail .bs
 	{
 		left: 50%;
@@ -3904,100 +3867,68 @@ font-size: .8rem !important;
 			left: 222px;
 
 			display: block;
-
 			width: 180px;
-
 	}
 
-
-
-
-
 ._panel .project-name span {
-
     font-size: 13px;
-
     margin-right: 0 !important;
-
     position: absolute;
-
     top: -20px;
-
     right: 0px;
-
     display: block;
-
 }
 
-
-
 ._panel .p-about{
-
 	line-height: 1.3 !important;
-
 	font-size: 11px !important;
-
 	color: #9a9b9a;
-
 	font-size: 12px;
-
 	word-spacing: 0px;
-
     margin-top:22px;
     margin-bottom:7px;
-
 	margin-right: 0px !important;
-
 	width: 100%;
     max-height: 30px !important;
     overflow: hidden!important;
-
 }
 
 .word-of-princpal .word-title .line-left {
-
     left: 124px;
-
 		top:45px;
-
 }
 
-
-
 .word-of-princpal .word-title .line-right {
-
     right: 153px;
-
 		top:45px;
-
 }
 
 .word-of-princpal .word-title {
-
 	margin-bottom: 35px;
-
 }
-
 .widget {
-
     margin-top: 170px;
-
     margin-left: -629px;
-
     /* margin-bottom: 50px; */
-
 }
 
 
-
 }
-
-
 
 /*Small Screen*/
 
 @media(min-width: 768px) and (max-width: 991px)
 {
+	.contactus .form-contact .btn-contact, 
+	.contact-us .form-contact .form-control,
+	 .contactus .form-contact .form-control
+	 {
+		 width: 100%;
+	 }
+	.slider .carousel .slider-small {
+		left: 20% !important;
+		width: 70% !important;
+	}
 	.fix-width {
 
 		max-width: 141%;

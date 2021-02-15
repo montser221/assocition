@@ -27,8 +27,8 @@
                 
                 @foreach ($files as $file)
                   <div class="col-sm-12 col-md-4 4 mt-5 center-phone">
-                    <a target="_blank" class="d-block main-color" href="{{url('uploads/files/'.$file->pdfFile)}}">
-                    <img src="{{url("uploads/files/".$file->imageFile)}}" alt="" style="width: 100px;">
+                    <a target="_blank" class="d-block main-color" href="{{url('storage/'.$file->pdfFile)}}">
+                    <img src="{{url("storage/".$file->imageFile)}}" alt="" style="width: 100px;">
                   
                     <span class="video-title" style=" display: block; margin-right: 15px; margin-top: 14px; margin-bottom: 15px;">{{$file->fileTitle}} </span>
                       </a>

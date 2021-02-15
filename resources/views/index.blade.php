@@ -22,12 +22,14 @@
         @foreach ($allsliderimages->chunk(1) as $imageCollection)
         <div class="carousel-item {{ $loop->first ? 'active' : '' }} ">
         @foreach ($imageCollection as $slider)
+        
        <img style="max-height: 100%;" src="{{ url($slider->sliderImage)}}" class="d-block w-100 slider-image" alt="...">
-       <div class="container text-center slider-small" style="position: absolute;top: 40%;  left: 6%;">
+       <div class="container text-center slider-small" style="border-radius:10px;padding:10px;  position: absolute;top: 50%; left: 20%; width: 790px; background: #baa342;">
+       {{-- <div class="container text-center slider-small" style="position: absolute;top: 40%;  left: 6%;"> --}}
          <div class="text-center mb-3 slider-title"  style="color:#fff;font-size:30px">{{ $slider->sliderTitle }} </div>
          <div class="text-center   mb-5 slider-text" style="color:#fff;font-size:20px;  width: 80%; margin: 0 auto;">{{ $slider->sliderText }}</div>
          <a href="{{ $slider->sliderLink }}" 
-            class="btn btn-success  text-center slider-btn " 
+            class="btn btn-main  text-center slider-btn " 
              >سجل الان</a>
        </div>
      {{-- @endif --}}
@@ -504,8 +506,8 @@
          @if($file_count > 4)
               <?php continue ?>
          @else
-          <a target="_blank" href="{{url('uploads/files/'.$file->pdfFile)}}">
-            <img style="width:60px;height:60px;" src="{{url("uploads/files/".$file->imageFile)}}" alt="">
+          <a target="_blank" href="{{url('storage/'.$file->pdfFile)}}">
+            <img style="width:60px;height:60px;" src="{{url("storage/".$file->imageFile)}}" alt="">
           </a>
           <span class="img-title"> {{ $file->fileTitle }}</span>
           <span class="img-shows-count"> <i class="fa fa-download"></i>

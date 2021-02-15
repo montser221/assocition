@@ -1,9 +1,9 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Models\pdfFile;
+use Storage;
+use Image;
 class pdfFileController extends Controller
 {
   /**
@@ -39,7 +39,7 @@ class pdfFileController extends Controller
         'imageFile'     => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2028',
         'pdfFile'       => 'required|mimes:pdf|max:20480',
     ]);
-    // // create project instance
+    // // create files instance
     $files = new pdfFile;
 
     if ($request->has('fileStatus'))
@@ -50,30 +50,36 @@ class pdfFileController extends Controller
     //pdf file
     if($request->file('pdfFile')){
 
-        $image_name = time() . rand(1,1000000000000);
-        $image_ext = $request->file('pdfFile')->getClientOriginalExtension(); // example: png, jpg ... etc
-        $image_full_name = $image_name . '.' . $image_ext;
+        // $image_name = time() . rand(1,1000000000000);
+        // $image_ext = $request->file('pdfFile')->getClientOriginalExtension(); // example: png, jpg ... etc
+        // $image_full_name = $image_name . '.' . $image_ext;
 
-        $uploads_folder =  getcwd() .'/uploads/files/';
-        if (!file_exists($uploads_folder)) {
-            mkdir($uploads_folder, 0777, true);
-        }
-        $request->file('pdfFile')->move($uploads_folder,    $image_full_name);
-        $files->pdfFile=$image_full_name;
+        // $uploads_folder =  getcwd() .'/uploads/files/';
+        // if (!file_exists($uploads_folder)) {
+        //     mkdir($uploads_folder, 0777, true);
+        // }
+        // $request->file('pdfFile')->move($uploads_folder,    $image_full_name);
+        // $files->pdfFile=$image_full_name;
+        $path = Storage::disk('public_path')->putFile('uploads/files', $request->file('pdfFile'));
+        $files->pdfFile=$path;
     }
     // img file
     if($request->file('imageFile')){
 
-        $image_name = time() . rand(1,1000000000000);
-        $image_ext = $request->file('imageFile')->getClientOriginalExtension(); // example: png, jpg ... etc
-        $image_full_name = $image_name . '.' . $image_ext;
+        // $image_name = time() . rand(1,1000000000000);
+        // $image_ext = $request->file('imageFile')->getClientOriginalExtension(); // example: png, jpg ... etc
+        // $image_full_name = $image_name . '.' . $image_ext;
 
-        $uploads_folder =  getcwd() .'/uploads/files/';
-        if (!file_exists($uploads_folder)) {
-            mkdir($uploads_folder, 0777, true);
-        }
-        $request->file('imageFile')->move($uploads_folder,    $image_full_name);
-        $files->imageFile=$image_full_name;
+        // $uploads_folder =  getcwd() .'/uploads/files/';
+        // if (!file_exists($uploads_folder)) {
+        //     mkdir($uploads_folder, 0777, true);
+        // }
+        // $request->file('imageFile')->move($uploads_folder,    $image_full_name);
+        // $files->imageFile=$image_full_name;
+        $path = Storage::disk('public_path')->putFile('uploads/files', $request->file('imageFile'));
+        $files->imageFile=$path;
+        $image = Image::make(Storage::path($path))->fit(1200,700);
+        $image->save();
     }
 
     $files->fileTitle   = $request->input('fileTitle');
@@ -104,37 +110,42 @@ class pdfFileController extends Controller
   {
 
     if($request->file('pdfFile')){
-        $image_name = time() . rand(1,1000000000000);
-        $image_ext = $request->file('pdfFile')->getClientOriginalExtension(); // example: png, jpg ... etc
-        $image_full_name = $image_name . '.' . $image_ext;
+        // $image_name = time() . rand(1,1000000000000);
+        // $image_ext = $request->file('pdfFile')->getClientOriginalExtension(); // example: png, jpg ... etc
+        // $image_full_name = $image_name . '.' . $image_ext;
 
-        $uploads_folder =  getcwd() .'/uploads/files';
-        if (!file_exists($uploads_folder)) {
-            mkdir($uploads_folder, 0777, true);
-        }
-        $request->file('pdfFile')->move($uploads_folder,    $image_full_name);
+        // $uploads_folder =  getcwd() .'/uploads/files';
+        // if (!file_exists($uploads_folder)) {
+        //     mkdir($uploads_folder, 0777, true);
+        // }
+        // $request->file('pdfFile')->move($uploads_folder,    $image_full_name);
 
+        $path = Storage::disk('public_path')->putFile('uploads/files', $request->file('pdfFile'));
         \DB::table('pdf_files')
         ->where('fileId',$id)
         ->update([
-          'pdfFile'=>$image_full_name,
+          'pdfFile'=>$path,
         ]);
     }
 
     if($request->file('imageFile')){
-        $image_name = time() . rand(1,1000000000000);
-        $image_ext = $request->file('imageFile')->getClientOriginalExtension(); // example: png, jpg ... etc
-        $image_full_name = $image_name . '.' . $image_ext;
+        // $image_name = time() . rand(1,1000000000000);
+        // $image_ext = $request->file('imageFile')->getClientOriginalExtension(); // example: png, jpg ... etc
+        // $image_full_name = $image_name . '.' . $image_ext;
 
-        $uploads_folder =  getcwd() .'/uploads/files';
-        if (!file_exists($uploads_folder)) {
-            mkdir($uploads_folder, 0777, true);
-        }
-        $request->file('imageFile')->move($uploads_folder,    $image_full_name);
+        // $uploads_folder =  getcwd() .'/uploads/files';
+        // if (!file_exists($uploads_folder)) {
+        //     mkdir($uploads_folder, 0777, true);
+        // }
+        // $request->file('imageFile')->move($uploads_folder,    $image_full_name);
+        $path = Storage::disk('public_path')->putFile('uploads/files', $request->file('imageFile'));
+        $files->imageFile=$path;
+        $image = Image::make(Storage::path($path))->fit(1200,700);
+        $image->save();
         \DB::table('pdf_files')
         ->where('fileId',$id)
         ->update([
-          'imageFile'=>$image_full_name,
+          'imageFile'=>$path,
         ]);
     }
 
@@ -151,7 +162,6 @@ class pdfFileController extends Controller
     ->update([
       'fileTitle'=>$request->input('fileTitle'),
     ]);
-
     return redirect()->route('files.index')->with('success','تم تحديث  الملف بنجاح');
   }
 
@@ -163,8 +173,10 @@ class pdfFileController extends Controller
    */
   public function destroy($id)
   {
-    // delete project by id
+    // delete files by id
     if(intval($id)){
+      Storage::delete(pdfFie::find($id)->pdfImage);
+      Storage::delete(pdfFie::find($id)->pdfFile);
       \DB::table('pdf_files')
       ->where('fileId',$id)
       ->delete();

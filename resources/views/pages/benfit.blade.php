@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title','تسجيل مستفيد ')
+@section('title','تسجيل عضوية ')
 
 @include('includes.header')
 <div class="voluntary">
@@ -9,7 +9,7 @@
     <div class="dulni-inner">
       <div class="container">
         <div class="page-path">
-          <p><a href="{{url("/")}}"> الرئيسية </a>/تسجيل مستفيد </p>
+          <p><a href="{{url("/")}}"> الرئيسية </a>/تسجيل عضوية </p>
         </div>
       </div>
     </div>
@@ -23,16 +23,16 @@
           {{-- @include('includes._errors') --}}
           @include('includes._success')
         </div>
-        <h3 class="text-center mt-3 mb-2">  تسجيل مستفيد </h3>
+        <h3 class="text-center mt-3 mb-2">  تسجيل عضوية </h3>
         <div class="text-center mt-1 mb-4 line-design"></div>
-        <div class="benfit-top nav  nav-tabs  id="myTab" role="tablist"">
+        <div class="benfit-top nav  nav-tabs d-none  id="myTab" role="tablist"">
           <hr>
          
         </div>
           <form method="post" action="{{route('benfit.store')}}" id="dulani-form">
             @csrf
             @method('POST')
-            <div class="mt-5">
+            <div class="mt-3">
               البيانات الشخصية
             </div>
             <hr>

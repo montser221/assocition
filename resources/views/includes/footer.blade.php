@@ -7,9 +7,8 @@ $data = \App\Models\Settings::find(1);
     <div class="row">
       <div class="col-sm-3">
         <p class="about">
-          تهدف جمعية البر الخيرية بمحافظة
-المويه إلى تقديم الخدمات التي
-تحتاجها المحافظة والمراكز التابعة له
+            {{ $data->foundationName ?? ' ' }}    
+            نص يمكن ان يستبدل باي نص 
         </p>
         <div class="social">
           <div class="h6"> تابعنا عبر وسائل التواصل الاجتماعي:</div>

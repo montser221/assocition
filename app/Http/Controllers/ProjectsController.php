@@ -174,7 +174,7 @@ class ProjectsController extends Controller
       ->update([
         'projectName'=>$request->input('projectName'),
         'projectDesc'=>$request->input('projectDesc'),
-        // 'projectCategoryId'=>$request->input('projectCategoryId'),
+        'projectCategoryId'=>1,
         'projectText'=>$request->input('projectText'),
         'projectCost'=>$request->input('projectCost'),
         'projectLocation'=>$request->input('projectLocation'),

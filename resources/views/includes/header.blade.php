@@ -3,6 +3,8 @@
 <?php
 $data = \App\Models\Settings::find(1);
 $otherFiles = \App\Models\OtherMember::all();
+$afiles = \App\Models\pdfFile::latest()->paginate(10);
+
  ?>
 
 
@@ -35,7 +37,7 @@ $otherFiles = \App\Models\OtherMember::all();
             </li>
              <li>
                 <i class="fa fa-user" aria-hidden="true"></i>
-                <a href="{{route('benfit.index')}}"> تسجيل مستفيد</a>
+                <a href="{{route('benfit.index')}}"> تسجيل عضوية</a>
             </li>
              <li>
                 <i class="fa fa-phone-square" aria-hidden="true"></i>
@@ -136,12 +138,12 @@ $otherFiles = \App\Models\OtherMember::all();
             </li>
             <li class="nav-item dropdown">
                  <a class="nav-link dropdown-toggle"  id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-             المكتبة الأعلامية
+             اللوائح والسياسات
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                   <a class="dropdown-item" href="{{route('allVideos')}}"> البوم الفيديو </a>
-                     <a class="dropdown-item" href="{{route('allFiles')}}"> اللوائح والسياسات العامة </a>
-                    <a class="dropdown-item"href="{{route('allReportFiles')}}">  التقارير المالية </a>
+                   @foreach ($afiles as $polices)
+                   <a target="_blank" class="dropdown-item" href="{{url('storage/'.$polices->pdfFile)}}"> {{ $polices->fileTitle }} </a>
+                   @endforeach
                 </div>
            </li>
             <li class="nav-item">

@@ -32,7 +32,7 @@
               </div>
             @enderror
             </div>
-          <div class="form-inline">
+          <div class="form-inline" style="display: flex;justify-content: space-between;">
             <input 
                   class="form-control  ml-1 mb-2 fullname" 
                   type="text" 
