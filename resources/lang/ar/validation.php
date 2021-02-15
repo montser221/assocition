@@ -260,5 +260,7 @@ return [
         'subscriberBirthOfDate' => 'تاريخ الميلاد',
         'subscriberFamilyCard' => 'كرت العائلة',
         'trainningCourseId' => 'معرف الدورة التدريبية',
+        'moneyNotify' => 'إشعار رسوم العضوية',
+        'memberType'   => 'نوع العضوية',
     ],
 ];

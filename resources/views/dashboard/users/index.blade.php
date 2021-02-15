@@ -45,13 +45,7 @@
           <button data-toggle="modal" data-target="#createUser" type="button" class="btn text-orange text-white " name="button">  <i class="fa fa-plus "></i> &nbsp;&nbsp; أنشاء </a>
 
         </div>
-
-
-
       </div>
-
-
-
       <!-- Modal -->
 
       <div class="modal fade" id="createUser" tabindex="-1" data-keyboard="false"  data-backdrop="static" aria-labelledby="createUserLabel" aria-hidden="true">
@@ -341,5 +335,7 @@
       </table>
 
     </div>
-
+<div class="container">
+      {{$allUsers->links()}}
+    </div>
 @endsection

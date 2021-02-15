@@ -119,4 +119,7 @@
         </tbody>
       </table>
     </div>
+     <div class="container">
+     {{$allimages->links()}}
+    </div>
 @endsection

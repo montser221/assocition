@@ -163,4 +163,7 @@
         </tbody>
       </table>
     </div>
+     <div class="container">
+      {{$allpolicies->links()}}
+    </div>
 @endsection

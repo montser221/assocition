@@ -126,4 +126,7 @@
         </tbody>
       </table>
     </div>
+    <div class="container">
+      {{$allpaymentmethod->links()}}
+    </div>
 @endsection

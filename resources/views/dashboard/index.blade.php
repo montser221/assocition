@@ -68,10 +68,10 @@
 
           <a class="list-group-item" href="{{route('services.index')}}"><i class="fa fa-cog fa-fw" aria-hidden="true"></i>&nbsp;  إدارة  الخدمات     </a>
 
-          <a class="list-group-item" href="{{route('payees.index')}}"><i class="fa fa-group fa-fw" aria-hidden="true"></i>&nbsp; إدارة   المستفيدين       </a>
+          {{-- <a class="list-group-item" href="{{route('payees.index')}}"><i class="fa fa-group fa-fw" aria-hidden="true"></i>&nbsp; إدارة   المستفيدين       </a> --}}
 
           <a class="list-group-item" href="{{route('needy')}}"><i class="fa fa-group fa-fw" aria-hidden="true"></i>&nbsp;   المحتاجين المتقدمين   </a>
-          <a class="list-group-item" href="{{route('applicable')}}"><i class="fa fa-group fa-fw" aria-hidden="true"></i>&nbsp;  المستفيدين المتقدمين   </a>
+          <a class="list-group-item" href="{{route('applicable')}}"><i class="fa fa-group fa-fw" aria-hidden="true"></i>&nbsp;  طلبات العضوية المتقدمين   </a>
           <a class="list-group-item" href="{{route('volnt')}}"><i class="fa fa-group fa-fw" aria-hidden="true"></i>&nbsp;  المتطوعين المتقدمين   </a>
           <a class="list-group-item" href="{{route('contact.contact')}}"><i class="fa fa-bell fa-lg" aria-hidden="true"></i>&nbsp;      رسائل التواصل   </a>
 

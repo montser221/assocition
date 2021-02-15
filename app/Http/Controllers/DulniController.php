@@ -37,7 +37,7 @@ class DulniController extends Controller
 
     public function needy()
     {
-      $allneedy = Dulni::all();
+      $allneedy = Dulni::latest()->paginate(9);
         return view('dashboard.needy.index')->with([
           'allneedy'=>$allneedy,
         ]);

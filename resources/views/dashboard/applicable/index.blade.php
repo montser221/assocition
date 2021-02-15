@@ -1,10 +1,10 @@
 @extends('dashboard.index')
-@section('title','إدارة  ألمستفيدين المتقدمين')
+@section('title','إدارة  العضوية المتقدمين')
 @section('dashboard-content')
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="{{route('dashboard.index')}}">لوحة التحكم</a></li>
-      <li class="breadcrumb-item active "  > <a href="{{route('applicable')}}"> إدارة المستفيدين المتقدمين  </a></li>
+      <li class="breadcrumb-item active "  > <a href="{{route('applicable')}}"> إدارة العضوية المتقدمين  </a></li>
      </ol>
     </nav>
     <div class="users">
@@ -31,6 +31,8 @@
           <th> إسم الاب </th>
           <th> إسم الجد </th>
           <th> الإسم الاخير </th>
+          <th>   نوع العضوية </th>
+          <th>   إشعار السداد </th>
           <th> ح إجتماعية </th>
           <th>ر . الهوية</th>
           <th>  الجنسية </th>
@@ -53,6 +55,24 @@
               <td>{{  $applicable->fatherName }}</td>
               <td>{{  $applicable->grandFatherName }}</td>
               <td>{{  $applicable->lastName }}</td>
+              <td>@if($applicable->memberType=="volnteerMember") 
+              عضوية متطوع
+              @elseif($applicable->memberType=="commonMember")
+              عضوية جمعية عمومية
+              @endif 
+              </td>
+              <td 
+                data-toggle="tooltip" 
+                offset="2" 
+                data-placement="top" 
+                title="أضغط لعرض الصورة"> 
+                <a target="_blank"   
+                  href="{{url("storage/".$applicable->moneyNotify)}}" >
+                  <img style="max-width:40px;max-height:40px" 
+                  src="{{url("storage/".$applicable->moneyNotify)}}"
+                  class="viewImage" alt="" />
+                </a>
+              </td>
                <td class="@if ($applicable->socialState == 'married') text-success  @else text-danger   @endif">
                 @if ($applicable->socialState == 'married')
                 <span class="  alert-success">
@@ -91,6 +111,6 @@
           @endforeach
         </tbody>
       </table>
-      {{-- {{$allapplicable->links()}} --}}
+      {{$allapplicable->links()}}
     </div>
 @endsection

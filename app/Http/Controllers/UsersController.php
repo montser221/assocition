@@ -14,7 +14,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $allUsers = User::latest()->paginate(5);
+        $allUsers = User::latest()->paginate(9);
         return view('dashboard.users.index')->with(['allUsers'=>$allUsers]);
     }
 

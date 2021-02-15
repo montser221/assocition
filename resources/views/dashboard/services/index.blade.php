@@ -120,4 +120,7 @@
         </tbody>
       </table>
     </div>
+    <div class='container'>
+    {{ $allservices->links() }}
+    </div>
 @endsection

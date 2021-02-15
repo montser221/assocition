@@ -13,7 +13,7 @@ class SliderImageController extends Controller
      */
     public function index()
     {
-       $allsliderimages =  SliderImage::latest()->paginate(10);
+       $allsliderimages =  SliderImage::latest()->paginate(9);
        return view('dashboard.sliderimages.index',compact('allsliderimages'));
     }
     public function store(Request $request)

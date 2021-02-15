@@ -129,4 +129,7 @@
         </tbody>
       </table>
     </div>
+    <div class="container">
+      {{$allreportFiles->links()}}
+    </div>
 @endsection

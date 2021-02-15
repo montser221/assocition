@@ -129,4 +129,7 @@
         </tbody>
       </table>
     </div>
+<div class="container">
+      {{$allvideos->links()}}
+    </div>
 @endsection

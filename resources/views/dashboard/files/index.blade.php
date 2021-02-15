@@ -128,4 +128,7 @@
         </tbody>
       </table>
     </div>
+    <div class="container">
+     {{$allfiles->links()}}
+    </div>
 @endsection

@@ -48,14 +48,17 @@ class BenfitController extends Controller
 
   public function store(Request $request)
   {
+   
     // return $request->all();
     $request->validate([
+        'moneyNotify'     =>'required|image|mimes:jpeg,png,jpg|max:10000',
+        'memberType'      =>'required|string',
         'firstName'       => 'required|string',
         'fatherName'      => 'required|string',
         'grandFatherName' => 'required|string',
         'lastName'        => 'required|string',
         'socialState'     => 'required',
-         'natonality'     => 'required|string',
+        'natonality'     => 'required|string',
         'email'           => 'required|email|unique:payees',
         'ssnNumber'       => 'required|numeric',
         'bestContactTime' => 'required|string',
@@ -66,8 +69,15 @@ class BenfitController extends Controller
         'address'         => 'required|string',
         'phone'           => 'required|numeric',
     ]);
-
     $payees = new Payee;
+
+    if($request->file('moneyNotify'))
+    {
+      $path = \Storage::disk('public_path')->putFile('storage', $request->file('moneyNotify'));
+      $payees->moneyNotify=$path;
+      // $image = Image::make(Storage::path($path))->fit(1200,700);
+      // $image->save();
+    }
 
     $payees->firstName = $request->input('firstName');
     $payees->fatherName = $request->input('fatherName');
@@ -84,8 +94,9 @@ class BenfitController extends Controller
     $payees->jobEmployer      = $request->input('jobEmployer');
     $payees->address      = $request->input('address');
     $payees->phone    = $request->input('phone');
+    $payees->memberType    = $request->input('memberType');
     $payees->save();
-    return redirect()->route('benfit.index')->with('success','تم   تسجيل المستفيد بنجاح   ');
+    return redirect()->route('benfit.index')->with('success','تم    تقديم الطلب  بنجاح   ');
   }
 
 

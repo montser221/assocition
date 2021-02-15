@@ -8,7 +8,7 @@ class ApplicableController extends Controller
 {
   public function applicable()
   {
-    $allapplicable = Payee::all();
+    $allapplicable = Payee::latest()->paginate(9);
     // dd($allapplicable);
     return view('dashboard.applicable.index')->with([
       'allapplicable'=>$allapplicable,
@@ -19,6 +19,7 @@ class ApplicableController extends Controller
   {
     // delete project by id
     if(intval($id)){
+      \Storage::delete(Payee::find($id)->moneyNotify);
       \DB::table('payees')
       ->where('payeeId',$id)
       ->delete();

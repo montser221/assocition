@@ -113,4 +113,7 @@
         </tbody>
       </table>
     </div>
+    <div class="container">
+     {{$allgoals->links()}}
+    </div>
 @endsection

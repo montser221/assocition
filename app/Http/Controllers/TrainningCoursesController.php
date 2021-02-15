@@ -13,7 +13,7 @@ class TrainningCoursesController extends Controller
      */
     public function index()
     {
-        $allcourses = TrainningCourses::latest()->paginate(10);
+        $allcourses = TrainningCourses::latest()->paginate(9);
         return view('dashboard.courses.index')->with(['allcourses'=>$allcourses]);
     }
 

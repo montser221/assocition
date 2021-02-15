@@ -57,4 +57,7 @@
         </tbody>
       </table>
     </div>
+         <div class="container">
+     {{$allneedy->links()}}
+    </div>
 @endsection

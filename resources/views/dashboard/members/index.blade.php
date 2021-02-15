@@ -157,4 +157,7 @@
         </tbody>
       </table>
     </div>
+     <div class="container">
+     {{$allmembers->links()}}
+    </div>
 @endsection

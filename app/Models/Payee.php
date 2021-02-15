@@ -10,8 +10,9 @@ class Payee extends Model
     use HasFactory;
     protected $primaryKey  ='payeeId';
     protected $fillable = [
-      'firstName','fatherName','grandFatherName','lastName',
-      'socialState','ssnNumber','natonality','bestContactTime','email','gender',
+      'moneyNotify','memberType','firstName','fatherName',
+      'grandFatherName','lastName','socialState',
+      'ssnNumber','natonality','bestContactTime','email','gender',
       'birthDate','jobTitle','jobEmployer','address','phone'
     ];
 }

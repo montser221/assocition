@@ -94,3 +94,4 @@ Route::resource('goals',App\Http\Controllers\OurGoalController::class)->middlewa
 Route::resource('reportfiles',App\Http\Controllers\ManageMoneyReportController::class)->middleware('auth');
 Route::resource('otherfiles',App\Http\Controllers\OtherMemberController::class)->middleware('auth');
 
+ 

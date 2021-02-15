@@ -13,7 +13,7 @@ class ServicesController extends Controller
    */
   public function index()
   {
-      $allservices = Services::all();
+      $allservices = Services::latest()->paginate(9);
       return view('dashboard.services.index',)->with(['allservices'=>$allservices]);
   }
 

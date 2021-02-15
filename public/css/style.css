@@ -2111,7 +2111,8 @@ color: #20c997}
 
 .voluntary .content .voluntary-fix {
 
-	position: absolute;
+	/* position: absolute; */
+	padding: 30px;;
 
 	width: 85%;
 
@@ -2339,7 +2340,7 @@ input[type='radio']:checked:after {
 
 	position: relative;
 
-	margin-bottom: 1171px;
+	/* margin-bottom: 1171px; */
 
 	margin-top: -60px;
 
