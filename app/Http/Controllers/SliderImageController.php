@@ -23,6 +23,7 @@ class SliderImageController extends Controller
           'sliderText'         => 'required',
           'sliderImage'       => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:14096',
           'sliderLink'        => 'required|url',
+          'sliderBtnText'     => 'required|string',
       ]);
       // create slider instance
       $slider = new SliderImage;
@@ -42,6 +43,7 @@ class SliderImageController extends Controller
       $slider->sliderTitle      = $request->input('sliderTitle');
       $slider->sliderText       = $request->input('sliderText');
       $slider->sliderLink       = $request->input('sliderLink');
+      $slider->sliderBtnText       = $request->input('sliderBtnText');
       $slider->save();
       return redirect()->route('sliderimages.index')->with('success','تم أضافة الملف بنجاح');
     }
@@ -102,6 +104,14 @@ class SliderImageController extends Controller
       ->where('sliderId',$id)
       ->update([
         'sliderTitle'=>$request->input('sliderTitle'),
+      ]);
+    }
+    if($request->has('sliderBtnText'))
+    {
+      \DB::table('slider_images')
+      ->where('sliderId',$id)
+      ->update([
+        'sliderBtnText'=>$request->input('sliderBtnText'),
       ]);
     }
 

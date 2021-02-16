@@ -12,6 +12,12 @@ Route::get('/',[App\Http\Controllers\MainController::class,'index'])->name('/');
 // })->name('test');
 Route::resource('subscribenow',App\Http\Controllers\TrainningSubscriberController::class);
 Route::get('/subscriber', [App\Http\Controllers\TrainningSubscriberController::class,'subscriber'])->name('subscriber');
+Route::post('activate/{id}', [App\Http\Controllers\TrainningSubscriberController::class,'activate'])->name('activate');
+Route::post('deactivate/{id}', [App\Http\Controllers\TrainningSubscriberController::class,'deactivate'])->name('deactivate');
+// payee 
+Route::post('payee/activate/{id}', [App\Http\Controllers\ApplicableController::class,'activate'])->name('pactivate');
+Route::post('payee/deactivate/{id}', [App\Http\Controllers\ApplicableController::class,'deactivate'])->name('pdeactivate');
+//payeee
 Route::get('/exportAllDenoate', [App\Http\Controllers\DenoateController::class,'exportAllDenoate'])->name('exportAllDenoate')->middleware('auth');
 Route::get('/exportToExcel/{id}', [App\Http\Controllers\MoneyReportController::class,'exportToExcel'])->name('exportToExcel')->middleware('auth');
 Route::get('money', [App\Http\Controllers\MoneyReportController::class,'index'])->name('money.index')->middleware('auth');

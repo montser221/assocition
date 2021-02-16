@@ -16,6 +16,7 @@
           </form>
         </div>
 
+
         <div class="col offset-lg-8">
           {{-- <a type="button" class="btn border border-dark  " name="button">  <i class="fa fa-upload fa-lg"></i>  تصدير </a>
           <a type="button" class="btn border border-dark " name="button"> <i class="fa fa-download fa-lg"></i> استيراد </a> --}}
@@ -23,7 +24,7 @@
         </div>
       </div>
 
-
+      @include('includes.success')
       <table class="table table-hover table-bordered table-responsive">
         <thead>
           <th>#</th>
@@ -106,6 +107,11 @@
                   @method("DELETE")
                   <button   type="submit" class="btn  btn-sm  btn-project"><i class="fa fa-bank "></i></button>
                 </form>
+                <form method="post" action="@if($applicable->payeeStatus == 1)  {{route('pdeactivate',$applicable->payeeId )}} @else  {{route('pactivate',$applicable->payeeId )}} @endif"> 
+                  @csrf
+                  @method('POST')
+                  <button   type="submit" class="btn  btn-sm  btn  btn-sm @if($applicable->payeeStatus == 1) btn-danger  @else   btn-success @endif ">  @if($applicable->payeeStatus == 1) الغاء تفعيل  @else  تفعيل  @endif</button>
+                </form> 
               </td>
             </tr>
           @endforeach

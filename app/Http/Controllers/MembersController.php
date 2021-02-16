@@ -14,7 +14,7 @@ class MembersController extends Controller
    */
   public function index()
   {
-    $allmembers = Member::all();
+    $allmembers = Member::latest()->paginate(9);
     return view('dashboard.members.index')->with(['allmembers'=>$allmembers]);
   }
 

@@ -14,6 +14,7 @@ class SliderImage extends Model
         'sliderImage',
         'sliderText',
         'sliderLink',
+        'sliderBtnText',
         'sliderStatus'
     ];
 }

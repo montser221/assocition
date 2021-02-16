@@ -67,6 +67,18 @@
                             </div>
                             <div class="form-row">
                                 <div class="col">
+                                    <label class="label-control" for="sliderBtnText"> النص على الزر </label>
+                                    <input 
+                                        type="text" 
+                                        class="form-control" 
+                                        name="sliderBtnText" 
+                                        placeholder="النص على الزر"
+                                        value="{{ old("sliderBtnText") }}"
+                                        >
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
                                     <label class="label-control" for="sliderImage">صورة مميزة</label>
                                     <input 
                                         type="file" 
@@ -118,6 +130,7 @@
                 <th> العنوان</th>
                 <th> نص مختصر</th>
                 <th> الرابط</th>
+                <th> النص على الزر</th>
                 <th>الصورة المميزة</th>
                 <th> الحالة </th>
                 <th> أحداث </th>
@@ -131,6 +144,7 @@
                         <td>{{ $slider->sliderTitle }}</td>
                         <td style="  max-width: 300px;">{{ $slider->sliderText }}</td>
                         <td> <a target="_balnk" style="color:#BAA342 !important" href="{{ $slider->sliderLink }}"> فتح الرابط </a> </td>
+                        <td>{{ $slider->sliderBtnText }}</td>
                         <td> <img style="max-width:100px;max-height:100px" src="{{ url($slider->sliderImage) }}"
                                 class="icon" alt="" /></i> </td>
                     <td class="@if ($slider->sliderStatus == 1) text-success @else

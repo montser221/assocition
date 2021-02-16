@@ -109,9 +109,9 @@ $afiles = \App\Models\pdfFile::latest()->paginate(10);
                    <a class="dropdown-item" href="{{route('aboutus')}}/#about">من نحن</a>
                    <a class="dropdown-item" href="{{route('aboutus')}}/#word"> عن الجمعية</a>
                    <a class="dropdown-item"href="{{route('aboutus')}}/#member"> اعضاء مجلس الإداره</a>
-                   @isset($otherFiles)
+                   @isset($otherFiles) 
                     @foreach ($otherFiles as $file)
-                      <a class="dropdown-item"href="{{ url(env('APP_URL').'storage/'.$file->memFile) }}"  target="_blank"> {{ $file->memName }} </a>
+                      <a class="dropdown-item"href="{{ url('storage/'.$file->memFile) }}"  target="_blank"> {{ $file->memName }} </a>
                     @endforeach
                    @endisset
 
@@ -138,7 +138,7 @@ $afiles = \App\Models\pdfFile::latest()->paginate(10);
             </li>
             <li class="nav-item dropdown">
                  <a class="nav-link dropdown-toggle"  id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-             اللوائح والسياسات
+           دليل الحوكمة
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                    @foreach ($afiles as $polices)

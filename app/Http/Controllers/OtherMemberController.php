@@ -26,8 +26,6 @@ class OtherMemberController extends Controller
       $request->validate([
           'memName'        => 'required|unique:other_members',
           'memFile'        => 'required|mimes:pdf|max:14946',
-          'memEmail'       => 'required',
-          'memPhone'       => 'required',
       ]);
       // // create project instance
       $otherfiles = new OtherMember;
@@ -45,8 +43,8 @@ class OtherMemberController extends Controller
 
   
       $otherfiles->memName   = $request->input('memName');
-      $otherfiles->memEmail   = $request->input('memEmail');
-      $otherfiles->memPhone   = $request->input('memPhone');
+      // $otherfiles->memEmail   = $request->input('memEmail');
+      // $otherfiles->memPhone   = $request->input('memPhone');
       $otherfiles->save();
       return redirect()->route('otherfiles.index')->with('success','تم أضافة  الملف بنجاح');
     }
@@ -96,8 +94,8 @@ class OtherMemberController extends Controller
       ->where('memId',$id)
       ->update([
         'memName'=>$request->input('memName'),
-        'memEmail'=>$request->input('memEmail'),
-        'memPhone'=>$request->input('memPhone'),
+        // 'memEmail'=>$request->input('memEmail'),
+        // 'memPhone'=>$request->input('memPhone'),
       ]);
   
       return redirect()->route('otherfiles.index')->with('success','تم تحديث  الملف بنجاح');

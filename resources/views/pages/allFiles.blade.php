@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title','  اللوائح والسياسات ')
+@section('title','  دليل الحوكمة ')
 
 @include('includes.header')
 <div class="dulni">
@@ -9,7 +9,7 @@
     <div class="dulni-inner">
       <div class="container">
         <div class="page-path">
-          <p><a href="{{url("/")}}"> الرئيسية </a>/ اللوائح والسياسات       </p>
+          <p><a href="{{url("/")}}"> الرئيسية </a>/  دليل الحوكمة  </p>
         </div>
       </div>
     </div>
@@ -21,7 +21,7 @@
         <div class="allfiles mx-auto">
           <div class="container" id="dulani-form-container">
             
-            <h3 class="text-center mt-5 mb-2 main-color">    اللوائح والسياسات    </h3>
+            <h3 class="text-center mt-5 mb-2 main-color">    دليل الحوكمة    </h3>
            <div class="text-center mt-1 mb-4 line-design"></div>
               <div class="row mb-5">
                 

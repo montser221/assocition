@@ -10,6 +10,6 @@ class OtherMember extends Model
     use HasFactory;
     protected $primaryKey  ='memId';
     protected $fillable = [
-      'memName','memEmail','memPhone','memStatus'
+      'memName','memStatus'
     ];
 }

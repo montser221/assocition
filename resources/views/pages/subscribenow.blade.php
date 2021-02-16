@@ -108,7 +108,10 @@
           @if(request()->query('p')=="paid") 
             <label for="subscriberMoneyStatement" class="label-control text-right mt-2">إيصال الدفع</label>
            <div class="file-fix ">
-            <i class="fa fa-upload"></i>  <span class="" style=" font-size:15px !important; top: 3px;right: 16px;  margin-top: 3rem !important;">  إيصال الدفع </span>
+            <i class="fa fa-upload"></i>  
+            <span class="" 
+                  style=" font-size:15px !important; top: 3px;right: 16px; ">  
+                  إيصال الدفع </span>
             <input 
               type="file" 
               class="form-control mb-3"  

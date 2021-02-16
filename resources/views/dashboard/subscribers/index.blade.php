@@ -32,6 +32,7 @@
            <th>  كرت العائلة</th>
            <th>     الايصال</th>
            <th>تاريخ التقديم</th>
+           {{-- <th>الحالة</th> --}}
           <th> أحداث  </th>
         </thead>
         <tbody>
@@ -45,17 +46,28 @@
               <td>{{$trainner->subscriberBirthOfDate}}</td>
               <td>{{$trainner->subscriberPhone}}</td>
               <td>{{ \App\Models\TrainningCourses::find($trainner->trainningCourseId )->courseName}}</td>
-              <td data-toggle="tooltip"  offset="2" data-placement="top" title="أضغط لعرض الصورة"> <a target="_blank"   href="{{url("storage/".$trainner->subscriberFamilyCard)}}" > <img style="max-width:40px;max-height:40px" src="{{url("storage/".$trainner->subscriberFamilyCard)}}" class="viewImage" alt="" /></i> </a></td>
+              <td data-toggle="tooltip"  offset="2" data-placement="top" title="أضغط لعرض الصورة"> <a target="_blank"   href="{{url("storage/".$trainner->subscriberFamilyCard)}}" > <img style="max-width:40px;max-height:40px" src="{{url("storage/".$trainner->subscriberFamilyCard)}}" class="viewImage" alt="" />  </a></td>
               {{-- @if() --}}
-              <td data-toggle="tooltip"  offset="2" data-placement="top" title="أضغط لعرض الصورة"> <a target="_blank"   href="{{url("storage/".$trainner->subscriberMoneyStatement ?? '')}}" > <img style="max-width:40px;max-height:40px" src="{{url("storage/".$trainner->subscriberMoneyStatement ?? '')}}" class="viewImage" alt="" /></i> </a></td>
+              <td data-toggle="tooltip"  offset="2" data-placement="top" title="أضغط لعرض الصورة"> <a target="_blank"   href="{{url("storage/".$trainner->subscriberMoneyStatement ?? '')}}" > <img style="max-width:40px;max-height:40px" src="{{url("storage/".$trainner->subscriberMoneyStatement ?? '')}}" class="viewImage" alt="" />  </a></td>
               {{-- @endif --}}
               <td>{{ $trainner->subscriberBirthOfDate }}</td>
+              {{-- <td  class="@if($trainner->subscriberStatus == 1) text-success  @else text-danger  @endif">
+              @if($trainner->subscriberStatus == 1) 
+              مفعل
+              @else
+                غير مفعل
+              @endif
+              </td> --}}
               <td>
                 <form class="form-inline" action="{{route('subscribenow.destroy',$trainner->subscriberId ) }}" method="post">
                   @csrf
-                  @method("DELETE")
-                  {{-- <a class="btn  btn-sm ml-1" href="{{route('subscribenow.show',$trainner->subscriberId )}}" ><i class="fa fa-eye "></i></a> --}}
+                  @method("DELETE")  
                   <button   type="submit" class="btn  btn-sm  btn-trainner"><i class="fa fa-bank "></i></button>
+                </form>
+                <form method="post" action="@if($trainner->subscriberStatus == 1)  {{route('deactivate',$trainner->subscriberId )}} @else  {{route('activate',$trainner->subscriberId )}} @endif"> 
+                  @csrf
+                  @method('POST')
+                  <button   type="submit" class="btn  btn-sm  btn  btn-sm @if($trainner->subscriberStatus == 1) btn-danger  @else   btn-success @endif ">  @if($trainner->subscriberStatus == 1) الغاء تفعيل  @else  تفعيل  @endif</button>
                 </form>
               </td>
             </tr>

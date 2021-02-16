@@ -1060,12 +1060,12 @@ input[type=number] {direction: rtl;}
 
 	color: #fff;
 
-	background-image: url(../design/backhands.png);
+	/* background-image: url(../design/backhands.png);
 
 	background-repeat: no-repeat;
 
 	background-size: cover;
-	    background-position: center;
+    background-position: center; */
 
 	
 
@@ -1098,8 +1098,8 @@ min-height: 370px;
 }
 
 .our-achieving .item-1{
-
-		border: 6px solid #FFF;
+		color:#786e42;
+		border: 6px solid #786e42;
 
 		width: 134px;
 
@@ -1118,7 +1118,7 @@ min-height: 370px;
 .our-achieving .achieve-text {
 
 	/*margin-right: 36%;*/
-
+	color: #786E42;
 	margin-top: 15px;
 
 	font-weight: bold;
@@ -1535,7 +1535,7 @@ color: #20c997}
 
 .footer {
 
-	background-color: #32353c;
+	background-color: #786E42 !important;
 
 	 padding-top: 130px !important;
 
@@ -2942,6 +2942,13 @@ border:0px solid ;
 		{left:60% !important}
 }
 @media (max-width:576px) {
+	.line-design-right  {
+		width: 100%;
+	}
+	.media-libarary .video-title, .media-libarary .versions .img-title
+	{
+		margin-right: 145px;
+	}
 	.form-subscriber {
 		width: 90%  !important;
 	}
@@ -3005,6 +3012,7 @@ border:0px solid ;
         /*margin-right: 10% !important;*/
         margin-top: 19% !important;
         border:4px solid #FFF !important;
+		border: 6px solid #786e42 !important;
     }
     .our-achieving .item-1 span 
     {

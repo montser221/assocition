@@ -28,9 +28,10 @@
        {{-- <div class="container text-center slider-small" style="position: absolute;top: 40%;  left: 6%;"> --}}
          <div class="text-center mb-3 slider-title"  style="color:#fff;font-size:30px">{{ $slider->sliderTitle }} </div>
          <div class="text-center   mb-5 slider-text" style="color:#fff;font-size:20px;  width: 80%; margin: 0 auto;">{{ $slider->sliderText }}</div>
-         <a href="{{ $slider->sliderLink }}" 
+         <a target="_blank" href="{{ $slider->sliderLink }}" 
             class="btn btn-main  text-center slider-btn " 
-             >سجل الان</a>
+             > {{ $slider->sliderBtnText }} </a>
+             {{--  @if($slider->sliderBtnText == null) نص افتراضي @endif --}}
        </div>
      {{-- @endif --}}
    @endforeach
@@ -401,7 +402,7 @@
 <div class="our-achieving">
   <div class="inner">
   <div class="container">
-    <div class="h2 text-center mt-4" style="padding-top:30px">
+    <div class="h2 text-center mt-4" style="padding-top:30px;color:#786e42;">
       بفضل الله ثم بفضلكم وصل عدد انجازنا
     </div>
     <div class="row mt-4">
@@ -497,7 +498,7 @@
       </div>
       <div class="col-sm-12 col-md-3 versions 4 mt-5 center-phone">
         <img src="{{url("design/pdf.png")}}" alt="">
-        <div class="h4 d-inline mb-5 main-color"> اللوائح والسياسات</div>
+        <div class="h4 d-inline mb-5 main-color">  دليل الحوكمة </div>
         <br>
         <hr/>
         <?php $file_count =0 ;?>
@@ -558,7 +559,7 @@
 @include('includes.contact')
 {{-- @include('includes._ourlocation') --}}
 <!-- Start Our Mailing List -->
-<div class="container">
+{{-- <div class="container">
   <div class="our-mailing-list">
     <div class="row">
       <div class="col-md-8">
@@ -575,7 +576,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> --}}
 <!-- End Our Mailing List -->
 @endsection
 @section('footer')

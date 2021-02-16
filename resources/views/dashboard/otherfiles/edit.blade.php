@@ -32,7 +32,7 @@
                     <input style="margin-right: 10%;" id="memFile" type="file" name="memFile" class="form-control-file w-80" >
                   </div>
                 </div>
-                 <div class="form-row">
+                 {{-- <div class="form-row">
                   <div class="col">
                     <label class="label-control" for="memEmail">    الايمل </label>
                     <input id="i" type="text" name="memEmail" class="form-control w-40"  value="{{ $data->memEmail }}"  >
@@ -43,7 +43,7 @@
                     <label class="label-control" for="memPhone">     الهاتف </label>
                     <input id="i" type="text" name="memPhone" class="form-control w-40"   value="{{ $data->memPhone }}" >
                   </div>
-                </div>
+                </div> --}}
        <div class="form-row">
          <div class="col" style="margin-top:8%">
            <div class="form-check">

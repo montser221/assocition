@@ -34,6 +34,7 @@ class TrainningSubscriberController extends Controller
              'subscriberPhone'       => 'required|numeric|unique:trainning_subscribers',
              'subscriberBirthOfDate' => 'required|date',
              'subscriberFamilyCard'  => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:14096',
+             'subscriberMoneyStatement'  => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:14096',
              'trainningCourseId'     => 'required|numeric',
         ]);
         $getallSubscriber = \DB::table('trainning_subscribers')
@@ -79,7 +80,24 @@ class TrainningSubscriberController extends Controller
     \DB::commit();
     return redirect()->to('subscribenow?cid='.$request->trainningCourseId.'&p='.$request->cprice)->with('success','تم الاشتراك في الدورة التدريبية بنجاح');
     }
-
+ // activate the subscriber
+    public function activate($id)
+    {
+        $this->middleware('auth');
+        // \DB::table('trainning_subscribers')
+        // ->where('subscriberId',$id)
+        TrainningSubscriber::where('subscriberId',$id)->update(['subscriberStatus'=>1]);
+        return redirect()->route('subscriber')->with('success','تم تفعيل المشترك بنجاح');
+    }
+    // deactivate the subscriber
+    public function deactivate($id)
+    {
+        $this->middleware('auth');
+        // \DB::table('trainning_subscribers')
+        // ->where('subscriberId',$id)
+        TrainningSubscriber::where('subscriberId',$id)->update(['subscriberStatus'=>0]);
+        return redirect()->route('subscriber')->with('success','تم  الغاء تفعيل المشترك بنجاح');
+    }
         /**
      * Remove the specified resource from storage.
      *

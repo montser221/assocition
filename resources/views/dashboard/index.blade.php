@@ -58,7 +58,7 @@
           <a class="list-group-item" href="{{route('images.index')}}"><i class="fa fa-picture-o" aria-hidden="true"></i>&nbsp; إدارة   البوم الصور      </a>
           <a class="list-group-item" href="{{route('sliderimages.index')}}"><i class="fa fa-picture-o" aria-hidden="true"></i>&nbsp; إدارة    أسلايدر الصور </a>
           <a class="list-group-item" href="{{route('videos.index')}}"><i class="fa fa-film" aria-hidden="true"></i>&nbsp; إدارة  الفيديوهات </a>
-          <a class="list-group-item" href="{{route('files.index')}}"><i class="fa fa-file-pdf-o" aria-hidden="true"></i>&nbsp; إدارة ملفات اللوائح والسياسات </a>
+          <a class="list-group-item" href="{{route('files.index')}}"><i class="fa fa-file-pdf-o" aria-hidden="true"></i>&nbsp; إدارة ملفات    دليل الحوكمة </a>
           <a class="list-group-item" href="{{route('reportfiles.index')}}"><i class="fa fa-file-pdf-o" aria-hidden="true"></i>&nbsp; إدارة ملفات  التقارير المالية   </a>
           {{-- <a class="list-group-item" href="#"><i class="fa fa-cog fa-fw" aria-hidden="true"></i>&nbsp; إدارة  محتويات الموقع    </a> --}}
           <a class="list-group-item" href="{{route('aboutassoiation.index')}}"><i class="fa fa-info" aria-hidden="true"></i>&nbsp;  إدارة معلومات حول الجمعية </a>
@@ -72,7 +72,7 @@
 
           <a class="list-group-item" href="{{route('needy')}}"><i class="fa fa-group fa-fw" aria-hidden="true"></i>&nbsp;   المحتاجين المتقدمين   </a>
           <a class="list-group-item" href="{{route('applicable')}}"><i class="fa fa-group fa-fw" aria-hidden="true"></i>&nbsp;  طلبات العضوية المتقدمين   </a>
-          <a class="list-group-item" href="{{route('volnt')}}"><i class="fa fa-group fa-fw" aria-hidden="true"></i>&nbsp;  المتطوعين المتقدمين   </a>
+          {{-- <a class="list-group-item" href="{{route('volnt')}}"><i class="fa fa-group fa-fw" aria-hidden="true"></i>&nbsp;  ال,متطوعين المتقدمين   </a> --}}
           <a class="list-group-item" href="{{route('contact.contact')}}"><i class="fa fa-bell fa-lg" aria-hidden="true"></i>&nbsp;      رسائل التواصل   </a>
 
         </div>

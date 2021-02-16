@@ -47,7 +47,7 @@
                     <input id="i" type="text" name="memName" class="form-control w-40" placeholder="  الاسم " >
                   </div>
                 </div>
-
+{{-- 
                  <div class="form-row">
                   <div class="col">
                     <label class="label-control" for="memEmail">    الايمل </label>
@@ -59,7 +59,7 @@
                     <label class="label-control" for="memPhone">     الهاتف </label>
                     <input id="i" type="text" name="memPhone" class="form-control w-40" placeholder=" الهاتف   " >
                   </div>
-                </div>
+                </div> --}}
                 <div class="form-row">
                   <div class="col">
                     <label class="label-control" for="memFile">  الملف      </label>
@@ -102,8 +102,8 @@
         <thead>
           <th>#</th>
           <th> الاسم </th>
-          <th> الايمل </th>
-          <th>  الهاتف   </th>
+          {{-- <th> الايمل </th> --}}
+          {{-- <th>  الهاتف   </th> --}}
           <th> الملف  </th>
           <th>  الحالة </th>
           <th> أحداث  </th>
@@ -113,8 +113,8 @@
             <tr>
               <td>  رقم  {{$file->memId}} </td>
               <td>{{  $file->memName }}</td>
-              <td>{{  $file->memEmail }}</td>
-              <td>{{  $file->memPhone }}</td>
+              {{-- <td>{{  $file->memEmail }}</td> --}}
+              {{-- <td>{{  $file->memPhone }}</td> --}}
               <td> <a class="main-color" href="storage/app/{{ $file->memFile }}"> رابط الملف </a> </td>
               <td class="@if ($file->memStatus ==1) text-success  @else text-danger   @endif">
                 @if ($file->memStatus ==1)

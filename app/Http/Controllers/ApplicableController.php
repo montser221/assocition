@@ -14,7 +14,24 @@ class ApplicableController extends Controller
       'allapplicable'=>$allapplicable,
     ]);
   }
-
+  // activate the subscriber
+  public function activate($id)
+  {
+    $this->middleware('auth');
+      // \DB::table('trainning_subscribers')
+      // ->where('payeeId',$id)
+      Payee::where('payeeId',$id)->update(['payeeStatus'=>1]);
+      return redirect()->route('applicable')->with('success','تم تفعيل العضوء بنجاح');
+  }
+  // deactivate the subscriber
+  public function deactivate($id)
+  {
+    $this->middleware('auth');
+      // \DB::table('trainning_subscribers')
+      // ->where('payeeId',$id)
+      Payee::where('payeeId',$id)->update(['payeeStatus'=>0]);
+      return redirect()->route('applicable')->with('success','تم  الغاء تفعيل العضوء بنجاح');
+}
   public function destroy($id)
   {
     // delete project by id
