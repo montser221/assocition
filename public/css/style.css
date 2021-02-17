@@ -13,7 +13,11 @@ input:focus {outline: none !important; }
     margin-left: 15px;
     margin-bottom: 15px;
 }
-
+.plus-sign {
+	position: absolute;
+	top: 52px;
+	left: 28px;
+}
 .hide {
 	display: none;
 }
@@ -1136,7 +1140,7 @@ min-height: 370px;
 
 	top: 43px;
 
-	left: 26px;
+	left: 43px;
 
 	display: inline-block;
 

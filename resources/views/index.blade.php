@@ -406,11 +406,14 @@
       بفضل الله ثم بفضلكم وصل عدد انجازنا
     </div>
     <div class="row mt-4">
+      <?php $ani = -1 ?>
       @foreach($statistics as $stat)
+      <?php $ani++?>
+
        @if($stat->sStatus==1)
       <div class="col-sm-3 small-phone">
-        <div class="item-1">
-         +  <span class="animate">  {{$stat->sValue}}</span>
+        <div class="item-1 ani"  >
+         <i class="fa fa-plus plus-sign" aria-hidden="true"></i> <span class="animate-{{$ani}}"> {{$stat->sValue}}</span>
         </div>
         <div class="achieve-text  text-center   "   >
            {{$stat->sName}}
