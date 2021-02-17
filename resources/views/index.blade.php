@@ -194,7 +194,7 @@
                 margin-bottom: 10px;
                 padding: 7px;
             	min-width: 256px;
-                border: 1px solid #2fa89c;
+                border: 1px solid #786E42 !important;
             }
             ._add_ {
               border: none;

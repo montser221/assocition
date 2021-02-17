@@ -43,6 +43,17 @@
             </div>
             <div class="form-row">
                 <div class="col">
+                    <label class="label-control" for="sliderBtnText"> النص على الزر </label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        name="sliderBtnText" 
+                        value="{{ $data->sliderBtnText}}"
+                        >
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col">
                     <label class="label-control" for="sliderImage">صورة مميزة</label>
                     <input 
                         type="file" 

@@ -1303,7 +1303,7 @@ color: #20c997}
 }
 .our-partner    img {padding: 20px;}
 
-.our-partner .h2 {color: #006ea6;margin-bottom:8px;margin-top: 50px;padding-top: 30px;}
+.our-partner .h2 {color: #786e42;margin-bottom:8px;margin-top: 50px;padding-top: 30px;}
 .our-partner .carousel-indicators {
 
 	bottom: -100px
@@ -3016,9 +3016,9 @@ border:0px solid ;
     }
     .our-achieving .item-1 span 
     {
-        top: 24px; 
-        left: 14px;
-        font-size: 14px;
+       top: 18px;
+		left: 8px;
+		font-size: 14px;
     }
     
     .media-libarary .video-shows-count,.media-libarary .versions .img-shows-count {margin-right:154px !important;}
@@ -3401,7 +3401,7 @@ border:0px solid ;
 
 margin-top: 5px;
 
-color: #007bff;
+color: #786e42;
 
 font-weight: bolder;
 
@@ -3509,7 +3509,7 @@ font-size: .8rem !important;
 		.our-achieving .achieve-text {
         
             width: 100%;
-            margin-right: 26%;
+            margin-right: 20%;
             font-size: 9px;
             margin-bottom: 50px;
 
