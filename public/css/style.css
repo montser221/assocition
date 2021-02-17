@@ -1112,9 +1112,14 @@ min-height: 370px;
 		margin-top: 25%;
 
 		margin-right: 23%;
+		transition: all .6s ease-in-out;
 
 }
 
+.our-achieving .item-1:hover{
+	transform: rotate(740deg);
+	border: 3px solid #baa342;
+}
 .our-achieving .achieve-text {
 
 	/*margin-right: 36%;*/
@@ -1140,8 +1145,9 @@ min-height: 370px;
 	font-size: 22px;
 
 	direction: ltr;
-
+	transition: all .7s ease-in-out;
 }
+
 
 /* End Our Achieving */
 

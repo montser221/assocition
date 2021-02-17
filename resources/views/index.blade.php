@@ -410,7 +410,7 @@
        @if($stat->sStatus==1)
       <div class="col-sm-3 small-phone">
         <div class="item-1">
-          <span class="animate">+   {{$stat->sValue}}</span>
+         +  <span class="animate">  {{$stat->sValue}}</span>
         </div>
         <div class="achieve-text  text-center   "   >
            {{$stat->sName}}

@@ -45,8 +45,8 @@
                     
                   ?>
                   <div class="p-total mb-5">
-                    <strong  class="text-gray" style="margin-left:2rem"  class="d-inline-block"> إجمالي التبرعات  </strong>
-                    <span class="main-color" style="font-weight:bold;">  SAR {{ number_format($getAllDenoate,0)}}</span>
+                    <strong  class="text-gray" style="margin-left:2rem;color:#786e42 !important"  class="d-inline-block"> إجمالي التبرعات  </strong>
+                    <span class="main-color" style="font-weight:bold;color:#786e42 !important">  SAR {{ number_format($getAllDenoate,0)}}</span>
                   </div>
                   <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ar_AR/sdk.js#xfbml=1&version=v9.0" nonce="rcB6zvfw"></script>
