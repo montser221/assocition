@@ -81,7 +81,8 @@
   <div class="container">
     <div class="row">
     <div class="col-sm-12 col-md-5 mb-5">
-      <div class="back-vison">
+      <div class="back-vison" 
+      style="background-image: url({{ url($aboutassociation->visonImage) }});">
       <div class="  vison">
         @isset($aboutassociation)
         <img src="{{ url("uploads/aboutassoiation/".$aboutassociation->visonIcon ) ?? ''}}" alt="">
@@ -98,7 +99,14 @@
     </div>
     </div>
       <div class="col-sm-12 col-md-5 mb-5">
-      <div class="back-message">
+      <div class="back-message"
+      style="
+        background-image: url(../{{ $aboutassociation->messageImage }});
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      "
+      >
       <div class="  message">
         @isset($aboutassociation)
         <img src="{{url("uploads/aboutassoiation/".$aboutassociation->messageIcon ?? '')}}" alt="">

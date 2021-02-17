@@ -680,7 +680,7 @@ background-position: center;
 }
 
 .msg-vison .vison {
-	padding: 51px;
+	padding: 42px;
 	margin-left: 7.5px;
 	border-radius: 5px;
 	max-width: 100%;
@@ -698,14 +698,14 @@ background-position: center;
 .msg-vison .vison .vison-title  {
 	font-size: 18px;
 	font-weight: bold;
-    color:#161616;
+    color:#ffffff;
 	text-align: center;
 	margin-top: 15px;
 }
 
 .msg-vison .message .msg-title  {
 	font-size: 18px;
-      color:#161616;
+      color:#ffffff;
 	font-weight: bold;
 
 	text-align: center;
@@ -719,7 +719,7 @@ background-position: center;
 .msg-vison .vison .vison-text  {
 
 	font-size: 15px;
-      color:#717171;
+      color:#ffffff;
 	margin-top: 20px;
 
 	font-weight: normal;
@@ -731,7 +731,7 @@ background-position: center;
 .msg-vison .message .message-text  {
 
 	font-size: 15px;
- color:#717171;
+ color:#ffffff;
 	margin-top: 20px;
 
 	font-weight: normal;
@@ -1787,7 +1787,10 @@ color: #20c997}
 
 
 /* Start users */
-
+.navbar-light .navbar-nav .nav-link {
+	font-size: 14px;
+}
+.dropdown-item{ font-size: 14px;}
 .dashboard .dropdown-menu > a:hover {color: #6e6e6e}
 .nav-link:focus, .nav-link:hover {cursor: pointer; background-color: transparent;}
 .dropdown-item:focus, .dropdown-item:hover{

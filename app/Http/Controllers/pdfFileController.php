@@ -36,7 +36,7 @@ class pdfFileController extends Controller
 
     $request->validate([
         'fileTitle'     => 'required|unique:pdf_files',
-        'imageFile'     => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2028',
+        'imageFile'     => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:4096',
         'pdfFile'       => 'required|mimes:pdf|max:20480',
     ]);
     // // create files instance
@@ -49,33 +49,11 @@ class pdfFileController extends Controller
 
     //pdf file
     if($request->file('pdfFile')){
-
-        // $image_name = time() . rand(1,1000000000000);
-        // $image_ext = $request->file('pdfFile')->getClientOriginalExtension(); // example: png, jpg ... etc
-        // $image_full_name = $image_name . '.' . $image_ext;
-
-        // $uploads_folder =  getcwd() .'/uploads/files/';
-        // if (!file_exists($uploads_folder)) {
-        //     mkdir($uploads_folder, 0777, true);
-        // }
-        // $request->file('pdfFile')->move($uploads_folder,    $image_full_name);
-        // $files->pdfFile=$image_full_name;
         $path = Storage::disk('public_path')->putFile('uploads/files', $request->file('pdfFile'));
         $files->pdfFile=$path;
     }
     // img file
     if($request->file('imageFile')){
-
-        // $image_name = time() . rand(1,1000000000000);
-        // $image_ext = $request->file('imageFile')->getClientOriginalExtension(); // example: png, jpg ... etc
-        // $image_full_name = $image_name . '.' . $image_ext;
-
-        // $uploads_folder =  getcwd() .'/uploads/files/';
-        // if (!file_exists($uploads_folder)) {
-        //     mkdir($uploads_folder, 0777, true);
-        // }
-        // $request->file('imageFile')->move($uploads_folder,    $image_full_name);
-        // $files->imageFile=$image_full_name;
         $path = Storage::disk('public_path')->putFile('uploads/files', $request->file('imageFile'));
         $files->imageFile=$path;
         $image = Image::make(Storage::path($path))->fit(1200,700);
@@ -110,16 +88,6 @@ class pdfFileController extends Controller
   {
 
     if($request->file('pdfFile')){
-        // $image_name = time() . rand(1,1000000000000);
-        // $image_ext = $request->file('pdfFile')->getClientOriginalExtension(); // example: png, jpg ... etc
-        // $image_full_name = $image_name . '.' . $image_ext;
-
-        // $uploads_folder =  getcwd() .'/uploads/files';
-        // if (!file_exists($uploads_folder)) {
-        //     mkdir($uploads_folder, 0777, true);
-        // }
-        // $request->file('pdfFile')->move($uploads_folder,    $image_full_name);
-
         $path = Storage::disk('public_path')->putFile('uploads/files', $request->file('pdfFile'));
         \DB::table('pdf_files')
         ->where('fileId',$id)
@@ -129,15 +97,6 @@ class pdfFileController extends Controller
     }
 
     if($request->file('imageFile')){
-        // $image_name = time() . rand(1,1000000000000);
-        // $image_ext = $request->file('imageFile')->getClientOriginalExtension(); // example: png, jpg ... etc
-        // $image_full_name = $image_name . '.' . $image_ext;
-
-        // $uploads_folder =  getcwd() .'/uploads/files';
-        // if (!file_exists($uploads_folder)) {
-        //     mkdir($uploads_folder, 0777, true);
-        // }
-        // $request->file('imageFile')->move($uploads_folder,    $image_full_name);
         $path = Storage::disk('public_path')->putFile('uploads/files', $request->file('imageFile'));
         $files->imageFile=$path;
         $image = Image::make(Storage::path($path))->fit(1200,700);
@@ -175,8 +134,8 @@ class pdfFileController extends Controller
   {
     // delete files by id
     if(intval($id)){
-      Storage::delete(pdfFie::find($id)->pdfImage);
-      Storage::delete(pdfFie::find($id)->pdfFile);
+      Storage::delete(pdfFile::find($id)->pdfImage);
+      Storage::delete(pdfFile::find($id)->pdfFile);
       \DB::table('pdf_files')
       ->where('fileId',$id)
       ->delete();

@@ -21,7 +21,7 @@ class SliderImageController extends Controller
       $request->validate([
           'sliderTitle'        => 'required|unique:slider_images|max:255',
           'sliderText'         => 'required',
-          'sliderImage'       => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:14096',
+          'sliderImage'       => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:15096',
           'sliderLink'        => 'required|url',
           'sliderBtnText'     => 'required|string',
       ]);

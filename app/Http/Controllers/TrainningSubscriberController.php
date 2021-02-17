@@ -30,8 +30,8 @@ class TrainningSubscriberController extends Controller
     { 
         $request->validate([
             'subscriberName'         => 'required|max:255',
-             'subscriberEmail'       => 'required|email|unique:trainning_subscribers',
-             'subscriberPhone'       => 'required|numeric|unique:trainning_subscribers',
+             'subscriberEmail'       => 'required',
+             'subscriberPhone'       => 'required',
              'subscriberBirthOfDate' => 'required|date',
              'subscriberFamilyCard'  => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:14096',
              'subscriberMoneyStatement'  => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:14096',

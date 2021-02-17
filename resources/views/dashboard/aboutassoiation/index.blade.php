@@ -161,6 +161,39 @@
 
                   <div class="col">
 
+                    <label 
+                    class="label-control mt-2" 
+                    for="messageImage">  صورة الرسالة </label>
+
+                   <input 
+                   class="form-control-file" 
+                   style="margin-right: 10%;" 
+                   id="messageImage" type="file" 
+                   name="messageImage" 
+                   class="form-control w-80"  >
+
+                  </div>
+
+                  <div class="col">
+
+                    <label 
+                    class="label-control mt-2"
+                     for="visonImage"> صورة الرؤية   </label>
+
+                    <input 
+                    class="form-control-file" 
+                    style="margin-right: 10%;" 
+                    id="visonImage" type="file" 
+                    name="visonImage" class="form-control w-80"  >
+
+                  </div>
+
+                </div>
+
+                <div class="form-row">
+
+                  <div class="col">
+
                     <label class="label-control mt-2" for="messageIcon">  ايقونة الرسالة </label>
 
                    <input class="form-control-file" style="margin-right: 10%;" id="messageIcon" type="file" name="messageIcon" class="form-control w-80"  >
@@ -296,20 +329,6 @@
               <td><img class="img-responsive img-thambnail" style="max-width:40px" src="{{  url('uploads/aboutassoiation/'.$about->messageIcon )}}" alt="" /></td>
 
               <td>{{  $about->managerName }}</td>
-
-              <td   class="@if ( $about->showInHome ==1) text-success  @else text-danger @endif">
-
-                @if ( $about->showInHome ==1)
-
-                  نعم
-
-                @else
-
-                  لا
-
-                @endif
-
-              </td>
 
               <td   class="@if ( $about->associationStatus ==1) text-success  @else text-danger @endif">
 

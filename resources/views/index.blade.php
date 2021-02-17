@@ -87,7 +87,9 @@
   <div class="container text-center">
     <div class="row">
     <div class="col-sm ">
-      <div class="back-vison">
+      <div class="back-vison"
+       style="background-image: url({{ url($aboutassociation->visonImage) }});"
+      >
       <div class="  vison">
         <img src="{{url("uploads/aboutassoiation/".$aboutassociation->visonIcon)}}" alt="">
         <div class="vison-title">
@@ -100,7 +102,9 @@
     </div>
     </div>
       <div class="col-sm ">
-      <div class="back-message">
+      <div class="back-message"
+       style="background-image: url({{ url($aboutassociation->messageImage) }});"
+      >
       <div class="  message">
         <img src="{{url("uploads/aboutassoiation/".$aboutassociation->messageIcon)}}" alt="">
         <div class="msg-title">

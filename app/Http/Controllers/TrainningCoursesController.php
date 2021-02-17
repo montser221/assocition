@@ -17,6 +17,12 @@ class TrainningCoursesController extends Controller
         return view('dashboard.courses.index')->with(['allcourses'=>$allcourses]);
     }
 
+    public function ourcourses()
+    {
+        $allcourses = TrainningCourses::latest()->paginate(9);
+        return view('pages.ourcourses')->with(['allcourses'=>$allcourses]);
+    }
+
     /**
      * Store a newly created resource in storage.
      *

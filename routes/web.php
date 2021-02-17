@@ -23,6 +23,7 @@ Route::get('/exportToExcel/{id}', [App\Http\Controllers\MoneyReportController::c
 Route::get('money', [App\Http\Controllers\MoneyReportController::class,'index'])->name('money.index')->middleware('auth');
 Route::get('dDetail/{id?}', [App\Http\Controllers\MoneyReportController::class,'dDetail'])->name('dDetail')->middleware('auth');
 Route::get('courseDetail/{id?}', [App\Http\Controllers\TrainningCoursesController::class,'courseDetail'])->name('courseDetail');
+Route::get('ourcourses', [App\Http\Controllers\TrainningCoursesController::class,'ourcourses'])->name('ourcourses');
 
 // public pages
 Route::get('login',[App\Http\Controllers\LoginController::class,'login'])->name('login');

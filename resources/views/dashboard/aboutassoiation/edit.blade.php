@@ -101,7 +101,38 @@
         </div>
 
 
+          <div class="form-row mb-3 mt-3">
 
+                  <div class="col">
+
+                    <label 
+                    class="label-control mt-2" 
+                    for="messageImage">  صورة الرسالة </label>
+
+                   <input 
+                   class="form-control-file" 
+                
+                   id="messageImage" type="file" 
+                   name="messageImage" 
+                   class="form-control w-80 "  >
+
+                  </div>
+
+                  <div class="col">
+
+                    <label 
+                    class="label-control mt-2"
+                     for="visonImage"> صورة الرؤية   </label>
+
+                    <input 
+                    class="form-control-file" 
+              
+                    id="visonImage" type="file" 
+                    name="visonImage" class="form-control w-80"  >
+
+                  </div>
+
+                </div>
         <div class="form-row">
 
           <div class="col">

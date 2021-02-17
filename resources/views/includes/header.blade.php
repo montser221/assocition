@@ -128,6 +128,9 @@ $afiles = \App\Models\pdfFile::latest()->paginate(10);
             <li class="nav-item">
               <a href="{{route('ourproject')}}" class="nav-link">مشاريعنا</a>
             </li>
+            <li class="nav-item">
+              <a href="{{route('ourcourses')}}" class="nav-link">الدورات</a>
+            </li>
 
 
             <li class="nav-item">
