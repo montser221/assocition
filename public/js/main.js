@@ -17,12 +17,20 @@ var animationElements = [];
 $('.ani').each(function(par){
   animationElements.push($(this).children().text());
 });
-
-for(i=0;i<animationElements.length; i++)
-{
-  animateValue('.animate-'+i+'',1,animationElements[i],6000)
-  console.log(animationElements[i]);
+if(window.scrollY == 3782){
+  // console.log(`scrollY = ${this.scrollY} `);
+ 
 }
+
+$(document).on('scroll',function(){
+  console.log($(document).scrollTop());
+  if ($(document).scrollTop() >= 4318) {
+    for(i=0;i<animationElements.length; i++)
+    {
+      animateValue('.animate-'+i+'',1,animationElements[i],6000)
+    }
+  }
+});
 // console.log(animationElements);
 
 $(function(){
