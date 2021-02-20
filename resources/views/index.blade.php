@@ -173,21 +173,24 @@
                                 ->where('projectTable',$project->projectId)
                                 ->sum('moneyValue');
                                 // ->get();
-            echo( number_format($getAllDenoate,0));
+            //echo( number_format($getAllDenoate,0));
+            
             ?>
+            @if($getAllDenoate >= $project->projectCost ) {{number_format( $project->projectCost ,0)}} @else  {{ number_format( $getAllDenoate ,0)}} @endif
             </strong>
           </div>
           <div class="remain mb-2"  >
             <span style="font-size: 12px; margin-left: 10px;">باقي للتبرع:</span>
              <small style="margin-left: 5px"> SAR</small>
-              <small style="margin-left: 5px"> {{ $project->projectCost - $getAllDenoate }}  </small>
+              <small style="margin-left: 5px">   @if($getAllDenoate >= $project->projectCost ) 0 @else {{ $project->projectCost - $getAllDenoate }} @endif </small>
           </div>
-          <div class="progress mb-5"  data-toggle="tooltip"  offset="2" data-placement="top" title="{{ number_format($getAllDenoate,0)}} SAR ">
+          <div class="progress mb-5"  data-toggle="tooltip"  offset="2" data-placement="top" title="@if($getAllDenoate >= $project->projectCost ) {{  $project->projectCost }} @else  {{ number_format( $getAllDenoate ,0)}} @endif SAR ">
             <div class="progress-bar" role="progressbar"
-                 style="width: {{ round($getAllDenoate / $project->projectCost * 100) }}%;" aria-valuenow="25"
+
+                 style="@if($getAllDenoate >= $project->projectCost ) width:100% @else width: {{ round($getAllDenoate / $project->projectCost * 100) }}%; @endif" aria-valuenow="25"
                  aria-valuemin="0" aria-valuemax="100"
-                >
-                 {{  round($getAllDenoate / $project->projectCost * 100) }}%</div>
+                > @if($getAllDenoate >= $project->projectCost ) 100% @else
+                 {{  round($getAllDenoate / $project->projectCost * 100) }}% @endif</div>
           </div>
            <style type="text/css">
             .our-projects .carousel .carousel-inner .item-1 .project-buttons button 
@@ -219,7 +222,7 @@
                  <?php
                   foreach($arr as $a)
                   {?>
-            <button    class="c-b">
+            <button    class="c-b btn-active">
                 {{ $a->arrowName }} / {{ $a->arrowValue }} ريال
               <input class="arrVal" type="hidden"  value="{{ $a->arrowValue }}" />
             </button> 
@@ -359,7 +362,7 @@
                   @else
                   <span style="font-size: 12px; margin-left: 10px;">باقي للاشتراك:</span>
                   <small style="margin-left: 5px">{{ $course->seatCount - $getallSubscriber }} </small>
-                  <small style="margin-left: 5px"> خانة</small>
+                  <small style="margin-left: 5px"> مقاعد</small>
                   @endif
                 </div>
                 <div class="links" style="  display: flex;justify-content: space-around;">

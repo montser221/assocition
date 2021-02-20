@@ -43,7 +43,7 @@
                   ?>
                   <div class="p-total mb-5">
                     <strong  class="text-gray" style="margin-left:2rem"  class="d-inline-block"> إجمالي التبرعات  </strong>
-                    <span class="main-color" style="font-weight:bold;">  SAR {{ number_format($getAllDenoate,0)}}</span>
+                    <span class="main-color" style="font-weight:bold;">  SAR @if($getAllDenoate >= $projectData->projectCost ) {{  $projectData->projectCost }} @else  {{ number_format( $getAllDenoate ,0)}} @endif </span>
                   </div>
                   <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ar_AR/sdk.js#xfbml=1&version=v9.0" nonce="rcB6zvfw"></script>
@@ -89,17 +89,18 @@
                         <img style="width: 38px;" src="{{url('design/icons/whatsapp.png')}}" />
                     </a>
                   </div>
-                  <div class="progress mb-5" data-toggle="tooltip"  offset="2" data-placement="bottom" title="{{ number_format( $getAllDenoate ,0)}} ">
+                  <div class="progress mb-5" data-toggle="tooltip"  offset="2" data-placement="bottom" title="@if($getAllDenoate >= $projectData->projectCost ) {{  $projectData->projectCost }} @else  {{ number_format( $getAllDenoate ,0)}} @endif">
 
                     <div class="progress-bar" role="progressbar"
 
-                         style="width: {{round($getAllDenoate / $projectData->projectCost * 100)}}%;    background-color: #89c64f; " aria-valuenow="25"
+                         style="@if($getAllDenoate >= $projectData->projectCost ) width:100%; @else width: 
+                         {{round($getAllDenoate / $projectData->projectCost * 100)}}%;@endif    background-color: #BAA342; " aria-valuenow="25"
 
                          aria-valuemin="0" aria-valuemax="100"
 
                           >
-
-                          {{ round($getAllDenoate / $projectData->projectCost * 100)}}%</div>
+                          @if($getAllDenoate >= $projectData->projectCost ) 100% @else
+                          {{ round($getAllDenoate / $projectData->projectCost * 100)}}% @endif</div>
 
                   </div>
 
@@ -114,7 +115,7 @@
          
                             @csrf
                             @method('post')
-                            <button  type="submit" class="custom-input">
+                            <button  type="submit" class="custom-input btn-ative" style="background:#786E42;color:#FFF;">
                                 {{ $a->arrowName }} / {{ $a->arrowValue }} ريال
                               <input class="arrVal" type="hidden"  value="{{ $a->arrowValue }}" />
                             </button> 

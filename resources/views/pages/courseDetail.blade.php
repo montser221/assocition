@@ -58,11 +58,11 @@
                       <span style="font-size: 18px; margin-right: 10px; color: #0abd6b;"> أكتمل العدد <i class="fa fa-check fa-2x ml-4 mr-2"></i></span>
                   @else
                     <strong  class="text-gray" style=""  class="d-inline-block">  باقي للاشتراك  </strong>
-                    <span class="main-color" style="font-weight:bold;"> {{ $courseData->seatCount - $getallSubscriber ?? ''}} خانة </span>
+                    <span class="main-color" style="font-weight:bold;"> {{ $courseData->seatCount - $getallSubscriber ?? ''}} مقاعد </span>
                   @endif
                   </div>
                   <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ar_AR/sdk.js#xfbml=1&version=v9.0" nonce="rcB6zvfw"></script>
+                  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ar_AR/sdk.js#xfbml=1&version=v9.0" nonce="rcB6zvfw"></script>
                   <style type="text/css" scoped>
                     .buttons-share a {
                         padding: 11px;

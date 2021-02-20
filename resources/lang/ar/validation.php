@@ -262,5 +262,6 @@ return [
         'trainningCourseId' => 'معرف الدورة التدريبية',
         'moneyNotify' => 'إشعار رسوم العضوية',
         'memberType'   => 'نوع العضوية',
+        'msgType'   => 'نوع الرسالة',
     ],
 ];

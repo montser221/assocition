@@ -12,7 +12,7 @@
        <div class="page-path">
            <p><a href="{{route('home')}}"> الرئيسية </a> تواصل معنا   </p>
            <div class="h2" style="padding-bottom: 100px !important;">
-             الاتصال بالمؤسسة
+             الاتصال بالجمعية
            </div>
        </div>
      </div>
@@ -50,29 +50,35 @@
                @error('msgType')
               <div class="alert alert-danger mt-2">
                 {{$message}}
-              </div>
+              </div> 
             @enderror
             </div>
             <div class="form-inline">
               <input 
                   class="form-control w-49  fullname"   
                   type="text" 
+                  style="@error('fullName') width:100% !important;  margin-left: 0% !important; @enderror"
                   placeholder="الاسم الكامل"  
                   value="{{old('fullName')}}" 
                   name="fullName"  >
               @error('fullName')
+              </div>
               <div class="alert alert-danger mt-2">
                 {{$message}}
               </div>
             @enderror
+             @error('email')
+            <div class="form-inline">
+            @enderror
               <input 
               class="form-control w-49  email"  
+              style="@error('email') width:100% !important; @enderror"
               type="text" 
               placeholder="البريد الالكتروني" 
               value="{{old('email')}}" 
               name="email"  >
              @error('email')
-              <div class="alert alert-danger mt-2">
+              <div class="alert alert-danger mt-2" style="width:100%;">
                 {{$message}}
               </div>
             @enderror

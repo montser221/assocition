@@ -98,7 +98,7 @@
     margin-bottom: 10px;
     padding: 7px;
     min-width: 256px;
-    border: 1px solid #2fa89c;
+    border: 1px solid #786E42 !important;
 }
 
 @media (max-width:576px)
@@ -210,20 +210,22 @@
                                 ->where('projectTable',$project->projectId)
                                 ->sum('moneyValue');
                                 // ->get();
-            echo( number_format($getAllDenoate,0));
+            //echo( number_format($getAllDenoate,0));
             ?>
-          
+           @if($getAllDenoate >= $project->projectCost ) {{number_format( $project->projectCost ,0)}} @else  {{ number_format( $getAllDenoate ,0)}} @endif
+
             </strong>
           </div>
 
          <div class="remain mb-2"  >
             <span style="font-size: 12px; margin-left: 10px;">باقي للتبرع:</span>
              <small style="margin-left: 5px"> SAR</small>
-              <small style="margin-left: 5px"> {{ $project->projectCost - $getAllDenoate }}  </small>
+              <small style="margin-left: 5px">  @if($getAllDenoate >= $project->projectCost ) 0 @else {{ $project->projectCost - $getAllDenoate }} @endif </small>
+              {{-- <small style="margin-left: 5px"> {{ $project->projectCost - $getAllDenoate }}  </small> --}}
           </div>
 
 
-          <div class="progress"  data-toggle="tooltip"  offset="2" data-placement="top" title="{{ number_format($getAllDenoate,0)}} SAR ">
+          <div class="progress"  data-toggle="tooltip"  offset="2" data-placement="top" title="@if($getAllDenoate >= $project->projectCost ) {{  $project->projectCost }} @else  {{ number_format( $getAllDenoate ,0)}} @endif SAR ">
 
             <div class="progress-bar" role="progressbar"
 
@@ -252,7 +254,7 @@
                   foreach($arr as $a)
      
                   {?>
-              <button    class="c-b">
+              <button    class="c-b btn-active">
                   {{ $a->arrowName }} / {{ $a->arrowValue }} ريال
                 <input class="ourArrVal" type="hidden"  value="{{ $a->arrowValue }}" />
               </button> 

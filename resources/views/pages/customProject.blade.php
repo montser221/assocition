@@ -96,13 +96,19 @@
 
                     <div class="progress-bar" role="progressbar"
 
-                         style="width: {{round($getAllDenoate / $custom->projectCost * 100)}}%;    background-color: #89c64f; " aria-valuenow="25"
-
+                         style="@if($getAllDenoate >= $custom->projectCost ) width:100% @else width: 
+                         {{round($getAllDenoate / $custom->projectCost * 100)}}%;@endif 
+                          background-color: #89c64f; " aria-valuenow="25"
                          aria-valuemin="0" aria-valuemax="100"
-
                           >
 
-                          {{ round($getAllDenoate / $custom->projectCost * 100)}}%</div>
+                      @if($getAllDenoate >= $custom->projectCost ) 
+                      
+                        100%
+
+                      @else    
+                          {{ round($getAllDenoate / $custom->projectCost * 100)}}% 
+                      @endif</div>
 
                   </div>
 
