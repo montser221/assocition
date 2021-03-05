@@ -196,8 +196,8 @@
             .our-projects .carousel .carousel-inner .item-1 .project-buttons button 
             {
                 border-radius: 30px !important;
-                color: #2fa89c;
-                background-color: #E6E6E6;
+                color: #ffffff;
+                background-color: #786e42;
                 margin-bottom: 10px;
                 padding: 7px;
             	min-width: 256px;
