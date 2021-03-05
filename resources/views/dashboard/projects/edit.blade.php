@@ -1,25 +1,25 @@
 @extends('dashboard.index')
-@section('title','    تعديل مشروع  ')
+@section('title','    تعديل مبادرة  ')
 @section('dashboard-content')
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="{{route('dashboard.index')}}">لوحة التحكم</a></li>
       <li class="breadcrumb-item " aria-current="page"> <a href="{{route('projects.index')}}">إدارة  المشاريع </a></li>
-      <li class="breadcrumb-item active">   تعديل مشروع  </li>
+      <li class="breadcrumb-item active">   تعديل مبادرة  </li>
     </ol>
     </nav>
     <div class="projects-edit" style="background-color:#FFF;padding:15px">
       {{-- Errors message --}}
       @include('includes.errors')
       @include('includes.success')
-      <h5>تعديل مشروع </h5>
+      <h5>تعديل مبادرة </h5>
 
       <form  id="edit-form" enctype="multipart/form-data" method="post" action="{{route('projects.update',$data->projectId)}}">
         @csrf
         @method('PATCH')
         <div class="form-row">
           <div class="col">
-            <label class="label-control" for="projectName">إسم المشروع</label>
+            <label class="label-control" for="projectName">إسم المبادرة</label>
             <input type="text" name="projectName" class="form-control" value="{{$data->projectName}}">
           </div>
         <!--  <div class="col">
@@ -65,7 +65,7 @@
         </div>
         <div class="form-row mt-3">
           <div class="col">
-            <label class="label-control" for="projectLocation">مكان المشروع</label>
+            <label class="label-control" for="projectLocation">مكان المبادرة</label>
             <input type="text" name="projectLocation" class="form-control"  value="{{$data->projectLocation}}">
           </div>
           <div class="col">
@@ -81,7 +81,7 @@
           <div class="col">
             <div class="form-group form-check">
               <input class="form-check-input" type="checkbox" id="projectStatus"  @if ($data->projectStatus==1) checked="checked" @else  @endif name="projectStatus" >
-              <label class="form-check-label" for="projectStatus" > تفعيل المشروع</label>
+              <label class="form-check-label" for="projectStatus" > تفعيل المبادرة</label>
             </div>
           </div>
         </div>

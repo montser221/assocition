@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', "مشروع خاص")
+@section('title', "مبادرة خاصة")
 {{-- include header --}}
 @include('includes.header')
 {{-- include contact page --}}
@@ -34,7 +34,7 @@
                 <hr>
                 <div class="p-down">
                   <div class="p-cost mb-5">
-                    <strong class="text-gray"  style="/*margin-left:2rem"  class="d-inline-block">تكلفة المشروع</strong>
+                    <strong class="text-gray"  style="/*margin-left:2rem"  class="d-inline-block">تكلفة المبادرة</strong>
                     <button   class="d-inline-block btn btn-active btn-total-cost"  type="button" name="button">  {{$custom->projectCost}} SAR</button>
                   </div>
                   <?php
@@ -74,12 +74,12 @@
                     {{-- <a href="#">
                       <i class="fa fa-facebook fa-3x"></i>
                     </a>        --}}
-                    <a  data-toggle="tooltip"  offset="2" data-placement="top" title="مشاركة" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{route("projectDetail",$custom->projectId)}}&quote=مشروع :- {{$custom->projectText}}" class="fb-xfbml-parse-ignore"
+                    <a  data-toggle="tooltip"  offset="2" data-placement="top" title="مشاركة" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{route("projectDetail",$custom->projectId)}}&quote=مبادرة :- {{$custom->projectText}}" class="fb-xfbml-parse-ignore"
                     >
                         <!--<i class="fa fa-facebook fa-3x"></i> -->
                         <img style="width: 38px;" src="{{url('design/icons/facebook.png')}}" />
                     </a>
-                    <a data-toggle="tooltip"  offset="2" data-placement="top" title="مشاركة" target="_blank" href="https://twitter.com/intent/tweet?url={{route('projectDetail',$custom->projectId)}}&text=مشروع :- {{$custom->projectText }}">
+                    <a data-toggle="tooltip"  offset="2" data-placement="top" title="مشاركة" target="_blank" href="https://twitter.com/intent/tweet?url={{route('projectDetail',$custom->projectId)}}&text=مبادرة :- {{$custom->projectText }}">
                     <!--<i class="fa fa-twitter fa-3x twitter-share-button"></i>-->
                     <img style="width: 38px;" src="{{url('design/icons/twitter.png')}}" />
                     </a>                   
@@ -87,7 +87,7 @@
                       <!--<i class="fa fa-telegram fa-3x"></i>-->
                       <img style="width: 38px;" src="{{url('design/icons/telegram.png')}}" />
                     </a>                    
-                    <a data-toggle="tooltip"  offset="2" data-placement="top" title="مشاركة" target="_blank" href="https://api.whatsapp.com/send?text={{route("projectDetail",$custom->projectId)}} مشروع :- {{$custom->projectText }} " data-action="share/whatsapp/share">
+                    <a data-toggle="tooltip"  offset="2" data-placement="top" title="مشاركة" target="_blank" href="https://api.whatsapp.com/send?text={{route("projectDetail",$custom->projectId)}} مبادرة :- {{$custom->projectText }} " data-action="share/whatsapp/share">
                       <!--<i class="fa fa-whatsapp fa-3x"></i>-->
                         <img style="width: 38px;" src="{{url('design/icons/whatsapp.png')}}" />
                     </a>

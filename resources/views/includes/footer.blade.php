@@ -42,7 +42,7 @@ $data = \App\Models\Settings::find(1);
               <a href="{{url('aboutus')}}">من نحن</a>
             </li>
             <li>
-              <a href="{{url('ourproject')}}">مشاريعنا</a>
+              <a href="{{url('ourproject')}}">مبادراتنا</a>
             </li>
             <li>
               <a href="{{url('paymethod')}}" >طرق التبرع</a>

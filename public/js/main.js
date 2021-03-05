@@ -23,7 +23,7 @@ if(window.scrollY == 3782){
 }
 
 $(document).on('scroll',function(){
-  console.log($(document).scrollTop());
+  // console.log($(document).scrollTop());
   if ($(document).scrollTop() >= 4318) {
     for(i=0;i<animationElements.length; i++)
     {

@@ -1,14 +1,14 @@
 @extends('dashboard.index')
-@section('title',' إدارة المشاريع  ')
+@section('title',' إدارة المبادرات  ')
 @section('dashboard-content')
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="{{route('dashboard.index')}}">لوحة التحكم</a></li>
-      <li class="breadcrumb-item active" aria-current="page">إدارة  المشاريع</li>
+      <li class="breadcrumb-item active" aria-current="page">إدارة  المبادرات</li>
     </ol>
     </nav>
     <div class="projects">
-      <div class="h5">إدارة المشاريع</div>
+      <div class="h5">إدارة المبادرات</div>
       <div class="row " style="margin-bottom:15px">
         <div class="col">
           <form class="" action="" method="post">
@@ -30,7 +30,7 @@
         <div class="modal-dialog  modal-lg">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="createProjectLabel">أنشاء مشروع جديد</h5>
+              <h5 class="modal-title" id="createProjectLabel">أنشاء مبادرة جديد</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -42,7 +42,7 @@
                 @method('POST')
                 <div class="form-row">
                   <div class="col">
-                    <label class="label-control" for="projectName">إسم المشروع</label>
+                    <label class="label-control" for="projectName">إسم المبادرة</label>
                     <input id="inputProjectName" type="text" name="projectName" شعautofocus class="form-control" placeholder="أكتب إسم المشروع">
                   </div>
                   <!-- <div class="col">
@@ -87,7 +87,7 @@
                 </div>
                 <div class="form-row mt-3">
                   <div class="col">
-                    <label class="label-control" for="projectLocation">مكان المشروع</label>
+                    <label class="label-control" for="projectLocation">مكان المبادرة</label>
                     <input type="text" name="projectLocation" class="form-control" placeholder="مكان المشروع">
                   </div>
                   <div class="col">
@@ -104,7 +104,7 @@
                   <div class="col">
                     <div class="form-group form-check">
                       <input class="form-check-input" type="checkbox" id="projectStatus" name="projectStatus" >
-                      <label class="form-check-label" for="projectStatus" > تفعيل المشروع</label>
+                      <label class="form-check-label" for="projectStatus" > تفعيل المبادرة</label>
                     </div>
                   </div>
 
@@ -127,15 +127,15 @@
       <table class="table table-hover table-bordered">
         <thead>
           <th>#</th>
-          <th>   المشروع</th>
-          <th>    مكان المشروع</th>
+          <th>   المبادرة</th>
+          <th>    مكان المبادرة</th>
           <th>   التكلفة</th>
           <th> الواتساب</th>
           <th>الفئة المستهدفة</th>
           <th>الصورة المميزة</th>
           <!--<th>صورة الغلاف</th>-->
           <th>الايقونة</th>
-          <th>مشروع مميز</th>
+          <th>مبادرة مميز</th>
           <th> الحالة  </th>
           <th> أحداث  </th>
         </thead>

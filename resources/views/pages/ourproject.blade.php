@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title','مشاريعنا')
+@section('title','مبادراتنا')
 
 @section('header')
     @include('includes.header')
@@ -144,17 +144,17 @@
 
 @if ($show)
 
-    <div class="h2 text-center">من مشاريعنا</div>
+    <div class="h2 text-center">من مبادراتنا</div>
  <div class="text-center mt-1 mb-4 line-design"></div>
-    <div class="text-center p-fix">مجموعة المشاريع التطوعية التي قامت بها المؤسسة</div>
+    <div class="text-center p-fix">مجموعة المبادرات التطوعية التي قامت بها المؤسسة</div>
 
   {{--   <div class="p-buttons">
 
-      <button class="btn btn-light btn-urgent">المشاريع العاجلة</button>
+      <button class="btn btn-light btn-urgent">المبادرات العاجلة</button>
 
       <button class="btn btn-light">أخترنا لكم </button>
 
-      <button class="btn btn-light"> آخر المشاريع  </button>
+      <button class="btn btn-light"> آخر المبادرات  </button>
 
     </div> --}}
 
@@ -186,7 +186,7 @@
 
           <div class="text-center  mb-3 mt-3  ">
 
-            تكلفة المشروع
+            تكلفة المبادرة
 
           </div>
 

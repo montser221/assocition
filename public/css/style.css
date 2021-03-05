@@ -1,7 +1,13 @@
 @font-face
 {
-	font-family: 'Frutiger LT Arabic';
-	src: url('../fonts/Frutiger\ LT\ Arabic\ 55\ Roman.ttf');
+	font-family: 'ArbFONTS-4_F4';
+	src: url('../fonts/ArbFONTS-4_F4.ttf');
+	src: url('../fonts/ArbFONTS-4_F5.ttf');
+	src: url('../fonts/ArbFONTS-BR.ttf');
+	src: url('../fonts/ArbFONTS-riyad-bank-Bold.ttf');
+	src: url('../fonts/ArbFONTS-riyad-bank-Regular.ttf');
+	/* font-family: 'Frutiger LT Arabic';
+	src: url('../fonts/Frutiger\ LT\ Arabic\ 55\ Roman.ttf'); */
 }
 input:focus {outline: none !important; }
 .box {
@@ -44,13 +50,7 @@ a:hover{color: #ccc;}
 
 }
 
-body
-
-{
-
-    font-family: 'Frutiger LT Arabic';
-
-}
+* {  font-family: 'ArbFONTS-BR';}
 
 /* start header */
 

@@ -52,7 +52,7 @@
 <section class="about-association">
   <div class="container">
     <hr>
-      <p style="padding-bottom: 32px;">مرحبا بك في جمعية عاصم الخيرية    ! <span > <a class="main-color" href="{{route('ourproject')}}">تصفح المشاريع</a> الخيرية للقيام بالتبرع  </span></p>
+      <p style="padding-bottom: 32px;">مرحبا بك في جمعية عاصم الخيرية    ! <span > <a class="main-color" href="{{route('ourproject')}}">تصفح المبادرات</a> الخيرية للقيام بالتبرع  </span></p>
     <hr>
 </div>
 </section>
@@ -131,13 +131,13 @@
   @endif
 @endforeach
 @if ($show)
-    <div class="h2 text-center">من مشاريعنا</div>
+    <div class="h2 text-center">من مبادراتنا</div>
      <div class="text-center mt-1 mb-4 line-design"></div>
-    <div class="text-center p-fix">مجموعة المشاريع التطوعية التي قامت بها المؤسسة</div>
+    <div class="text-center p-fix">مجموعة المبادرات التطوعية التي قامت بها المؤسسة</div>
     <div class="p-buttons">
-      <button class="btn btn-light btn-urgent">  كل المشاريع </button>
+      <button class="btn btn-light btn-urgent">  كل المبادرات </button>
       <!--<button class="btn btn-light">أخترنا لكم </button>-->
-      <!--<button class="btn btn-light"> آخر المشاريع  </button>-->
+      <!--<button class="btn btn-light"> آخر المبادرات  </button>-->
     </div>
   @endif
     <div id="carouselProjectsIndicators" class="carousel slide" data-ride="carousel" data-interval="false">

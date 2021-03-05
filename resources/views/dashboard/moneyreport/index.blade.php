@@ -30,7 +30,7 @@
       <table class="table table-hover table-bordered">
         <thead>
           <th>#</th>
-          <th>   المشروع</th>
+          <th>   المبادرة</th>
           <th>   التكلفة</th>
           <th> الواتساب</th>
           <th> أحداث  </th>

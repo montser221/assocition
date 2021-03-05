@@ -1,16 +1,16 @@
 @extends('dashboard.index')
 
-@section('title','تبرعات المشروع')
+@section('title','تبرعات المبادرة')
 
 @section('dashboard-content')
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="{{route('dashboard.index')}}">لوحة التحكم</a></li>
-      <li class="breadcrumb-item active" aria-current="page"> تقرير المشروع   </li>
+      <li class="breadcrumb-item active" aria-current="page"> تقرير المبادرة   </li>
     </ol>
     </nav>
     <div class="projects">
-      <div class="h5">تقرير المشروع</div>
+      <div class="h5">تقرير المبادرة</div>
       <div class="row " style="margin-bottom:15px">
         <div class="col">
           <form class="" action="" method="post">
@@ -36,7 +36,7 @@
 		<table class="table table-hover table-bordered projectDenoate" >
         <thead>
           <th>#</th>
-          <th>   المشروع</th>
+          <th>   المبادرة</th>
           <th> رقم الهاتف </th>
           <th>   مبلغ التبرع</th>
           <th> وسيلة الدفع  </th>

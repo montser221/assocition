@@ -31,7 +31,7 @@
                 <hr>
                 <div class="p-down">
                   <div class="p-cost mb-5">
-                    <strong class="text-gray"  style="/*margin-left:2rem"  class="d-inline-block">تكلفة المشروع</strong>
+                    <strong class="text-gray"  style="/*margin-left:2rem"  class="d-inline-block">تكلفة المبادرة</strong>
                     <button   class="d-inline-block btn btn-active btn-total-cost"  type="button" name="button">  {{$projectData->projectCost}} SAR</button>
                   </div>
                   <?php
