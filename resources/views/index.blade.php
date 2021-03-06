@@ -86,9 +86,9 @@
 <div class="msg-vison text-center">
   <div class="container text-center">
     <div class="row">
-    <div class="col-sm ">
+    <div class="col-sm mb-sm-3">
       <div class="back-vison"
-       style="background-image: url({{ url($aboutassociation->visonImage) }});  height: 352px;"
+       style="background-image: url({{ url($aboutassociation->visonImage) }});"
       >
       <div class="  vison">
         <img src="{{url("uploads/aboutassoiation/".$aboutassociation->visonIcon)}}" alt="">
@@ -101,9 +101,9 @@
       </div>
     </div>
     </div>
-      <div class="col-sm ">
+      <div class="col-sm mb-sm-3">
       <div class="back-message"
-       style="background-image: url({{ url($aboutassociation->messageImage) }});  height: 352px;"
+       style="background-image: url({{ url($aboutassociation->messageImage) }});"
       >
       <div class="  message">
         <img src="{{url("uploads/aboutassoiation/".$aboutassociation->messageIcon)}}" alt="">
