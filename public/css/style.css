@@ -659,8 +659,8 @@ color: #FFF;
 
 	background-image: url('../design/vison.png' );
 
-	background-repeat: no-repeat;
-background-position: center;
+	/* background-repeat: no-repeat; */
+/* background-position: center; */
 	background-size: cover;
 	
 
@@ -670,11 +670,11 @@ background-position: center;
 
 	background-image: url(../design/message.png);
 
-	background-repeat: no-repeat;
+	/* background-repeat: no-repeat; */
 
 	background-size: cover;
 
-    background-position: center;
+    /* background-position: center; */
 	overflow: hidden;
 	margin-right: 0px;
 }
@@ -2995,7 +2995,10 @@ border:0px solid ;
 		margin: 0 auto;
 		overflow: hidden;
 	}
-	.fix-width-phone {max-width:215% !important; margin-top: 20px; margin-bottom: 20px;}
+	.fix-width-phone 
+	{max-width:215% !important;
+	 margin-top: 20px;
+	  margin-bottom: 60px;}
     .our-projects .carousel .carousel-inner .item-1 .project-buttons 
     {
             margin-right: 0px !important;

@@ -88,7 +88,7 @@
     <div class="row">
     <div class="col-sm ">
       <div class="back-vison"
-       style="background-image: url({{ url($aboutassociation->visonImage) }});"
+       style="background-image: url({{ url($aboutassociation->visonImage) }});  height: 352px;"
       >
       <div class="  vison">
         <img src="{{url("uploads/aboutassoiation/".$aboutassociation->visonIcon)}}" alt="">
@@ -103,7 +103,7 @@
     </div>
       <div class="col-sm ">
       <div class="back-message"
-       style="background-image: url({{ url($aboutassociation->messageImage) }});"
+       style="background-image: url({{ url($aboutassociation->messageImage) }});  height: 352px;"
       >
       <div class="  message">
         <img src="{{url("uploads/aboutassoiation/".$aboutassociation->messageIcon)}}" alt="">

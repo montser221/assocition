@@ -114,8 +114,8 @@ class AboutAssociationController extends Controller
           mkdir($uploads_folder, 0777, true);
       }
       $request->file('visonImage')->move($uploads_folder,    $image_full_name);
-      $image = Image::make( public_path("uploads/aboutassoiation/{$image_full_name}"))->fit(1200,1200);
-      $image->save();
+      // $image = Image::make( public_path("uploads/aboutassoiation/{$image_full_name}"))->fit(1200,1200);
+      // $image->save();
       $AboutAssociation->visonImage="uploads/aboutassoiation/".$image_full_name;
   }
    //store image message
@@ -130,8 +130,8 @@ class AboutAssociationController extends Controller
         mkdir($uploads_folder, 0777, true);
     }
     $request->file('messageImage')->move($uploads_folder,    $image_full_name);
-    $image = Image::make( public_path("uploads/aboutassoiation/{$image_full_name}"))->fit(1200,1200);
-    $image->save();
+    // $image = Image::make( public_path("uploads/aboutassoiation/{$image_full_name}"))->fit(1200,1200);
+    // $image->save();
     $AboutAssociation->messageImage="uploads/aboutassoiation/".$image_full_name;
 }
 
@@ -269,8 +269,8 @@ class AboutAssociationController extends Controller
           mkdir($uploads_folder, 0777, true);
       }
       $request->file('visonImage')->move($uploads_folder,    $image_full_name);
-      $image = Image::make( public_path("uploads/aboutassoiation/{$image_full_name}"))->fit(1200,1200);
-      $image->save();
+      // $image = Image::make( public_path("uploads/aboutassoiation/{$image_full_name}"))->fit(1200,1200);
+      // $image->save();
       // $AboutAssociation->visonImage=$image_full_name;
       \DB::table('about_associations')
         ->where('associationId',$id)
@@ -290,8 +290,8 @@ class AboutAssociationController extends Controller
         mkdir($uploads_folder, 0777, true);
     }
     $request->file('messageImage')->move($uploads_folder,    $image_full_name);
-    $image = Image::make( public_path("uploads/aboutassoiation/{$image_full_name}"))->fit(1200,1200);
-    $image->save();
+    // $image = Image::make( public_path("uploads/aboutassoiation/{$image_full_name}"))->fit(1200,1200);
+    // $image->save();
     // $AboutAssociation->messageImage=$image_full_name;
     \DB::table('about_associations')
     ->where('associationId',$id)
