@@ -23,7 +23,7 @@
         <div class="carousel-item {{ $loop->first ? 'active' : '' }} ">
         @foreach ($imageCollection as $slider)
         
-       <img style="max-height: 100%;" src="{{ url($slider->sliderImage)}}" class="d-block w-100 slider-image" alt="...">
+       <img style="" src="{{ url($slider->sliderImage)}}" class="d-block w-100 slider-image" alt="...">
        <div class="container text-center slider-small" style="border-radius:10px;padding:10px;  position: absolute;top: 50%; left: 20%; width: 790px; background: #baa342;">
        {{-- <div class="container text-center slider-small" style="position: absolute;top: 40%;  left: 6%;"> --}}
          <div class="text-center mb-3 slider-title"  style="color:#fff;font-size:30px">{{ $slider->sliderTitle }} </div>
@@ -72,7 +72,7 @@
      </div>
       <div class="col-sm-12  col-md-5 offset-md-1   text-center" style="max-width:50%">
          <video 
-            src="{{ url('storage/uploads/asim.mp4') }}" 
+            src="{{ url($aboutassociation->associationIcon) }}" 
             controls="true"   
             class="fix-width fix-width-phone"
             >
@@ -152,12 +152,12 @@
           <img style=" height: 126px;   max-height: 175px;"  src="{{ url("storage/".$project->projectImage) }}" class="" alt="1" />
           <span class="d-block text-center  main-color">{{$project->projectName ?? ''}}</span>
         </a>
-         <p style="font-size:15px;min-height:70px; max-height: 70px;   overflow: auto;">
+         <p style="font-size:17px;min-height:70px; max-height: 70px;   overflow: auto;">
           {{$project->projectText ?? ''}}
           </p>
           <hr>
           <div class="text-center  mb-3 mt-3  ">
-            تكلفة المشروع
+            تكلفة  المبادرة
           </div>
           <div class="btn  btn-lg d-block button-custom btn-active " style="direction: ltr;">
             {{-- 300,0000 SAR --}}
@@ -351,7 +351,7 @@
                   <img style=" height: 126px;   max-height: 175px;"  src="{{ url("storage/".$course->courseImage) }}" class="" alt=" " />
                   <span class="d-block text-center  main-color ">{{$course->courseName ?? ''}}</span>
                 </a>
-                <p style="font-size:15px;min-height:70px; max-height: 70px;   overflow: auto;margin-top:2rem">
+                <p style="font-size:18px;min-height:70px; max-height: 70px;   overflow: auto;margin-top:2rem">
                   {{$course->courseDescription ?? ''}}
                 </p>
                 <div class="remain mb-4" style="justify-content: start" >
@@ -449,11 +449,11 @@
         <hr/>
         <div id="carouselImage" class="carousel slide" data-ride="carousel" data-interval="false"> <!-- Start Carousel -->
           <ol class="carousel-indicators">
-            <?php $x=-1; ?>
+            <?php $imagecout=-1; ?>
             @foreach ($images as $img)
-              <?php $x++; ?>
-              @if($x < 6)
-            <li data-target="#carouselImage" data-slide-to="{{$x}}" class="<?php echo $x==0?'active':'' ?>" style="background-image:url(<?php echo  url("uploads/images/".$img->imageFile); ?>);
+              <?php $imagecout++; ?>
+              @if($imagecout < 5)
+            <li data-target="#carouselImage" data-slide-to="{{$imagecout}}" class="<?php echo $imagecout==0?'active':'' ?>" style="background-image:url(<?php echo  url("storage/".$img->imageFile); ?>);
               background-repeat: no-repeat;background-size: cover;"></li>
               @else
               @endif
@@ -464,7 +464,7 @@
               @foreach ($images as $img)
                 <?php $z++ ?>
                 <div class="carousel-item <?php echo $z==1 ? "active" :''  ?>" id="first-slide">
-                  <img style="max-height: 280px;"  src="<?php echo url("uploads/images/".$img->imageFile); ?>" class="d-block w-100"  alt="...">
+                  <img style="max-height: 163px;"  src="<?php echo url("storage/".$img->imageFile); ?>" class="d-block w-100"  alt="{{ $img->imageTitle}}">
                 </div>
             @endforeach
           </div>
@@ -490,9 +490,9 @@
               <?php continue ?>
             @else
             <a target="_blank" href="{{$video->videoLink}}">
-          <img src="{{url("uploads/videos/".$video->videoIcon)}}" alt="">
-        </a>
+          <img class="video-icon" src="{{url("uploads/videos/".$video->videoIcon)}}"  alt="">
           <span class="video-title">{{$video->videoTitle}}</span>
+        </a>
           <span class="video-shows-count"> <i class="fa fa-eye"></i>
             <span>0</span>
             <span class="video-date">{{ $video->created_at->format('Y-m-d')}}</span>
@@ -518,9 +518,9 @@
               <?php continue ?>
          @else
           <a target="_blank" href="{{url('storage/'.$file->pdfFile)}}">
-            <img style="width:60px;height:60px;" src="{{url("storage/".$file->imageFile)}}" alt="">
-          </a>
+            <img  class="version-img" style="" src="{{url("storage/".$file->imageFile)}}" alt="">
           <span class="img-title"> {{ $file->fileTitle }}</span>
+          </a>
           <span class="img-shows-count"> <i class="fa fa-download"></i>
             <span>0</span>
             <span class="img-date">{{ $file->created_at->format('Y-m-d') }}</span>
@@ -546,9 +546,9 @@
               <?php continue ?>
          @else
           <a target="_blank" href="{{url('uploads/reportFiles/'.$file->reportPdfFile)}}">
-            <img style="width:60px;height:60px;" src="{{url("uploads/reportFiles/".$file->reportImageFile)}}" alt="">
-          </a>
+            <img class="report-img" style="width:60px;height:60px;" src="{{url("uploads/reportFiles/".$file->reportImageFile)}}" alt="">
           <span class="img-title"> {{ $file->reportTitle }}</span>
+          </a>
           <span class="img-shows-count"> <i class="fa fa-download"></i>
             <span>0</span>
             <span class="img-date">{{$file->created_at->format('Y-m-d')}}</span>

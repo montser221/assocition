@@ -98,7 +98,7 @@ class pdfFileController extends Controller
 
     if($request->file('imageFile')){
         $path = Storage::disk('public_path')->putFile('uploads/files', $request->file('imageFile'));
-        $files->imageFile=$path;
+        // $files->imageFile=$path;
         $image = Image::make(Storage::path($path))->fit(1200,700);
         $image->save();
         \DB::table('pdf_files')

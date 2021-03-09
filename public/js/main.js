@@ -24,11 +24,16 @@ if(window.scrollY == 3782){
 
 $(document).on('scroll',function(){
   // console.log($(document).scrollTop());
-  if ($(document).scrollTop() >= 4318) {
+  if ($(document).scrollTop() > 500 && $(document).scrollTop() < 600) {
+    // console.log($(document).scrollTop() );
     for(i=0;i<animationElements.length; i++)
     {
       animateValue('.animate-'+i+'',1,animationElements[i],6000)
     }
+  }
+  else
+  {
+
   }
 });
 // console.log(animationElements);

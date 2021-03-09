@@ -44,7 +44,7 @@ class ProjectsController extends Controller
           'projectName'        => 'required|unique:projects|max:255',
         //   'projectCategoryId'  => 'required|numeric',
           'projectDesc'        => 'required',
-          'projectIcon'        => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1024',
+          'projectIcon'        => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:14096',
           'projectImage'       => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:14096',
         //   'projectWrapper'     => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:4096',
           'projectText'        => 'required',

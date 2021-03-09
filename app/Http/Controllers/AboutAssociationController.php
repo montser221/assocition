@@ -33,7 +33,7 @@ class AboutAssociationController extends Controller
         'managerWord'          => 'required',
         'vison'                => 'required',
         'message'              => 'required',
-       'associationIcon'       => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:14000',
+       'associationIcon'       => 'required|mimes:mp4|max:14000',
        'visonIcon'             => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:14000',
        'messageIcon'           => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:14000',
        'messageImage'          => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:14000',
@@ -65,9 +65,9 @@ class AboutAssociationController extends Controller
             mkdir($uploads_folder, 0777, true);
         }
         $request->file('associationIcon')->move($uploads_folder,    $image_full_name);
-        $image = Image::make( public_path("uploads/aboutassoiation/{$image_full_name}"))->fit(800,800);
-        $image->save();
-        $AboutAssociation->associationIcon=$image_full_name;
+        // $image = Image::make( public_path("uploads/aboutassoiation/{$image_full_name}"))->fit(800,800);
+        // $image->save();
+        $AboutAssociation->associationIcon="/uploads/aboutassoiation/".$image_full_name;
     }
     //store vison icon
     if($request->file('visonIcon')){
@@ -248,12 +248,12 @@ class AboutAssociationController extends Controller
             mkdir($uploads_folder, 0777, true);
         }
         $request->file('associationIcon')->move($uploads_folder,    $image_full_name);
-        $image = Image::make( public_path("uploads/aboutassoiation/{$image_full_name}"))->fit(800,800);
-        $image->save();
+        // $image = Image::make( public_path("uploads/aboutassoiation/{$image_full_name}"))->fit(800,800);
+        // $image->save();
         \DB::table('about_associations')
         ->where('associationId',$id)
         ->update([
-          'associationIcon'=>$image_full_name,
+          'associationIcon'=>'/uploads/aboutassoiation/'.$image_full_name,
         ]);
     }
 

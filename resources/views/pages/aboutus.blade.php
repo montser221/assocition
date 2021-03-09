@@ -12,7 +12,7 @@
 
 <!-- Start Contact Us -->
 
-<div class="contact" id="about">
+<div class="contact about-us" id="about">
 
   <div class=" px-0 banner" >
 
@@ -60,7 +60,7 @@
           </div>
 
           <div class="row">
-            <div class="col-sm-12 col-md-12 col-lg-10 word-text" style="color:#777">
+            <div class="col-sm-12 col-md-12 col-lg-12 word-text" style="color:#777">
               @isset($aboutassociation)
               {{$aboutassociation->managerWord ?? ''}}
 

@@ -36,7 +36,7 @@ class SliderImageController extends Controller
       if($request->file('sliderImage')){
           $path = Storage::disk('public_path')->putFile('uploads/sliders', $request->file('sliderImage'));
           $slider->sliderImage='storage/'.$path;
-          $image = Image::make(Storage::path($path))->fit(1200,700);
+          $image = Image::make(Storage::path($path))->fit(1200,600);
           $image->save();
       }
         // upload  wrapper and store it in database
@@ -46,7 +46,7 @@ class SliderImageController extends Controller
       $slider->sliderBtnText       = $request->input('sliderBtnText');
       $slider->save();
       return redirect()->route('sliderimages.index')->with('success','تم أضافة الملف بنجاح');
-    }
+    } 
     /**
      * Show the form for editing the specified resource.
      *
@@ -94,7 +94,7 @@ class SliderImageController extends Controller
         ->update([
           'sliderImage'=> 'storage/'.$path,
         ]);
-        $image = Image::make(Storage::path($path))->fit(1200,700);
+        $image = Image::make(Storage::path($path))->fit(1200,600);
         $image->save();
     }
 

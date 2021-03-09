@@ -70,7 +70,7 @@
 
           <div class="col">
 
-            <label class="label-control" for="associationIcon"> الايقونة   </label>
+            <label class="label-control" for="associationIcon"> الفيديو   </label>
 
             <input class="form-control-file"   id="associationIcon" type="file" name="associationIcon" class="form-control w-80"  >
 

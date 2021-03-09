@@ -10,7 +10,7 @@ $afiles = \App\Models\pdfFile::latest()->paginate(10);
 
 <div id="header-top">
     <div class="container">
-      <div class="row">
+      <div class="row sm-small" >
        <div class="col-lg-8 col-sm-6">
          <ul class="nav-top list-unstyled">
             <li>

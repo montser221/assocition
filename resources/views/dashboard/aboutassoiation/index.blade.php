@@ -127,7 +127,7 @@
 
                   <div class="col">
 
-                    <label class="label-control" for="associationIcon"> الايقونة   </label>
+                    <label class="label-control" for="associationIcon"> الفيديو   </label>
 
                     <input class="form-control-file" style="margin-right: 10%;" id="associationIcon" type="file" name="associationIcon" class="form-control w-80"  >
 
@@ -296,7 +296,7 @@
 
           <th>  العنوان</th>
 
-          <th>  الايقونة   </th>
+          {{-- <th>  الايقونة   </th> --}}
 
           <th>  ايقونة الرؤية   </th>
 
@@ -322,7 +322,7 @@
 
               <td>{{  $about->associationTitle }}</td>
 
-              <td><img class="img-responsive img-thambnail" style="max-width:40px" src="{{  url('uploads/aboutassoiation/'.$about->associationIcon )}}" alt="" /></td>
+              {{-- <td><img class="img-responsive img-thambnail" style="max-width:40px" src="{{  url('uploads/aboutassoiation/'.$about->associationIcon )}}" alt="" /></td> --}}
 
               <td><img class="img-responsive img-thambnail" style="max-width:40px" src="{{  url('uploads/aboutassoiation/'.$about->visonIcon )}}" alt="" /></td>
 
