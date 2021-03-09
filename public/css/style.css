@@ -1307,8 +1307,9 @@ color: #20c997}
 }
 .our-partner .partner-image 
 {
-	max-width: 175px;
-	max-height: 175px;
+	  max-height: 245px;
+	  margin-left: 18px;
+	  margin-top: 40px;
 }
 .our-partner  .carousel-item.active {
 	display: flex;
@@ -1323,7 +1324,7 @@ color: #20c997}
     display: inline-flex;
 
 }
-.our-partner    img {padding: 20px;}
+/*.our-partner    img {padding: 20px;}*/
 
 .our-partner .h2 {color: #786e42;margin-bottom:8px;margin-top: 50px;padding-top: 30px;}
 .our-partner .carousel-indicators {
@@ -3182,10 +3183,11 @@ border:0px solid ;
 	.contactus .form-contact {margin-left: 0 !important}
 	.center-phone {text-align: center !important;}
 	.our-partner .partner-image {
-		max-width: 60px;
-		max-height: 172px;
+		max-width: 59px;
+	  max-height: 142px;
+	  margin-top: 33px;
 	}
-	.our-partner img {padding: 5px;}
+	/*.our-partner img {padding: 5px;}*/
 	.say-about-us .item-1 {
 		width: 90% !important;
 		margin-right: 5% !important;

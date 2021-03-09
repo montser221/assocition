@@ -10,6 +10,6 @@ class Member extends Model
     use HasFactory;
     protected $primaryKey  = 'memberId';
     protected $fillable = [
-      'shortText','memberName','memberStatus'
+      'shortText','memberName','memberStatus','memberEmail','memberPhone'
     ];
 }
