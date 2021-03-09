@@ -81,8 +81,8 @@ class SettingsController extends Controller
               mkdir($uploads_folder, 0777, true);
           }
           $request->file('foundationLogo')->move($uploads_folder,    $image_full_name);
-          $image = Image::make( public_path("uploads/settings/{$image_full_name}"))->fit(1200,1200);
-          $image->save();
+          // $image = Image::make( public_path("uploads/settings/{$image_full_name}"))->fit(1200,1200);
+          // $image->save();
           $setting->foundationLogo=$image_full_name;
       }
 

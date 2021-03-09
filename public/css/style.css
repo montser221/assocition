@@ -728,7 +728,7 @@ color: #FFF;
 
 .msg-vison .vison .vison-text  {
 
-	font-size: 17px;
+	font-size: 16px;
       color:#ffffff;
 	margin-top: 20px;
 
@@ -740,7 +740,7 @@ color: #FFF;
 
 .msg-vison .message .message-text  {
 
-	font-size: 17px;
+	font-size: 16px;
  color:#ffffff;
 	margin-top: 20px;
 
@@ -1313,7 +1313,7 @@ color: #20c997}
 .our-partner  .carousel-item.active {
 	display: flex;
     margin-top: -12px;
-    margin-right: 11%;
+    margin-right: 24%;
     /*overflow: hidden;*/
 }
 
@@ -2515,7 +2515,7 @@ position: relative;
 
 /* Start My Classess */
 .fix-width{
-	max-width: 100%;
+	height: 100%;
 	border-radius: 5px;
 }
 .buttons-share a {
@@ -3138,6 +3138,7 @@ border:0px solid ;
 	.fix-width-phone 
 	{max-width:215% !important;
 	 margin-top: 20px;
+	 height: 184px;
 	  margin-bottom: 60px;}
     .our-projects .carousel .carousel-inner .item-1 .project-buttons 
     {
