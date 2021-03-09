@@ -70,7 +70,7 @@
       <div class="col-sm-12 col-md-6   word-text" style="color:#777">
         {{$aboutassociation->managerWord}}
      </div>
-      <div class="col-sm-12  col-md-5 offset-md-1   text-center" style="max-width:50%">
+      <div class="col-sm-12  col-md-5 offset-md-1   text-center">
          <video 
             src="{{ url($aboutassociation->associationIcon) }}" 
             controls="true"   
