@@ -1314,7 +1314,7 @@ color: #20c997}
 .our-partner  .carousel-item.active {
 	display: flex;
     margin-top: -12px;
-    margin-right: 24%;
+    margin-right: 11%;
     /*overflow: hidden;*/
 }
 
@@ -2904,6 +2904,11 @@ border:0px solid ;
 }
 /* Start media query*/
 @media (max-width:320px) { 
+	.plus-sign {
+	 top: 20px;
+  left: 6px;
+  font-size: 7px;
+	}
 	.msg-vison .vison .vison-text  {
 
 		margin-bottom: 40px !important;
