@@ -1628,7 +1628,9 @@ color: #000;
 
 }
 
-
+.footer a {
+  color: #FFF;
+}
 
 .footer .copyright {
 

@@ -35,6 +35,9 @@
           <th> ح إجتماعية </th>
           <th>ر . الهوية</th>
           <th>  الجنسية </th>
+          <th>  الصورة الشخصية </th>
+          <th>  السيرة الذاتية </th>
+          <th>    نوع الخدمة </th>
           <th>  الجنس </th>
           <th> الوظيفة </th>
           <th> جهة العمل </th>
@@ -66,7 +69,29 @@
               </td>
               <td>{{  $volnt->ssnNumber }}</td>
               <td>{{  $volnt->natonality }}</td>
-
+ <td 
+                data-toggle="tooltip" 
+                offset="2" 
+                data-placement="top" 
+                title="أضغط لعرض الصورة"> 
+                <a target="_blank"   
+                  href="{{url("storage/".$volnt->personalPhoto)}}" >
+                  <img style="max-width:40px;max-height:40px" 
+                  src="{{url("volnt/".$volnt->personalPhoto)}}"
+                  class="viewImage" alt="" />
+                </a>
+              </td>
+               <td 
+                data-toggle="tooltip" 
+                offset="2" 
+                data-placement="top" 
+                title="أضغط لعرض الملف"> 
+                <a target="_blank"   
+                  href="{{url("volnt/".$volnt->cv)}}" >
+                 السيرة الذاتية
+                </a>
+              </td>
+              <td style="width:40px;height:40px;overflow:scroll">{{ $volnt->typeOfService }}</td>
               <td>
               @if ($volnt->gender == "male")
                 ذكر

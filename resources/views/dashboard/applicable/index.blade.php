@@ -34,6 +34,8 @@
           <th> الإسم الاخير </th>
           <th>   نوع العضوية </th>
           <th>   إشعار السداد </th>
+          <th>     الصورة الشخصية </th>
+          <th>     السيرة الذاتية </th>
           <th> ح إجتماعية </th>
           <th>ر . الهوية</th>
           <th>  الجنسية </th>
@@ -74,6 +76,29 @@
                   class="viewImage" alt="" />
                 </a>
               </td>
+               <td 
+                data-toggle="tooltip" 
+                offset="2" 
+                data-placement="top" 
+                title="أضغط لعرض الصورة"> 
+                <a target="_blank"   
+                  href="{{url("storage/".$applicable->personalPhoto)}}" >
+                  <img style="max-width:40px;max-height:40px" 
+                  src="{{url("storage/".$applicable->personalPhoto)}}"
+                  class="viewImage" alt="" />
+                </a>
+              </td>
+               <td 
+                data-toggle="tooltip" 
+                offset="2" 
+                data-placement="top" 
+                title="أضغط لعرض الملف"> 
+                <a target="_blank"   
+                  href="{{url("storage/".$applicable->cv)}}" >
+                 السيرة الذاتية
+                </a>
+              </td>
+
                <td class="@if ($applicable->socialState == 'married') text-success  @else text-danger   @endif">
                 @if ($applicable->socialState == 'married')
                 <span class="  alert-success">

@@ -49,7 +49,7 @@
                echo $payees->count();
               ?>
            </div>
-           <small>إجمالي المستخدمين المتقدمين</small>
+           <small>إجمالي طلب العضوية المتقدمين</small>
          </div>
 
          <div class="col-sm-6 col-md-4 col-lg-3 box">

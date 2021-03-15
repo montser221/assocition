@@ -1,4 +1,4 @@
-<?php
+a<?php
 $data = \App\Models\Settings::find(1);
  ?>
 <!-- Start Footer  -->
@@ -16,6 +16,8 @@ $data = \App\Models\Settings::find(1);
           <a href="#"><img src="{{url('design/twitter.png')}}"></a>
           <a href="#"><img src="{{url('design/instagram.png')}}"></a>
           <a href="#"><img src="{{url('design/linkedin.png')}}"></a>
+          <a target="_blank" href="https://wa.me/{{$data->phoneNumber}}&text"> <img src="{{url('design/icons/whatsapp.png')}}"></a>
+    
           
         </div>
       </div>
@@ -23,8 +25,8 @@ $data = \App\Models\Settings::find(1);
         <div class="contact-info fix-footer"> معلومات التواصل</div>
         <ul class="list-unstyled">
 
-          <li ><a href="tel:+055 283-1282" dir="ltr">الهاتف:  {{$data->phoneNumber ?? ''}}</a></li>
-          <li class="d-block">العنوان: {{$data->foundationTitle ?? ''}}  </li>
+          <li ><a href="tel:+055 283-1282" dir="ltr">{{ __('messages.phone') }}:  {{$data->phoneNumber ?? ''}}</a></li>
+          <li class="d-block">{{ __('messages.location') }}: {{$data->foundationTitle ?? ''}}  </li>
         </ul>
         <div class="pay-by">
           <div class="h6"> نقبل الدفع بواسطة</div>

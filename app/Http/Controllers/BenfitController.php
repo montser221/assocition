@@ -68,6 +68,8 @@ class BenfitController extends Controller
         'jobEmployer'     => 'required|string',
         'address'         => 'required|string',
         'phone'           => 'required|numeric',
+        'personalPhoto'   => 'required|image|mimes:png,jpg,jpeg,svg,gif',
+        'cv'              => 'required|mimes:pdf,dox,docx',
     ]);
     $payees = new Payee;
 
@@ -77,6 +79,16 @@ class BenfitController extends Controller
       $payees->moneyNotify=$path;
       // $image = Image::make(Storage::path($path))->fit(1200,700);
       // $image->save();
+    }
+    if($request->file('personalPhoto'))
+    {
+      $path = \Storage::disk('public_path')->putFile('applicable', $request->file('personalPhoto'));
+      $payees->personalPhoto=$path;
+    }
+    if($request->file('cv'))
+    {
+      $path = \Storage::disk('public_path')->putFile('applicable', $request->file('cv'));
+      $payees->cv=$path;
     }
 
     $payees->firstName = $request->input('firstName');

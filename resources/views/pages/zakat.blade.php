@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title','حساب الزكاة  ')
+@section('title', __('messages.zakat') )
 {{-- include header --}}
 @include('includes.header')
 {{-- include contact page --}}
@@ -10,9 +10,9 @@
     <div class="z-inner">
      <div class="container">
        <div class="page-path">
-           <p><a href="{{route('home')}}"> الرئيسية / </a> حساب الزكاة   </p>
+           <p><a href="{{route('home')}}"> الرئيسية / </a> {{__('messages.zakat') }}   </p>
            <div class="h2" style="padding-bottom: 100px !important;">
-            أداة حساب الزكاة
+            {{ __('messages.zakat') }}
            </div>
        </div>
      </div>

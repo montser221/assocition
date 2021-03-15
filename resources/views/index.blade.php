@@ -24,7 +24,7 @@
         @foreach ($imageCollection as $slider)
         
        <img style="" src="{{ url($slider->sliderImage)}}" class="d-block w-100 slider-image" alt="...">
-       <div class="container text-center slider-small" style="border-radius:10px;padding:10px;  position: absolute;top: 50%; left: 20%; width: 790px; background: #baa342;">
+       <div class="container text-center slider-small" style="border-radius:10px;padding:10px;  position: absolute;top: 50%; left: 20%; width: 790px; background: #baa342;opacity: .7">
        {{-- <div class="container text-center slider-small" style="position: absolute;top: 40%;  left: 6%;"> --}}
          <div class="text-center mb-3 slider-title"  style="color:#fff;font-size:30px">{{ $slider->sliderTitle }} </div>
          <div class="text-center   mb-5 slider-text" style="color:#fff;font-size:20px;  width: 80%; margin: 0 auto;">{{ $slider->sliderText }}</div>
@@ -187,10 +187,12 @@
           <div class="progress mb-5"  data-toggle="tooltip"  offset="2" data-placement="top" title="@if($getAllDenoate >= $project->projectCost ) {{  $project->projectCost }} @else  {{ number_format( $getAllDenoate ,0)}} @endif SAR ">
             <div class="progress-bar" role="progressbar"
 
-                 style="@if($getAllDenoate >= $project->projectCost ) width:100% @else width: {{ round($getAllDenoate / $project->projectCost * 100) }}%; @endif" aria-valuenow="25"
+                 style="@if($getAllDenoate >= $project->projectCost ) width:100% @else background:#e9ecef; width: 50%; @endif" aria-valuenow="25"
                  aria-valuemin="0" aria-valuemax="100"
                 > @if($getAllDenoate >= $project->projectCost ) 100% @else
+                 <span style="color:#ff4758;font-size:15px">
                  {{  round($getAllDenoate / $project->projectCost * 100) }}% @endif</div>
+                </span>
           </div>
            <style type="text/css">
             .our-projects .carousel .carousel-inner .item-1 .project-buttons button 

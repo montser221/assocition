@@ -147,6 +147,28 @@
               {{-- </div> --}}
             </div>
              <div class="form-row">
+              <div class="col">      
+                <label  class="label-control">  نوع العضوية</label>
+                    <select class="form-control mb-3" 
+                     required="required" name="memberType" style="padding:0 8px 0 0; ">
+                      <option   selected  disabled class="" >إختار نوع العضوية</option>
+                      @if (old('memberType') ==  "volnteerMember") 
+                      
+                       @endif
+                      <option   value="volnteerMember"  
+                      @if (old('memberType') ==  "volnteerMember")  selected @endif>عضوية متطوع (300 ريال)
+                       </option>
+                     
+                     <option   
+                      value="commonMember"   @if (old('memberType') ==  "commonMember") selected @endif> عضوية   جمعية عمومية (500 ريال)
+                      </option>
+                    </select>
+                     @error('memberType')
+                      <div class="alert alert-danger">
+                        {{$message}}
+                      </div>
+                    @enderror
+              </div>
             <div class="col">
                 <label  class="label-control">  إشعار سداد رسوم </label>
                     <input 
@@ -162,28 +184,7 @@
                     @enderror
               </div>
        
-              <div class="col">      
-                <label  class="label-control">  نوع العضوية</label>
-                    <select class="form-control mb-3" 
-                     required="required" name="memberType" style="padding:0 8px 0 0; ">
-                      <option   selected  disabled class="" >إختار نوع العضوية</option>
-                      @if (old('memberType') ==  "volnteerMember") 
-                      
-                       @endif
-                      <option   value="volnteerMember"  
-                      @if (old('memberType') ==  "volnteerMember")  selected @endif>عضوية متطوع
-                       </option>
-                     
-                     <option   
-                      value="commonMember"   @if (old('memberType') ==  "commonMember") selected @endif>عضوية   جمعية عمومية
-                      </option>
-                    </select>
-                     @error('memberType')
-                      <div class="alert alert-danger">
-                        {{$message}}
-                      </div>
-                    @enderror
-              </div>
+             
              </div>
             <div class="form-row">
               <div class="col">
@@ -281,6 +282,34 @@
                        name="email"  
                        placeholder=" البريد الإلكتروني ">
                        @error('email')
+                      <div class="alert alert-danger"  >
+                        {{$message}}
+                      </div>
+                    @enderror
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col">
+                <label  class="label-control"> الصورة الشخصية </label>
+                    <input 
+                    type="file"
+                    class="form-control mb-3" 
+                    name="personalPhoto"  >
+                     @error('personalPhoto')
+                      <div class="alert alert-danger">
+                        {{$message}}
+                      </div>
+                    @enderror
+              </div>
+              <div class="col">
+                <label  class="label-control">السيرة الذاتية </label>
+                      <input 
+                      type="file" 
+                      class="form-control mb-3"
+                       value="{{old('email')}}" 
+                       name="cv"  
+                       >
+                       @error('cv')
                       <div class="alert alert-danger"  >
                         {{$message}}
                       </div>

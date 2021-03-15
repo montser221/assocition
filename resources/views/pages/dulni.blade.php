@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title',' دلني على محتاج')
+@section('title', __('messages.dulni'))
 
 @include('includes.header')
 <div class="dulni">
@@ -9,7 +9,7 @@
     <div class="dulni-inner">
       <div class="container">
         <div class="page-path">
-          <p><a href="{{url("/")}}"> الرئيسية </a>/ دلني على محتاج </p>
+          <p><a href="{{url("/")}}"> الرئيسية </a>/ {{ __('messages.dulni') }} </p>
         </div>
       </div>
     </div>
@@ -24,7 +24,7 @@
               {{-- @include('includes._errors') --}}
               @include('includes._success')
             </div>
-            <h3 class="text-center mt-3 mb-2">دلني على محتاج</h3>
+            <h3 class="text-center mt-3 mb-2">{{ __('messages.dulni') }}</h3>
             <div class="text-center mt-1 mb-4 line-design"></div>
               <form method="post" action="{{route('dulni.store')}}" id="dulani-form">
                   @csrf

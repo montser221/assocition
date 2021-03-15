@@ -263,5 +263,8 @@ return [
         'moneyNotify' => 'إشعار رسوم العضوية',
         'memberType'   => 'نوع العضوية',
         'msgType'   => 'نوع الرسالة',
+        'personalPhoto'   => 'الصورة الشخصية  ',
+        'typeOfService'   => '  نوع الخدمة المقدمة',
+
     ],
 ];

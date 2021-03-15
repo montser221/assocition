@@ -101,7 +101,7 @@
       <div class="col-sm-12 col-md-5 mb-5">
       <div class="back-message"
       style="
-        background-image: url(../{{ $aboutassociation->messageImage }});
+        background-image: url({{ $aboutassociation->messageImage }});
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -174,7 +174,7 @@
    <div class="container">
     <div class="row">
       @foreach ($goals as $goal)
-      <div class="col-11 col-xs-12 col-sm-6 col-md-5">
+      <div class="col-11 col-xs-12 col-sm-6 col-md-6">
         <div class="item text-right ">
           <i class="fa fa-check fa-2x ml-4 mr-2"></i>
           <span class="text ">{{$goal->goal}}</span>

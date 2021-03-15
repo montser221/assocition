@@ -225,7 +225,7 @@
           </div>
 
 
-          <div class="progress"  data-toggle="tooltip"  offset="2" data-placement="top" title="@if($getAllDenoate >= $project->projectCost ) {{  $project->projectCost }} @else  {{ number_format( $getAllDenoate ,0)}} @endif SAR ">
+          {{-- <div class="progress"  data-toggle="tooltip"  offset="2" data-placement="top" title="@if($getAllDenoate >= $project->projectCost ) {{  $project->projectCost }} @else  {{ number_format( $getAllDenoate ,0)}} @endif SAR ">
 
             <div class="progress-bar" role="progressbar"
 
@@ -237,8 +237,17 @@
 
                  {{  round($getAllDenoate / $project->projectCost * 100) }}%</div>
 
-          </div>
+          </div> --}}
+<div class="progress mb-5"  data-toggle="tooltip"  offset="2" data-placement="top" title="@if($getAllDenoate >= $project->projectCost ) {{  $project->projectCost }} @else  {{ number_format( $getAllDenoate ,0)}} @endif SAR ">
+            <div class="progress-bar" role="progressbar"
 
+                 style="@if($getAllDenoate >= $project->projectCost ) background-color: #BAA342;width:100% @else background:#e9ecef; width: 50%; @endif" aria-valuenow="25"
+                 aria-valuemin="0" aria-valuemax="100"
+                > @if($getAllDenoate >= $project->projectCost ) 100% @else
+                 <span style="color:#ff4758;font-size:15px">
+                 {{  round($getAllDenoate / $project->projectCost * 100) }}% @endif</div>
+                </span>
+          </div>
           <div class="project-buttons" id="our-projects-buttons">
             <small class="d-block text-gray mb-2 mt-4"> أختيار مبلغ التبرع </small>
             <?php 

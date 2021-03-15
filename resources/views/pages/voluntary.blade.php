@@ -26,7 +26,7 @@
             </div>
             <h3 class="text-center mt-3 mb-2"> طلب تسجيل متطوع </h3>
             <div class="text-center mt-1 mb-4 line-design"></div>
-              <form method="post" action="{{route('voluntary.store')}}" id="dulani-form">
+              <form method="post" enctype="form-multipart/data" action="{{route('voluntary.store')}}" id="dulani-form">
                 @csrf
                 @method('post')
                <div class="form-row">
@@ -182,7 +182,45 @@
                     @enderror
               </div>
             </div>
-
+ <div class="form-row">
+              <div class="col">
+                <label  class="label-control"> الصورة الشخصية </label>
+                    <input 
+                    type="file"
+                    class="form-control mb-3" 
+                    name="personalPhoto"  >
+                     @error('personalPhoto')
+                      <div class="alert alert-danger">
+                        {{$message}}
+                      </div>
+                    @enderror
+              </div>
+              <div class="col">
+                <label  class="label-control">السيرة الذاتية </label>
+                      <input 
+                      type="file" 
+                      class="form-control mb-3"
+                        
+                       name="cv"  
+                       >
+                       @error('cv')
+                      <div class="alert alert-danger"  >
+                        {{$message}}
+                      </div>
+                    @enderror
+              </div>
+            </div>
+             <div class="form-row">
+              <div class="col ">
+                <label  class="label-control">  نوع الخدمة التي ترغب بتقديمها </label>
+                      <textarea rows="4" name="typeOfService" class="form-control" placeholder="نوع الخدمة">{{ old('typeOfService') }}</textarea>
+                       @error('typeOfService')
+                      <div class="alert alert-danger mt-2"  >
+                        {{$message}}
+                      </div>
+                    @enderror
+              </div>
+            </div>
 
 
                   <button class="btn btn-main-color btn-lg position-fix  mx-auto" type="submit">إرسال</button>

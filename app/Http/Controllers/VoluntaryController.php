@@ -59,10 +59,27 @@ class VoluntaryController extends Controller
       'jobEmployer'     => 'required|string',
       'address'         => 'required|string',
       'phone'           => 'required|numeric',
+      'personalPhoto'   => 'required|image|mimes:png,jpg,jpeg,svg,gif',
+      'cv'              => 'required|mimes:pdf,dox,docx',
+      'typeOfService'  => 'required|max:100',
+      
   ]);
 
     $payees = new Voluntary;
-
+    if($request->file('personalPhoto'))
+    {
+      $path = \Storage::disk('public_path')->putFile('volnt', $request->file('personalPhoto'));
+      $payees->personalPhoto=$path;
+    }
+    if($request->file('cv'))
+    {
+      $path = \Storage::disk('public_path')->putFile('volnt', $request->file('cv'));
+      $payees->cv=$path;
+    }
+    if($request->has('typeOfService'))
+    {
+      $payees->typeOfService=$request->typeOfService;
+    }
     $payees->firstName      = $request->input('firstName');
     $payees->fatherName     = $request->input('fatherName');
     $payees->grandFatherName = $request->input('grandFatherName');

@@ -145,7 +145,7 @@
 
 
            <!--Bill Details-->
-            <div id="bill-details">
+            {{-- <div id="bill-details">
                <p>تفاصيل الفاتورة</p>
                <hr>
                <p class="d-inline-block ml-4" id="payment-method">طريقة الدفع:</p>
@@ -157,20 +157,20 @@
                    <input class="form-check-input" type="radio" name="pay-opt" id="pay-opt2" value="payment-account">
                    <label class="form-check-label" for="pay-opt2">حساب سداد</label>
                </div>
-           </div>
+           </div> --}}
 
-           <form  method="post" id="card-form" class="" action="https://api.moyasar.com/v1/payments.html">
+           {{-- <form  method="post" id="card-form" class="" action="https://api.moyasar.com/v1/payments.html">
              @csrf
-             @method('post')
+             @method('post') --}}
               {{-- <input type="hidden" name="publishable_api_key" value="sk_test_AXmiaohnBADcySyDJjPsChNwbiGPaAYZmgg2Vdnf">
               --}}
-            <input type="hidden" name="publishable_api_key" value="sk_live_qXRKzZaXCSnnRZXr9TnNYbr5jm2ZcdyUYSbQJZHy">
+            {{-- <input type="hidden" name="publishable_api_key" value="sk_live_qXRKzZaXCSnnRZXr9TnNYbr5jm2ZcdyUYSbQJZHy">
              <input type="hidden" name="amount" class="amount"  />
              <input type="hidden" name="source[type]" value="creditcard" />
-             <input type="hidden" name="callback_url" value="{{url('payments')}}" />
+             <input type="hidden" name="callback_url" value="{{url('payments')}}" /> --}}
 
 
-             <div class="form-row mb-3 mt-2">
+             {{-- <div class="form-row mb-3 mt-2">
                <div class="col-md-6 mb-2">
                  <input class="form-control " required type="text" name="source[name]" placeholder="الإسم على البطاقة">
                </div>
@@ -192,24 +192,24 @@
                       @for ($i=2021 ; $i <= 2031; $i++)
                       <option value="{{$i}}"> {{ $i }}</option>
                       @endfor
-                    </Select>
+                    </Select> --}}
                     <!--<input class="form-control col-5" required type="text" name="source[month]" placeholder="MM" style="margin-right: 20px;margin-bottom: 10px;">-->
                     <!--<input class="form-control col-5" required type="text" name="source[year]" placeholder="YY" style="margin-right: 20px;margin-bottom: 10px;">-->
-                  </div>
+                  {{-- </div>
               </div>
                <div class="col-md-6">
                  <input class="form-control " required type="password" name="source[cvc]" placeholder="الرمز السري">
                </div>
              </div>
              <button class="btn  btn-main-color back-main position-fix cart-p-fix   mx-auto" type="submit">تبرع الآن</button>
-           </form>
+           </form> --}}
 
-           <form  id="sdad-form" class="hide" method="post" action="https://api.moyasar.com/v1/payments.html">
+           {{-- <form  id="sdad-form" class="hide" method="post" action="https://api.moyasar.com/v1/payments.html">
              @csrf
-             @method('post')
+             @method('post') --}}
              {{-- <input type="hidden" name="publishable_api_key" value="sk_test_AXmiaohnBADcySyDJjPsChNwbiGPaAYZmgg2Vdnf">
              --}}
-             <input type="hidden" name="publishable_api_key" value="sk_live_qXRKzZaXCSnnRZXr9TnNYbr5jm2ZcdyUYSbQJZHy">
+             {{-- <input type="hidden" name="publishable_api_key" value="sk_live_qXRKzZaXCSnnRZXr9TnNYbr5jm2ZcdyUYSbQJZHy">
              <input type="hidden" name="amount" class="amount"  />
              <input type="hidden" name="callback_url" value="{{url('payments')}}" />
              <input type="hidden" name="source[type]" value="sadad" />
@@ -218,7 +218,7 @@
                 <button class="btn btn-main-color  back-main position-fix cart-p-fix   mx-auto" type="submit">تبرع الآن</button>
            </form>
            </div>
-         </div>
+         </div> --}}
 
        </div>
      </div>
