@@ -47,7 +47,7 @@
                         {{$message}}
                       </div>
                     @enderror
-                  <input type="text" class="form-control mb-3" name="needy"   placeholder="أدخل إسم المحتاج">
+                  <input type="text" class="form-control mb-3" name="needy"   placeholder="أدخل إسم اليتيم">
                   @error('needy')
                       <div class="alert alert-danger">
                         {{$message}}

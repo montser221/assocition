@@ -12,11 +12,11 @@ $data = \App\Models\Settings::find(1);
         </p>
         <div class="social">
           <div class="h6"> تابعنا عبر وسائل التواصل الاجتماعي:</div>
-          <a href="#"><img src="{{url('design/facebook.png')}}"></a>
-          <a href="#"><img src="{{url('design/twitter.png')}}"></a>
-          <a href="#"><img src="{{url('design/instagram.png')}}"></a>
+          <a href="https://www.facebook.com/profile.php?id=100064876505946"><img src="{{url('design/facebook.png')}}"></a>
+          <a href="https://mobile.twitter.com/aatorphans?lang=en"><img src="{{url('design/twitter.png')}}"></a>
+          <a href="https://instagram.com/aatorphans_m?igshid=b0bkdvv4w622"><img src="{{url('design/instagram.png')}}"></a>
           <a href="#"><img src="{{url('design/linkedin.png')}}"></a>
-          <a target="_blank" href="https://wa.me/966{{$data->phoneNumber}}&text"> <img src="{{url('design/icons/whatsapp.png')}}"></a>
+          <a target="_blank" href="https://wa.me/966{{$data->phoneNumber}}"> <img src="{{url('design/icons/whatsapp.png')}}"></a>
     
           
         </div>
