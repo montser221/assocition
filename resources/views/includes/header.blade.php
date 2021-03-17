@@ -41,7 +41,7 @@ $afiles = \App\Models\pdfFile::latest()->paginate(10);
             </li>
              <li>
                 <i class="fa fa-phone-square" aria-hidden="true"></i>
-                <a href="{{route('dulni.index')}}">دلني على محتاج</a>
+                <a href="{{route('dulni.index')}}">{{ __('messages.dulni') }}</a>
             </li>
         </ul>
        </div>
@@ -124,7 +124,19 @@ $afiles = \App\Models\pdfFile::latest()->paginate(10);
              {{-- <a class="dropdown-item" href="#">اللجان التطوعية </a> --}}
              </div>
            </li>
+          {{-- <li class="nav-item dropdown">
+                 <a class="nav-link dropdown-toggle"  id="navbarDropdownMenuLinkLib" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             المكتبة الأعلامية
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkLib">
+                    <a class="dropdown-item" href="{{route('allFiles')}}"> اللوائح والسياسات العامة </a>
+                    <a class="dropdown-item"href="{{route('allReportFiles')}}">  التقارير المالية </a>
+                    <a class="dropdown-item"href="{{route('associcFiles')}}">   محاضر الجمعية العمومية  </a>
+                   <a class="dropdown-item" href="{{route('allVideos')}}"> البوم الفيديو </a>
+                    <a class="dropdown-item"href="{{route('gallery')}}">البوم الصور</a>
 
+                </div>
+           </li> --}}
             <li class="nav-item">
               <a href="{{route('ourproject')}}" class="nav-link">مبادراتنا</a>
             </li>

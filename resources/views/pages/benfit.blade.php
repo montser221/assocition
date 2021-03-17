@@ -290,7 +290,7 @@
             </div>
             <div class="form-row">
               <div class="col">
-                <label  class="label-control"> الصورة الشخصية </label>
+                <label  class="label-control">   صورة الهوية الشخصية </label>
                     <input 
                     type="file"
                     class="form-control mb-3" 

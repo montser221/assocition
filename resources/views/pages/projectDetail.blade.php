@@ -89,21 +89,18 @@
                         <img style="width: 38px;" src="{{url('design/icons/whatsapp.png')}}" />
                     </a>
                   </div>
-                  <div class="progress mb-5" data-toggle="tooltip"  offset="2" data-placement="bottom" title="@if($getAllDenoate >= $projectData->projectCost ) {{  $projectData->projectCost }} @else  {{ number_format( $getAllDenoate ,0)}} @endif">
+             
+                  <div class="progress mb-5"  data-toggle="tooltip"  offset="2" data-placement="top" title="@if($getAllDenoate >= $projectData->projectCost ) {{  $projectData->projectCost }} @else  {{ number_format( $getAllDenoate ,0)}} @endif SAR ">
+                      <div class="progress-bar" role="progressbar"
 
-                    <div class="progress-bar" role="progressbar"
-
-                         style="@if($getAllDenoate >= $projectData->projectCost ) width:100%; @else width: 
-                         {{round($getAllDenoate / $projectData->projectCost * 100)}}%;@endif    background-color: #BAA342; " aria-valuenow="25"
-
-                         aria-valuemin="0" aria-valuemax="100"
-
-                          >
-                          @if($getAllDenoate >= $projectData->projectCost ) 100% @else
-                          {{ round($getAllDenoate / $projectData->projectCost * 100)}}% @endif</div>
-
-                  </div>
-
+                          style="@if($getAllDenoate > 0)  background-color:#BAA342 !important; @else  background-color:#e9ecef;width:15% !important;  @endif @if($getAllDenoate >= $projectData->projectCost ) width:100%;  @else  width: {{  round($getAllDenoate / $projectData->projectCost * 100)  }}%; @endif" aria-valuenow="25"
+                          aria-valuemin="0" aria-valuemax="100"
+                          > @if($getAllDenoate >= $projectData->projectCost ) 100% @else
+                          <small     style="color:#32353c;  font-size: 15px;position: absolute;right: 50%;">
+                          
+                          {{  round($getAllDenoate / $projectData->projectCost * 100) }}% @endif</div>
+                          </small>
+                      </div>
                   <div class="p-buttons">
                           
                           <div class="arrows  ">

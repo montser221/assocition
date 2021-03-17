@@ -1,4 +1,4 @@
-a<?php
+<?php
 $data = \App\Models\Settings::find(1);
  ?>
 <!-- Start Footer  -->
@@ -79,7 +79,7 @@ $data = \App\Models\Settings::find(1);
     <hr style="border-bottom:2px solid #DDD"/>
     <div class="copyright">
       <div class="footer-left">
-          جميع الحقوق محفوظة لدى  {{ $data->foundationName ?? ' ' }}             
+              {{ __('messages.copyright') }}              
        </div>
       <div class="footer-right">
         {{date('Y')}}

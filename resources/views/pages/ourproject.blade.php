@@ -225,28 +225,17 @@
           </div>
 
 
-          {{-- <div class="progress"  data-toggle="tooltip"  offset="2" data-placement="top" title="@if($getAllDenoate >= $project->projectCost ) {{  $project->projectCost }} @else  {{ number_format( $getAllDenoate ,0)}} @endif SAR ">
+         
+           <div class="progress mb-5"  data-toggle="tooltip"  offset="2" data-placement="top" title="@if($getAllDenoate >= $project->projectCost ) {{  $project->projectCost }} @else  {{ number_format( $getAllDenoate ,0)}} @endif SAR ">
+                    <div class="progress-bar" role="progressbar"
 
-            <div class="progress-bar" role="progressbar"
-
-                 style="    background-color: #BAA342;width: {{ round($getAllDenoate / $project->projectCost * 100) }}%;" aria-valuenow="25"
-
-                 aria-valuemin="0" aria-valuemax="100"
-
-                >
-
-                 {{  round($getAllDenoate / $project->projectCost * 100) }}%</div>
-
-          </div> --}}
-<div class="progress mb-5"  data-toggle="tooltip"  offset="2" data-placement="top" title="@if($getAllDenoate >= $project->projectCost ) {{  $project->projectCost }} @else  {{ number_format( $getAllDenoate ,0)}} @endif SAR ">
-            <div class="progress-bar" role="progressbar"
-
-                 style="@if($getAllDenoate >= $project->projectCost ) background-color: #BAA342;width:100% @else background:#e9ecef; width: 50%; @endif" aria-valuenow="25"
+                 style="@if($getAllDenoate > 0)  background-color:#BAA342 !important; @else  background-color:#e9ecef;width:15% !important;  @endif @if($getAllDenoate >= $project->projectCost ) width:100%;  @else  width: {{  round($getAllDenoate / $project->projectCost * 100)  }}%; @endif" aria-valuenow="25"
                  aria-valuemin="0" aria-valuemax="100"
                 > @if($getAllDenoate >= $project->projectCost ) 100% @else
-                 <span style="color:#ff4758;font-size:15px">
+                <small     style="color:#32353c;  font-size: 15px;position: absolute;right: 50%;">
+                
                  {{  round($getAllDenoate / $project->projectCost * 100) }}% @endif</div>
-                </span>
+                </small>
           </div>
           <div class="project-buttons" id="our-projects-buttons">
             <small class="d-block text-gray mb-2 mt-4"> أختيار مبلغ التبرع </small>
