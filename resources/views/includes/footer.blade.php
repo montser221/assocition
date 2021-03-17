@@ -16,7 +16,7 @@ $data = \App\Models\Settings::find(1);
           <a href="#"><img src="{{url('design/twitter.png')}}"></a>
           <a href="#"><img src="{{url('design/instagram.png')}}"></a>
           <a href="#"><img src="{{url('design/linkedin.png')}}"></a>
-          <a target="_blank" href="https://wa.me/{{$data->phoneNumber}}&text"> <img src="{{url('design/icons/whatsapp.png')}}"></a>
+          <a target="_blank" href="https://wa.me/966{{$data->phoneNumber}}&text"> <img src="{{url('design/icons/whatsapp.png')}}"></a>
     
           
         </div>
@@ -64,9 +64,7 @@ $data = \App\Models\Settings::find(1);
             <li>
               <a href="#">شروط وسياسة التبرع</a>
             </li>
-            <li>
-              <!--<a href="#" >ارجاع واسترداد المنتجات  </a>-->
-            </li>
+           
             <li>
               <a href="#">سياسة الخصوصية</a>
             </li>
