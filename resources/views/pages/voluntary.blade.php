@@ -212,7 +212,7 @@
             </div>
              <div class="form-row">
               <div class="col ">
-                <label  class="label-control">  نوع الخدمة التي ترغب بتقديمها للجمعية </label>
+                <label  class="label-control sm-font">  نوع الخدمة التي ترغب بتقديمها للجمعية </label>
                       <textarea rows="4" name="typeOfService" class="form-control" placeholder="نوع الخدمة">{{ old('typeOfService') }}</textarea>
                        @error('typeOfService')
                       <div class="alert alert-danger mt-2"  >

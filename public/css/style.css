@@ -3058,6 +3058,9 @@ border:0px solid ;
 		}
 }
 @media (max-width:576px) {
+	.sm-font {
+		font-size: 13px !important;
+	}
 	.media-libarary .video-icon {
 		  margin-right: -190px;
 	}
